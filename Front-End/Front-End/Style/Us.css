@@ -1,0 +1,317 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+body
+{
+    margin: 0;
+    font-family: 'Lucida Sans';
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: #fff;
+}
+/*Barra Menu*/
+.header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 8px;
+  }
+  .header__logo{
+    background-image: url(../Fotos/Logo44.png);
+    width: 50px;
+    height: 50px;
+  }
+  @media all and (max-width: 700px) {
+    .header
+    {
+        justify-content: space-between;
+    }
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgb(255, 255, 255);
+      transform: translateX(-100vw);
+      transition: 0.5s;
+    }
+    .nav--show {
+      transform: translateX(0);
+    }
+    .header__button-nav--open{
+        background-color: #fff;
+        border: 0;
+    }
+    .header__button-nav--close{
+        background-color: #fff;
+        border: 0;
+    }
+    .nav__button {
+      text-align: right;
+      margin: 1rem;
+    }
+    .nav__ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .nav__link {
+      display: block;
+      padding: 1rem;
+      font-size: 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+    }
+  }
+  @media all and (min-width: 701px) {
+    .nav__button,
+    .header__button-nav--open {
+      display: none;
+    }
+    .nav__ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+    .nav__link {
+      display: block;
+      padding: 10px 1rem;
+      text-decoration: none;
+      color: black;
+      transition: 0.5s;
+    }
+    .nav__link:hover {
+      background-color: rgba(206, 206, 206, 0.692);
+    }
+  }
+/*Form*/
+.Container
+{
+  margin-top: 80px;
+}
+h1
+{
+  margin-bottom: 40px;
+}
+.People
+{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 10px;
+}
+.People div
+{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.People-Titles
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  margin: 0 24px;
+  padding: 20px 0;
+  padding-left: 20px;
+  background-color: #fff;
+}
+.FrancoB
+{
+  background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("../Fotos/People.png");
+    padding-top: 200px;
+    padding-bottom: 10px;
+    margin: 0px 105px;
+}
+.ManuelM
+{
+  background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("../Fotos/People.png");
+    padding-top: 200px;
+    padding-bottom: 10px;
+    margin: 40px 105px;
+}
+.InakiU
+{
+  background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("../Fotos/People.png");
+    padding-top: 200px;
+    padding-bottom: 10px;
+    margin: 40px 105px;
+}
+.FrancoS
+{
+  background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("../Fotos/People.png");
+    padding-top: 200px;
+    padding-bottom: 10px;
+    margin: 0 105px;
+}
+.InfoText
+{
+  text-align: left;
+  margin: 0 50px;
+}
+.Imagenes
+{
+  display: none;
+}
+@media all and (min-width: 701px)
+{
+  .People
+  {
+    flex-direction: row;
+    width: 100%;
+  }
+  .People-Titles
+  {
+    padding: 20px 5px;
+    padding-left: 9px;
+  }
+  .FrancoB
+  {
+    padding: 0;
+    padding-top: 150px;
+    margin: 0 15px;
+  }
+  .ManuelM
+  {
+    padding: 0;
+    padding-top: 150px;
+    margin: 0 15px;
+  }
+  .FrancoS
+  {
+    padding: 0;
+    padding-top: 150px;
+    margin: 0 15px;
+  }
+  .InakiU
+  {
+    padding: 0;
+    padding-top: 150px;
+    margin: 0 15px;
+  }
+  .InfoText
+  {
+    display: flex;
+  }
+  .InfoText-Titles
+  {
+    margin:  50px 50px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+  }
+  .Imagenes
+  {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  .Imagenes img
+  {
+    flex-direction: column;
+    width: 100%;
+    margin: 50px 0;
+  }
+}
+@media all and (min-width: 1400px)
+{
+  .Container
+  {
+    padding: 100px;
+  }
+  .People-Titles
+  {
+    width: 165px;
+    font-size: 15px;
+    margin-top: 500px;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  .FrancoB
+  {
+    padding: 0;
+    padding: 100px 50px;
+    margin: 0 15px;
+  }
+  .ManuelM
+  {
+    padding: 0;
+    padding: 100px 50px;
+    margin: 0 15px;
+  }
+  .FrancoS
+  {
+    padding: 0;
+    padding: 100px 50px;
+    margin: 0 15px;
+  }
+  .InakiU
+  {
+    padding: 0;
+    padding: 100px 50px;
+    margin: 0 15px;
+  }
+  .Imagenes img
+  {
+
+    width: 70%;
+
+  }
+  body
+  {
+    width: 100%;
+  }
+  .InfoText
+  {
+    margin-right: 0;
+    margin-left: 150px;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}

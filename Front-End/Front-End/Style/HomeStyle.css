@@ -1,0 +1,306 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+body
+{
+    margin: 0;
+    font-family: 'Lucida Sans';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: rgb(235, 235, 235);
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: lato;
+}
+/*Barra Menu*/
+.header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 8px;
+  }
+
+  .header__logo
+  {
+    background-image: url(../Fotos/Logo44.png);
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Estilos móvil/celular */
+  @media all and (max-width: 700px) {
+    .header
+    {
+        justify-content: space-between;
+    }
+    /* Oculta el nav en la parte izquiera */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgb(255, 255, 255);
+      transform: translateX(-100vw);
+      transition: 0.5s;
+    }
+  
+    /* Muestra el nav */
+    .nav--show {
+      transform: translateX(0);
+    }
+    .header__button-nav--open
+    {
+        background-color: #fff;
+        border: 0;
+    }
+    .header__button-nav--close
+    {
+        background-color: #fff;
+        border: 0;
+    }
+    .nav__button {
+      text-align: right;
+      margin: 1rem;
+    }
+    .nav__ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .nav__link {
+      display: block;
+      padding: 1rem;
+      font-size: 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+    }
+  }
+  
+  /* Estilos Escritorio */
+  @media all and (min-width: 701px) {
+  
+    /* Oculta botón de abrir o cerrar */
+    .nav__button,
+    .header__button-nav--open {
+      display: none;
+    }
+  
+    /* Adapta el nav en horizontal */
+    .nav__ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+  
+    .nav__link {
+      display: block;
+      padding: 10px 1rem;
+      text-decoration: none;
+      color: black;
+      transition: 0.5s;
+      
+    }
+  
+    .nav__link:hover {
+      background-color: rgba(206, 206, 206, 0.692);
+    }
+  }
+/*Slider*/
+.slider-frame {
+	width: 80%;
+    height: auto;
+	margin:50px auto 0;
+	overflow: hidden;
+}
+
+.slider-frame ul {
+	display: flex;
+	padding: 0;
+	width: 400%;
+	
+	animation: slide 20s infinite alternate ease-in-out;
+}
+
+.slider-frame li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider-frame img {
+	width: 100%;
+}
+
+@keyframes slide {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
+}
+/*Slider End*/
+.BackGround
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    color: white;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("../Fotos/Iamgenes.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.BackGround button
+{
+    font-size: 1.5em;
+    font-family: 'Lucida Sans';
+    font-weight: bold;
+    padding: 13px 20px;
+    border-radius: 10px;
+    margin-top: 100px;
+    border-color: rgb(202,202,202);
+    background-color: rgb(202, 202, 202);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+
+}
+.Contenedor
+{
+    max-width: 2000px;
+    margin: auto;
+    background-color: #fff;
+    
+}
+.images img
+{
+    padding-top: 5%;
+    max-height: 70%;
+    max-width: 40%;
+}
+.Imagenes
+{
+
+    padding-top: 5%;
+    background-color: rgb(206, 206, 206);
+}
+.Ima
+{
+    max-height: 0%;
+    max-width: 0%;
+}
+.Legal
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:  2% 30%;
+    margin: 0;
+    background-color: rgb(180,180,180);
+}
+.Legal h3
+{
+    background-color: rgb(160,160,160);
+    line-height: 1.6;
+}
+/*Slider*/
+
+@media (min-width:720px)
+{
+    .Barra
+    {
+        display: flex;
+        flex-direction: row;
+        padding: 2px 20px;
+    }
+    .Barra a
+    {
+        padding: 20px 25px;
+    }
+    .Slider 
+    {
+        margin: 100px;
+        margin-left:  25%;
+        margin-right: 25%;
+    }
+    .Imagenes 
+    {
+        display: flex;
+        padding-bottom: 5%;
+    }
+    .images img
+    {
+        padding-top: 0;
+    }
+    .images
+    {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    .Ima
+    {
+        max-height: 100%;
+        max-width: 100%; 
+    }
+    .Registro
+    {
+        flex-direction: row;
+    }
+    .titles-container
+    {
+        padding: 20px;
+        padding-top: 10%;
+        width: 30%;
+        margin-left: 5%;
+    }
+    .Slider
+    {
+        margin: 5%;
+        display: flex;
+        flex-direction: row;
+    }
+    .slider-frame
+    {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    .Slider-Titles
+    {
+        margin-top: 180px;
+        width: 40%;
+    }
+    .botonMenu
+    {
+        
+    }
+
+}
+*
+{
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
