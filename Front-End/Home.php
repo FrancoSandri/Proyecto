@@ -32,8 +32,10 @@
 <body>
     <div class="Contenedor">
         <div class="BackGround">
+                <div class="BackGround-titles">
                 <h1> Satolution </h1>
                 <h3> Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, iste harum in </h3>
+                </div>
                 <form action="Home.php">
                 <button >Explora</button>
                 </form>
@@ -58,7 +60,7 @@
                 <h4 class="Titles">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed ex ipsam animi,
                     mollitia
                     magni iusto sapiente nemo suscipit?</h4>
-            </div>
+            </div> 
             <div class="images">
                 <img src="Fotos/Ejemplo.jpg">
                 <img src="Fotos/Ejemplo.jpg">

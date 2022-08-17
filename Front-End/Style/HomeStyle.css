@@ -161,9 +161,9 @@ body
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     flex-direction: column;
-    height: 90vh;
+    height: 100vh;
     color: white;
     background-image: linear-gradient(
         0deg,
@@ -174,6 +174,15 @@ body
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+}
+.BackGround-titles
+{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    padding: 10px 50px;
 }
 .BackGround button
 {
@@ -195,6 +204,10 @@ body
     background-color: #fff;
     
 }
+.Slider-Titles
+{
+    padding: 30px 50px;
+}
 .images img
 {
     padding-top: 5%;
@@ -211,6 +224,11 @@ body
 {
     max-height: 0%;
     max-width: 0%;
+}
+.Titles
+{
+    padding: 30px 50px;
+    padding-bottom: 0;
 }
 .Legal
 {
@@ -230,6 +248,10 @@ body
 
 @media (min-width:720px)
 {
+    .BackGround-titles
+    {
+        padding: 0;
+    }
     .Barra
     {
         display: flex;
@@ -292,6 +314,11 @@ body
     {
         margin-top: 180px;
         width: 40%;
+        padding: 0;
+    }
+    .Titles
+    {
+        padding: 0;
     }
     .botonMenu
     {
