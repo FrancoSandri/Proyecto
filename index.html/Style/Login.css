@@ -1,0 +1,190 @@
+@charset "utf-8";
+*
+{
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-top: 0;
+}
+body
+{
+    margin: 0;
+    font-family: "Inter";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: #fff(255, 255, 255);
+}
+/*Registro*/
+.Register
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    width: 75%;
+}
+.Titles
+{
+    margin-bottom: 10px;
+}
+.Register h1
+{
+    margin-top: 20px;
+    text-align: left;
+    font-size:48px;
+    padding: 17px 0px;
+}
+.Register h3
+{
+    margin-top: 0;
+    text-align: left;
+    font-size: 26px;
+}
+.From
+{
+    
+    margin-bottom: 50px;
+    margin: 5px;
+
+}
+.Form input
+{
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-color: grey;
+    background-color: #fff(255,255,255);
+    outline: none;
+    width: 100%;
+}
+.Register input:hover
+{
+    border-color: #216968;
+}
+.Sesion
+{
+    font-size: 16px;
+    padding: 12px 0;
+    margin: 2px;
+    width: 100%;
+    border: 0;  
+    justify-content: center;
+    background-color: #216968;
+    color: #fff;
+}
+button:hover
+{
+    transition-delay: .1s;
+    background-color: rgba(88, 88, 88, 0.336);
+}
+#Google
+{
+    font-size: 16px;
+    padding: 12px 0;
+    margin: 2px;
+    width: 100%;
+    background-color: #E7E7E7;
+    background-image: url(../Fotos/Google-Logo.png);
+    background-repeat: no-repeat;
+    background-position: 290px center;
+    color: black;
+    border-color: black;
+}
+#Google:hover
+{
+    transition-delay: .1s;
+    background-color: rgba(88, 88, 88, 0.336);
+}
+.Back
+{
+    font-size: 20px;
+    color: black;
+    padding: 20px;
+}
+.Back:hover
+{
+    color: #216968;
+}
+.HomeButton
+{
+    margin: 0;
+    display: flex;
+}
+h4
+{
+    margin-bottom: 0;
+    margin-top: 50px;
+}
+.Register a
+{
+    font-style: italic;
+    color: blue;
+    text-decoration: none; 
+}
+img
+{
+    display: none;
+}
+
+@media (min-width:768px)
+{
+    *
+    {
+        padding: 0;
+    }
+    .Back
+    {
+        justify-content: left;
+    }
+    .Form
+    {
+        display: flex;
+        width: 100%;
+        margin-top: 0;
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .Register
+    {
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 50px;
+        padding: 2.5%;
+        padding-left: 1.5%;
+    }
+    img
+    {
+        display: flex;
+    }
+    .HomeButton
+    {
+        margin: 0;
+    }
+    .Titles
+    {
+        padding-top: 0;
+    }
+    .Formas
+    {
+        margin: 0;
+    }
+}
+@media (min-width:1024px)
+{
+    img
+    {
+        min-width: 60%;
+    }
+}
+@media (min-width:1440px)
+{
+    img
+    {
+        min-width: 70%;
+    }
+
+}
