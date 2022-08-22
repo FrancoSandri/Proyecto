@@ -10,7 +10,6 @@ body
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    background-color: rgb(235, 235, 235);
 }
 /*Barra Menu*/
 .header {
@@ -183,7 +182,7 @@ body
     justify-content: center;
     text-align: left;
     flex-direction: column;
-    height: 100vh;
+    height: 120vh;
     color: white;
     background-image: url("../Fotos/HomeBackGround.jpg");
     background-repeat: no-repeat;
@@ -223,7 +222,6 @@ body
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #D9D9D9;
     padding: 30px;
 }
 .Nosotros h1
@@ -287,7 +285,7 @@ body
 }
 /*Slider*/
 
-@media (min-width:720px)
+@media (min-width:890px)
 {
     .BackGround-titles
     {
@@ -362,7 +360,7 @@ body
     }
     .images
     {
-        margin-top: 5%;
+        margin-top: 10%;
         margin-left: 12%;
         max-height: 100%;
         max-width: 100%;
@@ -376,9 +374,15 @@ body
     {
         flex-direction: row;
     }
+    .Slider-Titles
+    {
+      width: 40%;   
+    }
     .Slider
     {
-        margin: 5%;
+        margin: 0;
+        margin-top: 50px;
+        margin-left: 5%;
         display: flex;
         flex-direction: row;
     }
@@ -388,16 +392,7 @@ body
         display: flex;
         flex-direction: column;
     }
-    .Slider-Titles
-    {
-        margin-top: 180px;
-        width: 40%;
-        padding: 0;
-    }
-    .Titles
-    {
-        padding: 0;
-    }
+
     .Hacemos
     {
         display: flex;
@@ -416,17 +411,46 @@ body
         height: 100%;
         margin-left: 20px;
     }
-    .Legal{margin-top: 0;}
+    .Legal{
+        margin-top: 0;
+        background-color: #499F78;
+    }
     .Legal a
     {
         display: flex;
+        color: #fff;
     }
 }
-@media (min-width:1500px)
+@media (min-width:1200px)
 {
     .BackGround-titles h3
     {
         padding-right: 50%;
+    }
+    .Slider
+    {
+        margin: 0;
+        margin-left: 5%;
+    }
+    .Slider-Titles
+    {
+        width: 48%;
+        padding: 10%;
+        padding-top: 9%;
+        padding-left: 13%;
+        text-align: left;
+        color: #fff;
+
+        background-image: url(../Fotos/Group\ 93.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+    .Hacemos
+    {
+        background-image: url(../Fotos/BackGroundLegal.png);
+        background-repeat: no-repeat;
+        background-position: left bottom;
     }
 }
 *

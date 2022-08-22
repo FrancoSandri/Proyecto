@@ -1,0 +1,185 @@
+@charset "utf-8";
+*
+{
+    box-sizing: border-box;
+    margin: 1%;
+    margin-right: 0;
+    margin-top: 0;
+}
+body
+{
+    margin: 0;
+    font-family: "Inter";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: #fff(255, 255, 255);
+}
+/*Registro*/
+.Register
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    width: 75%;
+}
+.Titles
+{
+    margin-bottom: 30px;
+}
+.Register h1
+{
+    margin-top: 20px;
+    text-align: left;
+    font-size:24px;
+    padding: 17px 0px;
+}
+.Register h3
+{
+    margin-top: 0;
+    text-align: left;
+    font-size: 16px;
+}
+.From
+{
+    
+    margin-bottom: 50px;
+    margin: 5px;
+
+}
+.Form input
+{
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-color: grey;
+    background-color: #fff(255,255,255);
+    outline: none;
+    width: 99%;
+}
+.Register input:hover
+{
+    border-color: blue;
+}
+button
+{
+    font-size: 16px;
+    padding: 12px 0;
+    border-radius: 10px;
+    margin: 2px;
+    width: 100%;
+    border: 0;  
+    justify-content: center;
+    background-color: #CBCBCB;
+}
+button:hover
+{
+    transition-delay: .1s;
+    background-color: rgba(88, 88, 88, 0.336);
+}
+#Google
+{
+    padding: 0;
+    margin-bottom: 20px;
+    padding: 12px 0px;
+    background-color: #E7E7E7;
+}
+#Google:hover
+{
+    transition-delay: .1s;
+    background-color: rgba(88, 88, 88, 0.336);
+}
+.Back
+{
+    background-image: url("../Fotos/Logo44.png");
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    margin: 0;
+    margin-top: 20px;
+}
+.HomeButton
+{
+    margin: 0;
+    display: flex;
+}
+.Register a
+{
+    margin-top: 10px;
+    font-style: italic;
+    color: blue;
+    text-decoration: none; 
+}
+img
+{
+    width: 0%;
+    height: 0%;
+}
+
+@media (min-width:768px)
+{
+    *
+    {
+        padding: 0;
+    }
+    .Back
+    {
+        justify-content: left;
+        padding-right: 50px;
+    }
+    .Form
+    {
+        display: flex;
+        width: 100%;
+        margin-top: 0;
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .Register
+    {
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 50px;
+        padding: 2.5%;
+    }
+    img
+    {
+        min-width: 50%;
+        min-height: 100%;
+        justify-content: right;
+        padding: 0;
+        margin: 0;
+    }
+    .HomeButton
+    {
+        margin: 0;
+    }
+    .Titles
+    {
+        padding-top: 0;
+    }
+    .Formas
+    {
+        margin: 0;
+    }
+}
+@media (min-width:1024px)
+{
+    img
+    {
+        min-width: 60%;
+    }
+}
+@media (min-width:1440px)
+{
+    img
+    {
+        min-width: 70%;
+    }
+
+}
