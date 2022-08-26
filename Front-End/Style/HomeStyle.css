@@ -19,8 +19,8 @@ body
     top: 0;
     left: 0;
     right: 0;
-    background: #fff;
     z-index: 100;
+    justify-content: center;
   }
 
   .header__logo
@@ -28,6 +28,8 @@ body
     background-image: url(../Fotos/Logo44.png);
     width: 50px;
     height: 50px;
+    margin-left: 10px;
+    margin-top: 10px;
   }
   /* Estilos móvil/celular */
   @media all and (max-width: 700px) {
@@ -53,12 +55,10 @@ body
     }
     .header__button-nav--open
     {
-        background-color: #fff;
         border: 0;
     }
     .header__button-nav--close
     {
-        background-color: #fff;
         border: 0;
     }
     .nav__button {
@@ -75,8 +75,8 @@ body
       font-size: 1.5rem;
       text-align: center;
       text-decoration: none;
-      color: black;
-    }
+      color: #000;
+    }  
     .fi-br-align-justify
     {
         margin-top: 8px;
@@ -111,9 +111,8 @@ body
       display: block;
       padding: 10px 1rem;
       text-decoration: none;
-      color: black;
       transition: 0.5s;
-      
+       color: #fff;
     }
   
     .nav__link:hover {
@@ -125,17 +124,6 @@ body
     .fi-br-envelope{display: none;}
     .fi-br-users-alt{display: none;}
     .fi-br-user-add{display: none;}
-    #Register
-    {
-        position: fixed;
-        right:260px;
-        background-color: #389389;
-    }
-    #Login
-    {
-        position: fixed;
-        right: 400px;
-    }
   }
 /*Slider*/
 .slider-frame {
@@ -182,7 +170,7 @@ body
     justify-content: center;
     text-align: left;
     flex-direction: column;
-    height: 120vh;
+    height: 140vh;
     color: white;
     background-image: url("../Fotos/HomeBackGround.jpg");
     background-repeat: no-repeat;
@@ -194,7 +182,7 @@ body
     display: flex;
     flex-direction: column;
     text-align: left;
-    padding: 10px 50px;
+    padding: 10px 10px;
 
 }
 .BackGround-titles h3
@@ -342,7 +330,7 @@ body
     .titles-container
     {
         padding-left: 10%;
-        width: 40%;
+        width: 50%;
     }
     .titles-container h1
     {
@@ -427,6 +415,7 @@ body
     {
         padding-right: 50%;
     }
+
     .Slider
     {
         margin: 0;

@@ -8,13 +8,13 @@
     <link href="Style/HomeStyle.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="fonts.css">
-    <script src='main.js'></script>
+    <script src='Home.js'></script>
     <link href="Icons/css/uicons-bold-rounded.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     
 </head>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<header x-data="{ open: false }" class="header">
+<header x-data="{ open: false }" class="header" id="Head">
     <div class="header__logo">
     </div>
     <button class="header__button-nav--open" x-on:click="open = true"><i class="fi-br-align-justify"></i></button>
@@ -22,12 +22,12 @@
         <div class="nav__button" x-on:click="open = false">
             <button class="header__button-nav--close"><i class="fi-br-align-justify"></i></button>
         </div>
-            <ul class="nav__ul">
+            <ul class="nav__ul" id="Navv">
                 <li class="nav__item"><a href="#" class="nav__link"><i class="fi-br-map-marker"></i> Mapa</a></li>
                 <li class="nav__item"><a href="Us.html" class="nav__link"><i class="fi-br-users-alt"></i> Nosotros</a></li>
                 <li class="nav__item"><a href="Help.html" class="nav__link"><i class="fi-br-envelope"></i> Ayuda</a></li>
-                <li class="nav__item" id="Login"><a href="Login.html" class="nav__link"><i class="fi-br-user"></i> Iniciar Sesión</a></li>
-                <li class="nav__item" id="Register"><a href="Register.html" class="nav__link"><i class="fi-br-user-add"></i>Crear Cuenta</a></li>
+                <li class="nav__item"><a href="Login.html" class="nav__link"><i class="fi-br-user"></i> Iniciar Sesión</a></li>
+                <li class="nav__item"><a href="Register.html" class="nav__link"><i class="fi-br-user-add"></i>Crear Cuenta</a></li>
             </ul>
     </nav>
 </header>
@@ -99,11 +99,5 @@
         <a href="Register.html" class="nav__link"></i> Registrarse</a>
         </div>
     </div>
-
-        
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
 <body>
         
