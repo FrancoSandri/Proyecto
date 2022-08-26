@@ -126,42 +126,7 @@ body
     .fi-br-user-add{display: none;}
   }
 /*Slider*/
-.slider-frame {
-	width: 80%;
-    height: auto;
-	overflow: hidden;
-}
 
-.slider-frame ul {
-	display: flex;
-	padding: 0;
-	width: 400%;
-	animation: slide 20s infinite alternate ease-in-out;
-}
-
-.slider-frame li {
-	width: 100%;
-	list-style: none;
-}
-
-.slider-frame img {
-	width: 70%;
-    height: 70%;
-}
-
-@keyframes slide {
-	0% {margin-left: 0;}
-	20% {margin-left: 0;}
-	
-	25% {margin-left: -100%;}
-	45% {margin-left: -100%;}
-	
-	50% {margin-left: -200%;}
-	70% {margin-left: -200%;}
-	
-	75% {margin-left: -300%;}
-	100% {margin-left: -300%;}
-}
 /*Slider End*/
 .BackGround
 {
@@ -315,12 +280,6 @@ body
         padding-right: 20%;
         text-align: left;
     }
-    .Slider 
-    {
-        margin: 100px;
-        margin-left:  25%;
-        margin-right: 25%;
-    }
     .Imagenes 
     {
         display: flex;
@@ -370,9 +329,15 @@ body
     {
         margin: 0;
         margin-top: 50px;
-        margin-left: 5%;
+        padding: px;
+        padding-left: 0;
         display: flex;
         flex-direction: row;
+    }
+    #Sliderimg
+    {
+        width: 40%;
+        height: 40%;
     }
     .slider-frame
     {
@@ -415,12 +380,6 @@ body
     {
         padding-right: 50%;
     }
-
-    .Slider
-    {
-        margin: 0;
-        margin-left: 5%;
-    }
     .Slider-Titles
     {
         width: 48%;
@@ -430,10 +389,10 @@ body
         text-align: left;
         color: #fff;
 
-        background-image: url(../Fotos/Group\ 93.png);
+        background-image: url(../Fotos/Group\ 93.jpg);
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 100%;
+        background-size: 80%;
     }
     .Hacemos
     {

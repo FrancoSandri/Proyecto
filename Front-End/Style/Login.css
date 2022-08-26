@@ -6,6 +6,7 @@
     margin-right: 0;
     margin-top: 0;
     font-family: "poppins";
+    width: 100%;
 }
 body
 {
@@ -17,6 +18,18 @@ body
     text-align: center;
     flex-direction: column;
     background-color: #F9FCF8;
+
+}
+#file
+{
+    margin: 35px 0;
+    width: 250px;
+    height: 10px;
+    color: 216968;
+}
+#Continuar
+{
+    margin-top: 15%;
 }
 /*Registro*/
 .Register
@@ -48,7 +61,7 @@ body
 .From
 {
     margin-top: 15px;
-    margin-bottom: 25px;    
+    margin-bottom: 70px;    
 }
 .Form input
 {
@@ -72,7 +85,7 @@ body
     margin: 2px;
     width: 99%;
     border: 0;
-    border-radius: 5px;
+    border-radius: 10px;
     justify-content: center;
     background-color: #216968;
     color: #fff;
@@ -104,7 +117,7 @@ button:hover
     background-repeat: no-repeat;
     background-position: right 12% center;
     border-color: #b5b5b5;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 #Google:hover
 {
@@ -150,11 +163,11 @@ h4
     .Imagenes
     {
         display: flex;
+        width: 100%;
     }
     img
     {
         width: 100%;
-        height: auto;
     }
     *
     {
