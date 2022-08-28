@@ -22,12 +22,15 @@
         <div class="nav__button" x-on:click="open = false">
             <button class="header__button-nav--close"><i class="fi-br-align-justify"></i></button>
         </div>
-            <ul class="nav__ul" id="Navv">
-                <li class="nav__item"><a href="#" class="nav__link"><i class="fi-br-map-marker"></i> Mapa</a></li>
-                <li class="nav__item"><a href="Us.html" class="nav__link"><i class="fi-br-users-alt"></i> Nosotros</a></li>
-                <li class="nav__item"><a href="Help.html" class="nav__link"><i class="fi-br-envelope"></i> Ayuda</a></li>
-                <li class="nav__item"><a href="Login.html" class="nav__link"><i class="fi-br-user"></i> Iniciar Sesión</a></li>
-                <li class="nav__item"><a href="Register.html" class="nav__link"><i class="fi-br-user-add"></i>Crear Cuenta</a></li>
+            <ul class="nav__ul">
+                <li class="nav__item"><a id="Nav" href="#" class="nav__link"><i class="fi-br-map-marker"></i> Inicio</a></li>
+                <li class="nav__item"><a id="Nav1" href="#" class="nav__link"><i class="fi-br-map-marker"></i> Mapa</a></li>
+                <li class="nav__item"><a id="Nav2" href="Us.html" class="nav__link"><i class="fi-br-users-alt"></i> Nosotros</a></li>
+                <li class="nav__item"><a id="Nav3" href="Help.html" class="nav__link"><i class="fi-br-envelope"></i> Ayuda</a></li>
+                <div id="Registros">
+                    <li class="nav__item"><a id="Nav4" href="Login.html" class="nav__link"><i class="fi-br-user"></i> Iniciar Sesión</a></li>
+                    <li class="nav__item" id="Btn-Crear"><a href="Register.html" class="nav__link"><i class="fi-br-user-add"></i> Crear Cuenta</a></li>
+                </div>
             </ul>
     </nav>
 </header>
@@ -47,15 +50,22 @@
         <h3> Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet consectetur fugit, asperiores accusamus, sit dolorum harum suscipit voluptate quos in modi provident incidunt quasi qui officia? Neque cupiditate numquam a.</h3>
     </div>
     <div class="Slider" >
-        <img id="Sliderimg"src="Fotos/unsplash_d4SLJNrU4rs.jpg">
-    <div class="Slider-Titles">
+        <div class="slider-frame">
+            <ul>
+                <li><img src="Fotos/SliderIMG1.jpg" alt=""></li>
+                <li><img src="Fotos/SliderIMG1.jpg" alt=""></li>
+                <li><img src="Fotos/SliderIMG1.jpg" alt=""></li>
+                <li><img src="Fotos/SliderIMG1.jpg" alt=""></li>
+            </ul>
+        </div>
+    <div class="Slider-Titles" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                     <h1> Que es la sequia? </h1>
                     <h4> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio distinctio neque, nihil asperiores enim impedit suscipit animi sed quaerat nisi accusamus similique dolor rerum officiis, qui esse, ex inventore incidunt. </h4>
         </div>
     </div>
         <div class="Imagenes">
             <div class="titles-container">
-                <h1 class="Titles">Porque es importante prevenir esto?</h1>
+                <h1 id="test" class="Titles">Porque es importante prevenir esto?</h1>
                 <h4 class="Titles">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi eveniet ipsa hic et vel vero quod, nesciunt minima nihil, molestiae deserunt amet iste iusto dolores dolor atque animi officiis corrupti!
                 <br>
                 <br>
@@ -93,4 +103,3 @@
         </div>
     </div>
 <body>
-        

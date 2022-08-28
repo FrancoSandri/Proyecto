@@ -28,8 +28,6 @@ body
     background-image: url(../Fotos/Logo44.png);
     width: 50px;
     height: 50px;
-    margin-left: 10px;
-    margin-top: 10px;
   }
   /* Estilos móvil/celular */
   @media all and (max-width: 700px) {
@@ -56,6 +54,7 @@ body
     .header__button-nav--open
     {
         border: 0;
+        background-color: rgba(0, 0, 0, 0);
     }
     .header__button-nav--close
     {
@@ -71,7 +70,7 @@ body
     }
     .nav__link {
       display: block;
-      padding: 1rem;
+      padding: 10px 1.5rem;
       font-size: 1.5rem;
       text-align: center;
       text-decoration: none;
@@ -85,8 +84,7 @@ body
     .fi-br-align-justify:hover
     {
         text-align: center;
-        color: rgb(0, 140, 255);
-        font-size: 24px;
+        color: #499F78;
     }
   }
   
@@ -124,18 +122,70 @@ body
     .fi-br-envelope{display: none;}
     .fi-br-users-alt{display: none;}
     .fi-br-user-add{display: none;}
+    #Registros
+    {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        right: 2%;
+    }
+    .header__logo
+    {
+        position: absolute;
+        left: 0.5%;
+    }
+    #Btn-Crear
+    {
+        background-color: #389389;
+        border-radius: 10px;
+    }
   }
 /*Slider*/
+.slider-frame {
+	width: 80%;
+    height: auto;
+	overflow: hidden;
+}
 
+.slider-frame ul {
+	display: flex;
+	padding: 0;
+	width: 400%;
+	animation: slide 20s infinite alternate ease-in-out;
+}
+
+.slider-frame li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider-frame img {
+	width: 70%;
+    height: 70%;
+}
+
+@keyframes slide {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
+}
 /*Slider End*/
 .BackGround
 {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center top;
     text-align: left;
     flex-direction: column;
-    height: 140vh;
+    height: 120vh;
     color: white;
     background-image: url("../Fotos/HomeBackGround.jpg");
     background-repeat: no-repeat;
@@ -148,6 +198,7 @@ body
     flex-direction: column;
     text-align: left;
     padding: 10px 10px;
+    margin-top: 15%;
 
 }
 .BackGround-titles h3
@@ -219,8 +270,7 @@ body
 }
 .Hacemos-IMG img
 {
-    width: 20%;
-    height: 50%;
+    width: 40%;
 }
 .Legal
 {
@@ -280,6 +330,12 @@ body
         padding-right: 20%;
         text-align: left;
     }
+    .Slider 
+    {
+        margin: 100px;
+        margin-left:  25%;
+        margin-right: 25%;
+    }
     .Imagenes 
     {
         display: flex;
@@ -329,15 +385,9 @@ body
     {
         margin: 0;
         margin-top: 50px;
-        padding: px;
-        padding-left: 0;
+        margin-left: 5%;
         display: flex;
         flex-direction: row;
-    }
-    #Sliderimg
-    {
-        width: 40%;
-        height: 40%;
     }
     .slider-frame
     {
@@ -380,6 +430,12 @@ body
     {
         padding-right: 50%;
     }
+
+    .Slider
+    {
+        margin: 0;
+        margin-left: 5%;
+    }
     .Slider-Titles
     {
         width: 48%;
@@ -389,10 +445,10 @@ body
         text-align: left;
         color: #fff;
 
-        background-image: url(../Fotos/Group\ 93.jpg);
+        background-image: url(../Fotos/Group\ 93.png);
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 80%;
+        background-size: 100%;
     }
     .Hacemos
     {

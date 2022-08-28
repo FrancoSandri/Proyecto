@@ -20,17 +20,7 @@ body
     background-color: #F9FCF8;
 
 }
-#file
-{
-    margin: 35px 0;
-    width: 250px;
-    height: 10px;
-    color: 216968;
-}
-#Continuar
-{
-    margin-top: 15%;
-}
+
 /*Registro*/
 .Register
 {
@@ -61,7 +51,7 @@ body
 .From
 {
     margin-top: 15px;
-    margin-bottom: 70px;    
+    margin-bottom: 20%;    
 }
 .Form input
 {
@@ -163,16 +153,41 @@ h4
     .Imagenes
     {
         display: flex;
-        width: 100%;
     }
     img
     {
         width: 100%;
     }
-    *
+    #file
     {
-        overflow-y: hidden;
+        margin: 35px 0;
+        width: 250px;
+        height: 10px;
+        color: 216968;
+    }
+    #Continuar
+    {
+        margin-top: 15%;
     }
 }
+
+@media (min-width:1400px)
+{
+    .Imagenes
+    {
+        display: flex;
+        height: 960px;
+    }
+}
+@media (min-width:2000px)
+{
+    .Imagenes
+    {
+        display: flex;
+        height: 1250px;
+    }
+}
+
+
 
 
