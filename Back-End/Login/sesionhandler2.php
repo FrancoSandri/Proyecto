@@ -2,7 +2,7 @@
 
 include_once("./mysql_functions.php");
 
-//traigo la info en forma de POST y la transformo en una variable para que sea mas manejable
+//Info en el metodo post
 $EmailUsu = $_POST["mail"];
 
 
