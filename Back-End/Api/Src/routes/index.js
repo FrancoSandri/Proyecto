@@ -92,8 +92,8 @@ router.delete('/:id', (req, res) => {
 })
 
 router.post('/register', async (req, res) => {
-    const { name, surname, email, phone, password } = req.body
-    if(name && surname && email && phone && password)
+    const {email, password } = req.body
+    if( email && password)
     {
         const isEmailValid = validateEmail(email)
 
@@ -103,7 +103,7 @@ router.post('/register', async (req, res) => {
             {
                 const hashedPassword = await bcrypt.hash(password, 10)
 
-                let sql = `insert into user (name, surname, email, phone, password) values ('${name}', '${surname}', '${email}', '${phone}', '${hashedPassword}')`
+                let sql = `insert into user (email, password) values ('${email}','${hashedPassword}')`
                 db.query(sql, (err, result) => {
                     if (err) throw err
                     res.status(201).send('User created correctly')
