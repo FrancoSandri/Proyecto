@@ -140,154 +140,61 @@ body
         border-radius: 10px;
     }
   }
-/*Slider*/
-.slider-frame {
-	width: 80%;
-    height: auto;
-	overflow: hidden;
-}
-
-.slider-frame ul {
-	display: flex;
-	padding: 0;
-	width: 400%;
-	animation: slide 20s infinite alternate ease-in-out;
-}
-
-.slider-frame li {
-	width: 100%;
-	list-style: none;
-}
-
-.slider-frame img {
-	width: 70%;
-    height: 70%;
-}
-
-@keyframes slide {
-	0% {margin-left: 0;}
-	20% {margin-left: 0;}
-	
-	25% {margin-left: -100%;}
-	45% {margin-left: -100%;}
-	
-	50% {margin-left: -200%;}
-	70% {margin-left: -200%;}
-	
-	75% {margin-left: -300%;}
-	100% {margin-left: -300%;}
-}
-/*Slider End*/
+  /*Estilo Base*/
+  .Contenedor
+  {
+      max-width: 2000px;
+      margin: auto;
+      background-color: #fff;
+      
+  }
 .BackGround
 {
+  /*BackGround Position*/
     display: flex;
     align-items: center;
     justify-content: center top;
     text-align: left;
     flex-direction: column;
+  /*BackGround Settings*/
     height: 120vh;
-    color: white;
-    background-image: url("../Fotos/HomeBackGround.jpg");
+    background-image: url("../Fotos/Home-BackGround.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 .BackGround-titles
 {
+  /*Titles Position*/
     display: flex;
     flex-direction: column;
     text-align: left;
     padding: 10px 10px;
     margin-top: 15%;
-
 }
-.BackGround-titles h3
+.BackGround-titles p
 {
     margin-top: 40px;
 }
 .BackGround button
 {
+  /*Button Style*/
     font-size: 26px;
-    padding: 13px 20px;
-    margin-top: 50px;
-    border: 0;
     background-color: #389389;
     color: #fff;
+    border: 0;
+    border-radius: 10px;
+    padding: 13px 20px;
+    /*Button Position*/
+    margin-top: 50px;
 }
-.Contenedor
-{
-    max-width: 2000px;
-    margin: auto;
-    background-color: #fff;
-    
-}
-.Nosotros
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 30px;
-}
-.Nosotros h1
-{
-    margin-bottom: 10px;
-    font-size: 48px;
-    line-height: 50px;
-}
-
-.Slider-Titles
-{
-    padding: 30px 50px;
-}
-.images img
-{
-    padding-top: 5%;
-    max-height: 70%;
-    max-width: 40%;
-}
-.Imagenes
-{
-
-    padding-top: 5%;
-    background-color: rgb(206, 206, 206);
-}
-.Ima
-{
-    max-height: 0%;
-    max-width: 0%;
-}
-.Titles
-{
-    padding: 30px 50px;
-    padding-bottom: 0;
-}
-.Proveemos
-{
-    background-image: url('../Fotos/Proveemos.png');
-    margin: 0;
-    padding: 120px;
-    color: #fff;
-}
-.Hacemos-IMG img
-{
-    width: 40%;
-}
-.Legal
-{
-    margin-top: 25%;
-    padding:  2% 30%;
-    background-color: rgb(180,180,180);
-}
-.Legal a
-{
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    padding:  .5% 30%;
-    margin: 0;
-}
-/*Slider*/
-
+.Que-Es-La-Sequia
+    {
+      display: flex;
+      flex-direction: row;
+      /*Design*/
+      background-color: #6EBF9A;
+    }
 @media (min-width:890px)
 {
     .BackGround-titles
@@ -295,7 +202,7 @@ body
         padding: 0;
         width: 75%;
     }
-    .BackGround-titles h3
+    .BackGround-titles p
     {
         padding-right: 27%;
     }
@@ -303,125 +210,70 @@ body
     {
         width: 75%;
     }
-    .Barra
+    .QueEs
     {
-        display: flex;
-        flex-direction: row;
-        padding: 2px 20px;
+      display: flex;
+      flex-direction: column;
+      margin: 0 30%;
     }
-    .Barra a
+    /*Division*/
+    .PorqueEstamos
     {
-        padding: 20px 25px;
+      /*BacKGround Details*/
+      background-image: url(../Fotos/Home-BoxBackground.png);
+      background-size: cover;
+      background-position-y: 50px;
+      background-repeat: no-repeat;
+      /*Box Directions*/
+      display: flex;
+      flex-direction: column;
     }
-    .Nosotros
+    .box
     {
-        flex-direction: row;
-        padding: 7% 0;
+      /*Position*/
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      /*Design*/
+      text-align: center;
+      /*Far*/
+      margin-bottom: 80px;
     }
-    .Nosotros h1
+    .box div
     {
-        margin-top: 2%;
-        margin-left: 15%;
-        width: 100%;
+      /*Design*/
+      background-color: #fff;
+      max-width: 25%;
+      max-height: 40%;
+      border-radius: 10px;
+      /*Position*/
+      margin: 20px;      
     }
-    .Nosotros h3
+    .box p
     {
-        padding: 0 10%;
-        padding-right: 20%;
-        text-align: left;
+      font-size: 18px;
+      padding: 0 25px;
     }
-    .Slider 
+    .PQEstamos-PrincipalTitle
     {
-        margin: 100px;
-        margin-left:  25%;
-        margin-right: 25%;
+      text-align: left;
+      width: 40%;
+      margin-left: 13%;
     }
-    .Imagenes 
+    /*Divition*/
+    .Que-Es-La-Sequia
     {
-        display: flex;
-        text-align: left;
-        padding: 5% 0;
+      padding-left: 10%;
     }
-    .titles-container
+    .Que-Es-La-Sequia img
     {
-        padding-left: 10%;
-        width: 50%;
+      max-width: 500px;  
+      max-height: 500px;
     }
-    .titles-container h1
+    .Titles-Sequia
     {
-        font-size: 40px;
-    }
-    .titles-container h4
-    {
-        font-size: 20px;
-        padding-right: 15%;
-    }
-    .images img
-    {
-        padding-top: 0;
-        margin: 4%;
-    }
-    .images
-    {
-        margin-top: 10%;
-        margin-left: 12%;
-        max-height: 100%;
-        max-width: 100%;
-    }
-    .Ima
-    {
-        max-height: 100%;
-        max-width: 100%; 
-    }
-    .Registro
-    {
-        flex-direction: row;
-    }
-    .Slider-Titles
-    {
-      width: 40%;   
-    }
-    .Slider
-    {
-        margin: 0;
-        margin-top: 50px;
-        margin-left: 5%;
-        display: flex;
-        flex-direction: row;
-    }
-    .slider-frame
-    {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .Hacemos
-    {
-        display: flex;
-        padding: 100px;
-    }
-    .Hacemos-Titles
-    {
-        width: 50%;
-        padding: 7%;
-        text-align: left;
-        margin-right: 50px;
-    }
-    .Hacemos img
-    {
-        width: 40%;
-        height: 100%;
-        margin-left: 20px;
-    }
-    .Legal{
-        margin-top: 0;
-        background-color: #499F78;
-    }
-    .Legal a
-    {
-        display: flex;
-        color: #fff;
+      text-align: center;
+      padding: 2% 15%;
     }
 }
 @media (min-width:1200px)
@@ -430,35 +282,44 @@ body
     {
         padding-right: 50%;
     }
-
-    .Slider
-    {
-        margin: 0;
-        margin-left: 5%;
-    }
-    .Slider-Titles
-    {
-        width: 48%;
-        padding: 10%;
-        padding-top: 9%;
-        padding-left: 13%;
-        text-align: left;
-        color: #fff;
-
-        background-image: url(../Fotos/Group\ 93.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
-    }
-    .Hacemos
-    {
-        background-image: url(../Fotos/BackGroundLegal.png);
-        background-repeat: no-repeat;
-        background-position: left bottom;
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
 *
 {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+/*All Paragrafs Size*/
+p
+{
+  font-size: 22px;
+}
+/*Paragraphs in Green Background*/
+h5
+{
+  font-size: 22px;
+  color: #fff;
+  font-weight: normal;
+}
+/*All Titles Sizes*/
+h2
+{
+  font-size: 32px;
+}
+/*Titles in Green Background*/
+h3
+{
+  font-size: 32px;
+  color: #fff;
+  font-weight: normal;
 }
