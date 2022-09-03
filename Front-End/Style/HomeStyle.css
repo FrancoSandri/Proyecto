@@ -141,13 +141,13 @@ body
     }
   }
   /*Estilo Base*/
-  .Contenedor
-  {
+.Contenedor
+{
       max-width: 2000px;
       margin: auto;
       background-color: #fff;
       
-  }
+}
 .BackGround
 {
   /*BackGround Position*/
@@ -162,6 +162,7 @@ body
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    color: #fff;
 }
 .BackGround-titles
 {
@@ -171,155 +172,246 @@ body
     text-align: left;
     padding: 10px 10px;
     margin-top: 15%;
+    padding: 0;
+    width: 75%;
 }
 .BackGround-titles p
 {
     margin-top: 40px;
+    padding-right: 27%;
 }
 .BackGround button
 {
-  /*Button Style*/
+    /*Button Position*/
+    margin-top: 50px;
+}
+
+
+/*DIVISON*/
+
+
+.QueEs
+{
+  padding: 0 15%;
+  margin-bottom: 10%;
+}
+
+
+
+/*DIVISION*/
+
+
+
+.box
+{
+  /*Position*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /*Design*/
+  text-align: center;
+  /*Far*/
+  margin-bottom: 80px;
+}
+  
+.box div
+{
+  /*Design*/
+  background-color: #fff;
+  max-width: 25%;
+  max-height: 40%;
+  border-radius: 10px;
+  /*Position*/
+  margin: 20px;      
+}
+.box p
+{
+  font-size: 18px;
+  padding: 0 25px;
+}
+
+
+/*DIVISION*/
+
+
+.PorqueEstamos
+{
+  /*BacKGround Details*/
+  background-image: url(../Fotos/Home-BoxBackground.png);
+  background-size: cover;
+  background-position-y: 50px;
+  background-repeat: no-repeat;
+  /*Box Directions*/
+  display: flex;
+  flex-direction: column;
+}
+#PorqueEstamos-Titles
+{
+  margin-left: 12%;
+  margin-bottom: 5%;
+}
+
+
+/*DIVISION*/
+
+
+
+#TextBox-BG
+{
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: #6EBF9A;
+}
+
+
+/*DIVISION*/
+
+
+#PqImportante
+{
+  margin-top: 0;
+  background-image: url(../Fotos/Home-ImportanteTOPBG.jpg);
+  background-repeat: no-repeat;
+}
+#PqImportante h2
+{
+  margin-top: 20%;
+}
+
+
+/*DIVISION*/
+.Que-Argentina
+{
+  /*BackGround*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center ;
+  background-image: url(../Fotos/Home-BackGround-Curves.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /*Size*/
+  height: 1500px;
+}
+
+.Argentina-Titles
+{
+  margin-bottom: 25%;
+  padding: 0 30%;
+}
+
+/*DIVISION*/
+
+
+.Empeza-Ya-All
+{
+  display: flex;
+  flex-direction: row;
+}
+.Empeza-Ya
+{
+  background-color: #6EBF9A;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 5%;
+  text-align: left;
+}
+
+
+
+/*DIVISION*/
+
+
+footer
+{
+  background-image: url(../Fotos/Home-Footer.png);
+  background-repeat: no-repeat;
+  padding-top: 30px;
+  font-size: 15px;
+  list-style: none;
+}
+footer li
+{
+  padding: 0px 500px;
+}
+
+/*PREFABS*/
+
+*
+{
+  font-family: "poppins";
+}
+/*TITLES*/
+.Titles
+{
+  text-align: left;
+  width: 50%;
+}
+@media (min-width: 1200px)
+{
+  .Titles
+  {
+    width: 40%;
+    padding: 0 8%;
+  }
+}
+
+/*TITLES BOXES*/
+.TextBox
+{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+/*All Paragrafs Size*/
+p
+{
+  font-size: 17px;
+}
+@media (min-width: 1800px){p{font-size: 22px;}}
+
+/*Paragraphs in Green Background*/
+h5
+{
+  font-size: 17px;
+  color: #fff;
+  font-weight: normal;
+}
+@media (min-width: 1200px){h5{font-size: 22px;}}
+
+/*All Titles Sizes*/
+h2
+{
+  font-size: 28px;
+}
+@media (min-width: 1200px){h2{font-size: 32px;}}
+/*Titles in Green Background*/
+h3
+{
+  font-size: 28px;
+  color: #fff;
+  font-weight: normal;
+}
+@media (min-width: 1200px){h3{font-size: 32px;}}
+/*Imagenes*/
+img
+  {
+    max-width: 500px;  
+    max-height: 500px;
+  }
+  /*Botones*/
+  button
+  {
+    /*Button Style*/
     font-size: 26px;
     background-color: #389389;
     color: #fff;
     border: 0;
     border-radius: 10px;
     padding: 13px 20px;
-    /*Button Position*/
-    margin-top: 50px;
-}
-.Que-Es-La-Sequia
-    {
-      display: flex;
-      flex-direction: row;
-      /*Design*/
-      background-color: #6EBF9A;
-    }
-@media (min-width:890px)
-{
-    .BackGround-titles
-    {
-        padding: 0;
-        width: 75%;
-    }
-    .BackGround-titles p
-    {
-        padding-right: 27%;
-    }
-    .BackGround form
-    {
-        width: 75%;
-    }
-    .QueEs
-    {
-      display: flex;
-      flex-direction: column;
-      margin: 0 30%;
-    }
-    /*Division*/
-    .PorqueEstamos
-    {
-      /*BacKGround Details*/
-      background-image: url(../Fotos/Home-BoxBackground.png);
-      background-size: cover;
-      background-position-y: 50px;
-      background-repeat: no-repeat;
-      /*Box Directions*/
-      display: flex;
-      flex-direction: column;
-    }
-    .box
-    {
-      /*Position*/
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      /*Design*/
-      text-align: center;
-      /*Far*/
-      margin-bottom: 80px;
-    }
-    .box div
-    {
-      /*Design*/
-      background-color: #fff;
-      max-width: 25%;
-      max-height: 40%;
-      border-radius: 10px;
-      /*Position*/
-      margin: 20px;      
-    }
-    .box p
-    {
-      font-size: 18px;
-      padding: 0 25px;
-    }
-    .PQEstamos-PrincipalTitle
-    {
-      text-align: left;
-      width: 40%;
-      margin-left: 13%;
-    }
-    /*Divition*/
-    .Que-Es-La-Sequia
-    {
-      padding-left: 10%;
-    }
-    .Que-Es-La-Sequia img
-    {
-      max-width: 500px;  
-      max-height: 500px;
-    }
-    .Titles-Sequia
-    {
-      text-align: center;
-      padding: 2% 15%;
-    }
-}
-@media (min-width:1200px)
-{
-    .BackGround-titles h3
-    {
-        padding-right: 50%;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-*
-{
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-/*All Paragrafs Size*/
-p
-{
-  font-size: 22px;
-}
-/*Paragraphs in Green Background*/
-h5
-{
-  font-size: 22px;
-  color: #fff;
-  font-weight: normal;
-}
-/*All Titles Sizes*/
-h2
-{
-  font-size: 32px;
-}
-/*Titles in Green Background*/
-h3
-{
-  font-size: 32px;
-  color: #fff;
-  font-weight: normal;
-}
+  }
