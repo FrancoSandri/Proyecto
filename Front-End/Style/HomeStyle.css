@@ -158,7 +158,7 @@ body
     flex-direction: column;
   /*BackGround Settings*/
     height: 120vh;
-    background-image: url("../Fotos/Home-BackGround.jpg");
+    background-image: url("../Fotos/Home-BackGround.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -254,6 +254,13 @@ body
 
 /*DIVISION*/
 
+#PorqueEstamos
+{
+  margin-left: 12%;
+}
+
+
+/*DIVISION*/
 
 
 #TextBox-BG
@@ -307,15 +314,18 @@ body
 {
   display: flex;
   flex-direction: row;
+  background-color: #6EBF9A;
+  height: 500px;
+  background-image: url(../Fotos/Home-EmpezaYa.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  text-align: left;
 }
 .Empeza-Ya
 {
-  background-color: #6EBF9A;
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  padding: 5%;
-  text-align: left;
+  width: 30%;
+  padding-left: 5%;
+  padding-top: 2%;
 }
 
 
@@ -353,8 +363,11 @@ footer li
   .Titles
   {
     width: 40%;
-    padding: 0 8%;
   }
+}
+.Titles p, .Titles h2, .Titles h3, .Titles h5
+{
+ padding: 0 5%;
 }
 
 /*TITLES BOXES*/
