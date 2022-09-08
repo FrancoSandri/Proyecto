@@ -162,7 +162,6 @@ body
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    color: #fff;
 }
 .BackGround-titles
 {
@@ -193,7 +192,8 @@ body
 .QueEs
 {
   padding: 0 15%;
-  margin-bottom: 10%;
+  padding-bottom: 10%;
+  background-color:#FAF7F0;
 }
 
 
@@ -221,8 +221,9 @@ body
   max-width: 25%;
   max-height: 40%;
   border-radius: 10px;
+  padding-top: 50px;
   /*Position*/
-  margin: 20px;      
+  margin: 20px;    
 }
 .box p
 {
@@ -244,6 +245,8 @@ body
   /*Box Directions*/
   display: flex;
   flex-direction: column;
+  background-color:#FAF7F0;
+
 }
 #PorqueEstamos-Titles
 {
@@ -303,9 +306,10 @@ body
 
 .Argentina-Titles
 {
-  margin-bottom: 25%;
+  margin-bottom: 5%;
   padding: 0 30%;
 }
+
 
 /*DIVISION*/
 
