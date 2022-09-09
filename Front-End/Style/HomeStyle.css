@@ -152,16 +152,16 @@ body
 {
   /*BackGround Position*/
     display: flex;
-    align-items: center;
     justify-content: center top;
     text-align: left;
     flex-direction: column;
   /*BackGround Settings*/
-    height: 120vh;
+    height: 140vh;
     background-image: url("../Fotos/Home-BackGround.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    background-color: #FAF7F0;
 }
 .BackGround-titles
 {
@@ -171,18 +171,26 @@ body
     text-align: left;
     padding: 10px 10px;
     margin-top: 15%;
+    margin-left: 15%;
     padding: 0;
-    width: 75%;
+    /*Colour*/
+    color: #fff;
+    width: 50%;
 }
 .BackGround-titles p
 {
     margin-top: 40px;
     padding-right: 27%;
 }
+.BackGround-titles h1
+{
+  font-size: 50px;
+}
 .BackGround button
 {
     /*Button Position*/
     margin-top: 50px;
+    margin-left: 15%;
 }
 
 
@@ -192,7 +200,8 @@ body
 .QueEs
 {
   padding: 0 15%;
-  padding-bottom: 10%;
+  padding-top: 1px;
+  padding-bottom: 5%;
   background-color:#FAF7F0;
 }
 
@@ -295,21 +304,25 @@ body
   /*BackGround*/
   display: flex;
   flex-direction: column;
-  justify-content: center ;
+  justify-content: top;
   background-image: url(../Fotos/Home-BackGround-Curves.png);
-  background-position: center;
+  background-position: top;
   background-size: contain;
   background-repeat: no-repeat;
   /*Size*/
-  height: 1500px;
+  height: 1100px;
 }
 
 .Argentina-Titles
 {
-  margin-bottom: 5%;
-  padding: 0 30%;
+  padding: 7% 30%;
+  padding-top: 8%;
 }
 
+.Que-Argentina-Box img
+{
+  width: 80%;
+}
 
 /*DIVISION*/
 
@@ -319,20 +332,22 @@ body
   display: flex;
   flex-direction: row;
   background-color: #6EBF9A;
-  height: 500px;
-  background-image: url(../Fotos/Home-EmpezaYa.png);
-  background-repeat: no-repeat;
-  background-position: right;
+  height: 500px; 
   text-align: left;
 }
 .Empeza-Ya
 {
-  width: 30%;
+  width: 40%;
   padding-left: 5%;
   padding-top: 2%;
 }
 
+/*DIVISION*/
 
+.TextBox button
+{
+  margin: 0 10%;
+}
 
 /*DIVISION*/
 
@@ -371,7 +386,7 @@ footer li
 }
 .Titles p, .Titles h2, .Titles h3, .Titles h5
 {
- padding: 0 5%;
+ padding: 0 10%;
 }
 
 /*TITLES BOXES*/
@@ -416,7 +431,7 @@ h3
 }
 @media (min-width: 1200px){h3{font-size: 32px;}}
 /*Imagenes*/
-img
+.TextBox img
   {
     max-width: 500px;  
     max-height: 500px;
