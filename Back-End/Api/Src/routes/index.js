@@ -12,7 +12,7 @@ const db = mysql.createConnection({
 const syncSql = require('sync-sql')
 var config = {
     host : "localhost",
-    user : "root",
+    user: "root",
     password : "rootroot",
     database : "Satolution"
 }
@@ -31,7 +31,7 @@ router.get('/get-all', (req, res) => {
 })
 router.get('/:id', (req, res) => {
     const { id } = req.params
-    let sql = `select * from user where id = ${id}`
+    let sql = `select * from usuarios where id = ${id}`
     db.query(sql, (err, result) => {
         if (err) throw err
 
@@ -44,7 +44,7 @@ router.put('/name-reset/:id', (req, res) => {
     const { id } = req.params
     const { name } = req.body
 
-    let sql = `update user set name = '${name}' where id = ${id}`
+    let sql = `update usuarios set name = '${name}' where id = ${id}`
     db.query(sql, (err, result) => {
         if (err) throw err
 
@@ -63,8 +63,8 @@ router.put('/password-reset', async (req, res) => {
 
         if(IsUser)
         {
-            const hashedPassword = await bcrypt.hash(password, 10)
-            let sql = `update user set password = '${hashedPassword}'`
+            const Password = password;
+            let sql = `update usuario set password = '${Password}'`
 
             db.query(sql, (err, result) => {
                 if(err) throw err
@@ -81,7 +81,7 @@ router.put('/password-reset', async (req, res) => {
 router.delete('/:id', (req, res) => {
     const { id } = req.params
 
-    let sql = `delete from user where id = ${id}`
+    let sql = `delete from usuarios where id = ${id}`
     db.query(sql, (err, result) => {
         if (err) throw err
 
@@ -101,9 +101,9 @@ router.post('/register', async (req, res) => {
         {
             try 
             {
-                const hashedPassword = await bcrypt.hash(password, 10)
+                const Password = password;
 
-                let sql = `insert into user (email, password) values ('${email}','${hashedPassword}')`
+                let sql = `insert into usuarios (email, password) values ('${email}','${Password}')`
                 db.query(sql, (err, result) => {
                     if (err) throw err
                     res.status(201).send('User created correctly')
@@ -123,14 +123,14 @@ router.post('/login', async (req, res) => {
     db.query(sql, async (err, result) => {
         if(err) throw err
 
-        let hashedPassword 
+        let Password
 
-        if(result.length != 0) hashedPassword = result[0].password
+        if(result.length != 0) Password = result[0].password
         else return res.status(404).send('User not found')
         
         try 
         {
-            if (await bcrypt.compare(password, hashedPassword)) {
+            if (await compare(password, Password)) {
                 res.send('Success')
             }
             else {
@@ -143,15 +143,19 @@ router.post('/login', async (req, res) => {
 
 function validateEmail(email)
 {
-    let sql = `select * from user where email = '${email}'`
+    let sql = `select * from usuarios where email = '${email}'`
     var output = syncSql.mysql(config, sql)
 
-    return output.data.rows.length == 0
+    db.query(sql, (err, result) => {
+        if (err) throw err
+    })
+
+    return output.data
 }
 
 function checkUserExistance(email)
 {
-    let sql = `select * from user where email = '${email}'`
+    let sql = `select * from usuario where email = '${email}'`
     var output = syncSql.mysql(config, sql)
 
     return output.data.rows.length != 0
