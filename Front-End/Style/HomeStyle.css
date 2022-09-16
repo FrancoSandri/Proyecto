@@ -204,10 +204,35 @@ h5
   align-items: center;
 
   padding: 5% 10%;
+  padding-bottom: 30%;
 }
 
 .Que-es p
 {
   max-width: 500px;
+}
 
+/*Box mobile */
+.boxes
+{
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+}
+.box
+{
+  width: 80%;
+  background-color: #fff;
+}
+.box p
+{
+  padding: 0 10%;
+}
+
+/*Box mobile img*/
+
+.box img
+{
+  width: 100px;
 }
