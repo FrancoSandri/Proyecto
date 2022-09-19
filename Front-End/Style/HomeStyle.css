@@ -1,16 +1,5 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
-
-body
-{
-    margin: 0;
-    font-family: 'Lucida Sans';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-}
 /*Barra Menu*/
 .header {
     display: flex;
@@ -141,7 +130,6 @@ body
     }
   }
   /*Estilo Base*/
-
 /*Prefabs Mobile*/
 *{font-family: "poppins";}
 h1
@@ -151,6 +139,30 @@ h1
 h5
 {
   color: #fff;
+}
+p
+{
+
+}
+h3 /*White Titles*/
+{
+  color: #fff;
+  font-size: 25px;
+}
+
+/*Textbox Prefab Mobile*/
+.Text-box
+{
+  text-align: left;
+  padding: 0 15%;
+}
+.Text-box p, .Text-box h5, .Text-box h3
+{
+  max-width: 500px;
+}
+.Text-box img
+{
+  width: 300px;
 }
 
 /*Back Ground mobile*/
@@ -176,7 +188,7 @@ h5
 
 .BackGround-titles h5
 {
-  max-width: 500px;
+
   font-size: 15px;
   font-weight: 550;
 }
@@ -219,20 +231,76 @@ h5
   flex-direction: row;
 
   justify-content: center;
+
+  background-color: #6EBF9A;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+
+  height: 350px;
 }
 .box
 {
-  width: 80%;
+  width:65%;
+  height: 75%;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .box p
 {
   padding: 0 10%;
+  text-align: center;
 }
-
+#secondarybox
+{
+  display: none;
+}
 /*Box mobile img*/
 
 .box img
 {
   width: 100px;
+}
+/*Verde Agua section Mobile*/
+#Aqua
+{
+  background-color: #6EBF9A;
+  padding-top: 1px;
+}
+/*Preevenir Mobile*/
+#Preevenir
+{
+  background-color: black;
+  padding-top: 1px;
+}
+
+@media (min-width: 720px)
+{
+  /*Desktop Prefabs*/
+  .Text-box
+  {
+    padding-top: 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .Text-box img
+  {
+    width: 500px;
+  }
+  .Text-titles
+  {
+    flex-direction: column;
+  }
+  #secondarybox
+  {
+    display: flex;
+  }
+  .box
+  {
+    width: 20%;
+    margin: 0 5%;
+    height: 80%;
+    border-radius: 10px;
+  }
 }
