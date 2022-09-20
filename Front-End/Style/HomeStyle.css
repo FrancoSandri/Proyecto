@@ -154,7 +154,7 @@ h3 /*White Titles*/
 .Text-box
 {
   text-align: left;
-  padding: 0 15%;
+  padding: 5% 15%;
 }
 .Text-box p, .Text-box h5, .Text-box h3
 {
@@ -232,9 +232,9 @@ h3 /*White Titles*/
 
   justify-content: center;
 
-  background-color: #6EBF9A;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
+  background-image: url(../Fotos/Rectangle\ 178.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 
   height: 350px;
 }
@@ -266,15 +266,30 @@ h3 /*White Titles*/
 #Aqua
 {
   background-color: #6EBF9A;
-  padding-top: 1px;
 }
 /*Preevenir Mobile*/
-#Preevenir
-{
-  background-color: black;
-  padding-top: 1px;
+#Prevenir{
+  padding:0;
+  background-color: #6EBF9A;
 }
+/*Que argentina mobile*/
+.Que-argentina
+{
+  display: flex;
+  flex-direction: column;
 
+
+  background-image: url(../Fotos/Home-Bacground-Cruver-Mobiñe.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  padding: 20%;
+}
+.Que-argentina-img img
+{
+  width: 100%;
+}
 @media (min-width: 720px)
 {
   /*Desktop Prefabs*/
