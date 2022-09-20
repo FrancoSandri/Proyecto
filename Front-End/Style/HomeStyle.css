@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+body{margin: 0;}
 /*Barra Menu*/
 .header {
     display: flex;
@@ -132,15 +133,15 @@
   /*Estilo Base*/
 /*Prefabs Mobile*/
 *{font-family: "poppins";}
-h1
+h1 /*Background titles*/
 {
   color: #fff;
 }
-h5
+h5 /*White text*/
 {
   color: #fff;
 }
-p
+p /*Black texy*/
 {
 
 }
@@ -149,7 +150,18 @@ h3 /*White Titles*/
   color: #fff;
   font-size: 25px;
 }
+button /*Button design*/
+{
+  background-color: #389389;
+  color: #fff;
 
+  width: 150px;
+  height: 50px;
+
+  border: 0;
+
+  font-weight: 800;
+}
 /*Textbox Prefab Mobile*/
 .Text-box
 {
@@ -164,6 +176,10 @@ h3 /*White Titles*/
 {
   width: 300px;
 }
+
+
+/*Finish prefab Mobile*/
+
 
 /*Back Ground mobile*/
 
@@ -191,20 +207,6 @@ h3 /*White Titles*/
 
   font-size: 15px;
   font-weight: 550;
-}
-
-/*Button Mobile*/
-.BackGround button
-{
-  background-color: #389389;
-  color: #fff;
-
-  width: 150px;
-  height: 50px;
-
-  border: 0;
-
-  font-weight: 800;
 }
 
 /*Que es satolution mobile*/
@@ -281,7 +283,7 @@ h3 /*White Titles*/
 
   background-image: url(../Fotos/Home-Bacground-Cruver-Mobiñe.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
 
   padding: 20%;
@@ -289,6 +291,19 @@ h3 /*White Titles*/
 .Que-argentina-img img
 {
   width: 100%;
+}
+/*Empeza ya Mobile*/
+.Empeza-ya
+{
+  background-color: #6EBF9A;
+  flex-direction: column;
+
+  text-align: left;
+  padding: 50px;
+}
+.Empeza-ya h3
+{
+  font-size: 28px;
 }
 @media (min-width: 720px)
 {
