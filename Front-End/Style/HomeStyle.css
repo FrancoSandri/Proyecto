@@ -152,25 +152,27 @@ h3 /*White Titles*/
 }
 button /*Button design*/
 {
-  background-color: #389389;
+  background-color: #216968;
   color: #fff;
 
   width: 150px;
   height: 50px;
 
   border: 0;
+  border-radius: 10px;
 
   font-weight: 800;
 }
 /*Textbox Prefab Mobile*/
+
+.Text-box p, .Text-box h5, .Text-box h3, .Text-box h2
+{
+  max-width: 500px;
+}
 .Text-box
 {
   text-align: left;
-  padding: 5% 15%;
-}
-.Text-box p, .Text-box h5, .Text-box h3
-{
-  max-width: 500px;
+  padding: 0 15%;
 }
 .Text-box img
 {
@@ -199,12 +201,12 @@ button /*Button design*/
 
 .BackGround-titles
 {
-  padding-top: 25%;
+  padding-top: 15%;
 }
 
 .BackGround-titles h5
 {
-
+  max-width: 500px;
   font-size: 15px;
   font-weight: 550;
 }
@@ -216,6 +218,7 @@ button /*Button design*/
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 
   padding: 5% 10%;
   padding-bottom: 30%;
@@ -268,6 +271,16 @@ button /*Button design*/
 #Aqua
 {
   background-color: #6EBF9A;
+  flex-direction: row-reverse;
+}
+#Aqua1
+{
+  background-image: url(../Fotos/Home-Separador.png);
+  background-repeat: repeat-x;
+}
+#Aqua1 .Text-box
+{
+  margin-top: 100px;
 }
 /*Preevenir Mobile*/
 #Prevenir{
@@ -312,7 +325,7 @@ button /*Button design*/
   {
     padding-top: 5%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
   }
   .Text-box img
   {
@@ -320,7 +333,13 @@ button /*Button design*/
   }
   .Text-titles
   {
+    display: flex;
     flex-direction: column;
+    margin: 25px 50px;
+  }
+  .Que-es
+  {
+    padding-bottom: 10%;
   }
   #secondarybox
   {
