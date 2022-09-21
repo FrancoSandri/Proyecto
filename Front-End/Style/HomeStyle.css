@@ -12,7 +12,6 @@ body{margin: 0;}
     z-index: 100;
     justify-content: center;
   }
-
   .header__logo
   {
     background-image: url(../Fotos/Logo44.png);
@@ -140,15 +139,22 @@ h1 /*Background titles*/
 h5 /*White text*/
 {
   color: #fff;
+  font-weight: 100;
+  font-size: 18px;
 }
-p /*Black texy*/
+p /*Black text*/
 {
-
+  font-weight: 100;
+  font-size: 18px;
 }
 h3 /*White Titles*/
 {
   color: #fff;
-  font-size: 25px;
+  font-size: 27px;
+}
+h2/*Black Titles*/
+{
+  font-size: 27px;
 }
 button /*Button design*/
 {
@@ -173,15 +179,23 @@ button /*Button design*/
 {
   text-align: left;
   padding: 0 15%;
+  margin: 5% 0;
 }
 .Text-box img
 {
-  width: 300px;
+  max-width: 300px;
+  max-height: 300px;
 }
-
-
 /*Finish prefab Mobile*/
-
+/*Prefab Desktop*/
+@media (min-width: 720px)
+{
+  .Text-box img
+  {
+    max-width: 600px;
+    max-height: 600px;
+  }
+}
 
 /*Back Ground mobile*/
 
@@ -272,20 +286,13 @@ button /*Button design*/
 {
   background-color: #6EBF9A;
   flex-direction: row-reverse;
+  margin: 0;
 }
-#Aqua1
-{
-  background-image: url(../Fotos/Home-Separador.png);
-  background-repeat: repeat-x;
-}
-#Aqua1 .Text-box
-{
-  margin-top: 100px;
-}
+
 /*Preevenir Mobile*/
-#Prevenir{
-  padding:0;
-  background-color: #6EBF9A;
+#Preevenir
+{
+  
 }
 /*Que argentina mobile*/
 .Que-argentina
@@ -293,17 +300,14 @@ button /*Button design*/
   display: flex;
   flex-direction: column;
 
-
-  background-image: url(../Fotos/Home-Bacground-Cruver-Mobiñe.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
+  background-color: #6EBF9A;
   padding: 20%;
+  padding-bottom: 0;
+
 }
 .Que-argentina-img img
 {
-  width: 100%;
+  width:100%;
 }
 /*Empeza ya Mobile*/
 .Empeza-ya
@@ -317,6 +321,10 @@ button /*Button design*/
 .Empeza-ya h3
 {
   font-size: 28px;
+}
+.Empeza-ya img
+{
+  display: none;
 }
 @media (min-width: 720px)
 {
@@ -351,5 +359,66 @@ button /*Button design*/
     margin: 0 5%;
     height: 80%;
     border-radius: 10px;
+  }
+  /*Prevenir Desktop*/
+  #Preevenir
+  {
+    margin-top: 0;
+
+    background-image: url(../Fotos/Home-Separador.png);
+    background-repeat: repeat-x;
+  }
+  #Preevenir h2
+  {
+    margin-top: 50px;
+  }
+  /*Que hacemos para ayudar desktop*/
+  #Ayudar
+  {
+    flex-direction: row-reverse;
+  }
+  .Que-argentina
+  {
+    margin-top: 50px;
+    padding: 10%;
+    padding-bottom: 0;
+    align-items: center;
+  
+  }
+  .Que-argentina h5
+  {
+    width: 50%;
+  }
+  .Que-argentina-img img 
+  {
+    height: 600px;
+  }
+  .Empeza-ya
+  {
+    display: flex;
+    flex-direction: row;
+
+    padding: 0;
+    padding-left: 2.5%;
+
+    justify-content: space-between;
+  }
+  .Empeza-ya-titles
+  {
+    flex-direction: column;
+
+    padding: 2% 5%;
+  }
+  .Empeza-ya h3
+  {
+    font-size: 50px;
+  }
+  .Empeza-ya h5
+  {
+    font-size: 20px;
+  }
+  .Empeza-ya img
+  {
+    display: flex;
   }
 }
