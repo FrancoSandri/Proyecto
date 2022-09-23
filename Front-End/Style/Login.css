@@ -17,7 +17,7 @@ body
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    background-color: #F9FCF8;
+    background-color: #FDFFFD;
 
 }
 
@@ -51,7 +51,7 @@ body
 .From
 {
     margin-top: 15px;
-    margin-bottom: 20%;    
+    margin-bottom: 10%;    
 }
 .Form input
 {
@@ -144,7 +144,7 @@ h4
         width: 40%;
         margin: 4%;
         margin-bottom: 0;
-        margin-top: 2%;
+        margin-top: 1%;
     }
     .Titles
     {
@@ -153,6 +153,7 @@ h4
     .Imagenes
     {
         display: flex;
+        height: 657px;
     }
     img
     {

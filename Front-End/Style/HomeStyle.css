@@ -135,12 +135,14 @@ body{margin: 0;}
 h1 /*Background titles*/
 {
   color: #fff;
+  font-size: 48px;
+  max-width: 800px;
 }
 h5 /*White text*/
 {
   color: #fff;
   font-weight: 100;
-  font-size: 18px;
+  font-size: 20px;
 }
 p /*Black text*/
 {
@@ -207,7 +209,7 @@ button /*Button design*/
   background-repeat: no-repeat;
 
   height: 120vh;
-  padding-left: 45px;
+  padding-left: 150px;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -215,13 +217,13 @@ button /*Button design*/
 
 .BackGround-titles
 {
-  padding-top: 15%;
+  padding-top: 10%;
 }
 
 .BackGround-titles h5
 {
   max-width: 500px;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 550;
 }
 
@@ -301,7 +303,7 @@ button /*Button design*/
   flex-direction: column;
 
   background-color: #6EBF9A;
-  padding: 20%;
+  padding: 20%;|
   padding-bottom: 0;
 
 }
@@ -407,7 +409,7 @@ button /*Button design*/
   {
     flex-direction: column;
 
-    padding: 2% 5%;
+    padding: 2% 2%;
   }
   .Empeza-ya h3
   {
