@@ -1,16 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
-
-body
-{
-    margin: 0;
-    font-family: 'Lucida Sans';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-}
+body{margin: 0;}
 /*Barra Menu*/
 .header {
     display: flex;
@@ -22,7 +12,6 @@ body
     z-index: 100;
     justify-content: center;
   }
-
   .header__logo
   {
     background-image: url(../Fotos/Logo44.png);
@@ -141,309 +130,297 @@ body
     }
   }
   /*Estilo Base*/
-.Contenedor
+/*Prefabs Mobile*/
+*{font-family: "poppins";}
+h1 /*Background titles*/
 {
-      max-width: 2000px;
-      margin: auto;
-      background-color: #fff;
-      
+  color: #fff;
+  font-size: 48px;
+  max-width: 800px;
 }
+h5 /*White text*/
+{
+  color: #fff;
+  font-weight: 100;
+  font-size: 20px;
+}
+p /*Black text*/
+{
+  font-weight: 100;
+  font-size: 18px;
+}
+h3 /*White Titles*/
+{
+  color: #fff;
+  font-size: 27px;
+}
+h2/*Black Titles*/
+{
+  font-size: 27px;
+}
+button /*Button design*/
+{
+  background-color: #216968;
+  color: #fff;
+
+  width: 150px;
+  height: 50px;
+
+  border: 0;
+  border-radius: 10px;
+
+  font-weight: 800;
+}
+/*Textbox Prefab Mobile*/
+
+.Text-box p, .Text-box h5, .Text-box h3, .Text-box h2
+{
+  max-width: 500px;
+}
+.Text-box
+{
+  text-align: left;
+  padding: 0 15%;
+  margin: 5% 0;
+}
+.Text-box img
+{
+  max-width: 300px;
+  max-height: 300px;
+}
+/*Finish prefab Mobile*/
+/*Prefab Desktop*/
+@media (min-width: 720px)
+{
+  .Text-box img
+  {
+    max-width: 600px;
+    max-height: 600px;
+  }
+}
+
+/*Back Ground mobile*/
+
 .BackGround
 {
-  /*BackGround Position*/
-    display: flex;
-    justify-content: center top;
-    text-align: left;
-    flex-direction: column;
-  /*BackGround Settings*/
-    height: 140vh;
-    background-image: url("../Fotos/Home-BackGround.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-color: #FAF7F0;
+  background-image: url(../Fotos/Home-BackGround.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 120vh;
+  padding-left: 150px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
+
 .BackGround-titles
 {
-  /*Titles Position*/
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    padding: 10px 10px;
-    margin-top: 15%;
-    margin-left: 15%;
-    padding: 0;
-    /*Colour*/
-    color: #fff;
-    width: 50%;
-}
-.BackGround-titles p
-{
-    margin-top: 40px;
-    padding-right: 27%;
-}
-.BackGround-titles h1
-{
-  font-size: 50px;
-}
-.BackGround button
-{
-    /*Button Position*/
-    margin-top: 50px;
-    margin-left: 15%;
+  padding-top: 10%;
 }
 
-
-/*DIVISON*/
-
-
-.QueEs
+.BackGround-titles h5
 {
-  padding: 0 15%;
-  padding-top: 1px;
-  padding-bottom: 5%;
-  background-color:#FAF7F0;
+  max-width: 500px;
+  font-size: 20px;
+  font-weight: 550;
 }
 
+/*Que es satolution mobile*/
 
-
-/*DIVISION*/
-
-
-
-.box
+.Que-es
 {
-  /*Position*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: 5% 10%;
+  padding-bottom: 30%;
+}
+
+.Que-es p
+{
+  max-width: 500px;
+}
+
+/*Box mobile */
+.boxes
+{
   display: flex;
   flex-direction: row;
+
   justify-content: center;
-  /*Design*/
-  text-align: center;
-  /*Far*/
-  margin-bottom: 80px;
+
+  background-image: url(../Fotos/Rectangle\ 178.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 350px;
 }
-  
-.box div
+.box
 {
-  /*Design*/
+  width:65%;
+  height: 75%;
   background-color: #fff;
-  max-width: 25%;
-  max-height: 40%;
-  border-radius: 10px;
-  padding-top: 50px;
-  /*Position*/
-  margin: 20px;    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .box p
 {
-  font-size: 18px;
-  padding: 0 25px;
+  padding: 0 10%;
+  text-align: center;
+}
+#secondarybox
+{
+  display: none;
+}
+/*Box mobile img*/
+
+.box img
+{
+  width: 100px;
+}
+/*Verde Agua section Mobile*/
+#Aqua
+{
+  background-color: #6EBF9A;
+  flex-direction: row-reverse;
+  margin: 0;
 }
 
-
-/*DIVISION*/
-
-
-.PorqueEstamos
+/*Preevenir Mobile*/
+#Preevenir
 {
-  /*BacKGround Details*/
-  background-image: url(../Fotos/Home-BoxBackground.png);
-  background-size: cover;
-  background-position-y: 50px;
-  background-repeat: no-repeat;
-  /*Box Directions*/
+  
+}
+/*Que argentina mobile*/
+.Que-argentina
+{
   display: flex;
   flex-direction: column;
-  background-color:#FAF7F0;
 
-}
-#PorqueEstamos-Titles
-{
-  margin-left: 12%;
-  margin-bottom: 5%;
-}
-
-
-/*DIVISION*/
-
-#PorqueEstamos
-{
-  margin-left: 12%;
-}
-
-
-/*DIVISION*/
-
-
-#TextBox-BG
-{
-  margin-top: 0;
-  margin-bottom: 0;
   background-color: #6EBF9A;
+  padding: 20%;|
+  padding-bottom: 0;
+
 }
-
-
-/*DIVISION*/
-
-
-#PqImportante
+.Que-argentina-img img
 {
-  margin-top: 0;
-  background-image: url(../Fotos/Home-ImportanteTOPBG.jpg);
-  background-repeat: no-repeat;
+  width:100%;
 }
-#PqImportante h2
+/*Empeza ya Mobile*/
+.Empeza-ya
 {
-  margin-top: 20%;
-}
-
-
-/*DIVISION*/
-.Que-Argentina
-{
-  /*BackGround*/
-  display: flex;
+  background-color: #6EBF9A;
   flex-direction: column;
-  justify-content: top;
-  background-image: url(../Fotos/Home-BackGround-Curves.png);
-  background-position: top;
-  background-size: contain;
-  background-repeat: no-repeat;
-  /*Size*/
-  height: 1100px;
-}
 
-.Argentina-Titles
-{
-  padding: 7% 30%;
-  padding-top: 8%;
-}
-
-.Que-Argentina-Box img
-{
-  width: 80%;
-}
-
-/*DIVISION*/
-
-
-.Empeza-Ya-All
-{
-  display: flex;
-  flex-direction: row;
-  background-color: #6EBF9A;
-  height: 500px; 
   text-align: left;
+  padding: 50px;
 }
-.Empeza-Ya
-{
-  width: 40%;
-  padding-left: 5%;
-  padding-top: 2%;
-}
-
-/*DIVISION*/
-
-.TextBox button
-{
-  margin: 0 10%;
-}
-
-/*DIVISION*/
-
-
-footer
-{
-  background-image: url(../Fotos/Home-Footer.png);
-  background-repeat: no-repeat;
-  padding-top: 30px;
-  font-size: 15px;
-  list-style: none;
-}
-footer li
-{
-  padding: 0px 500px;
-}
-
-/*PREFABS*/
-
-*
-{
-  font-family: "poppins";
-}
-/*TITLES*/
-.Titles
-{
-  text-align: left;
-  width: 50%;
-}
-@media (min-width: 1200px)
-{
-  .Titles
-  {
-    width: 40%;
-  }
-}
-.Titles p, .Titles h2, .Titles h3, .Titles h5
-{
- padding: 0 10%;
-}
-
-/*TITLES BOXES*/
-.TextBox
-{
-  margin-top: 100px;
-  margin-bottom: 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-
-/*All Paragrafs Size*/
-p
-{
-  font-size: 17px;
-}
-@media (min-width: 1800px){p{font-size: 22px;}}
-
-/*Paragraphs in Green Background*/
-h5
-{
-  font-size: 17px;
-  color: #fff;
-  font-weight: normal;
-}
-@media (min-width: 1200px){h5{font-size: 22px;}}
-
-/*All Titles Sizes*/
-h2
+.Empeza-ya h3
 {
   font-size: 28px;
 }
-@media (min-width: 1200px){h2{font-size: 32px;}}
-/*Titles in Green Background*/
-h3
+.Empeza-ya img
 {
-  font-size: 28px;
-  color: #fff;
-  font-weight: normal;
+  display: none;
 }
-@media (min-width: 1200px){h3{font-size: 32px;}}
-/*Imagenes*/
-.TextBox img
+@media (min-width: 720px)
+{
+  /*Desktop Prefabs*/
+  .Text-box
   {
-    max-width: 500px;  
-    max-height: 500px;
+    padding-top: 5%;
+    display: flex;
+    flex-direction: row;
   }
-  /*Botones*/
-  button
+  .Text-box img
   {
-    /*Button Style*/
-    font-size: 26px;
-    background-color: #389389;
-    color: #fff;
-    border: 0;
+    width: 500px;
+  }
+  .Text-titles
+  {
+    display: flex;
+    flex-direction: column;
+    margin: 25px 50px;
+  }
+  .Que-es
+  {
+    padding-bottom: 10%;
+  }
+  #secondarybox
+  {
+    display: flex;
+  }
+  .box
+  {
+    width: 20%;
+    margin: 0 5%;
+    height: 80%;
     border-radius: 10px;
-    padding: 13px 20px;
   }
+  /*Prevenir Desktop*/
+  #Preevenir
+  {
+    margin-top: 0;
+
+    background-image: url(../Fotos/Home-Separador.png);
+    background-repeat: repeat-x;
+  }
+  #Preevenir h2
+  {
+    margin-top: 50px;
+  }
+  /*Que hacemos para ayudar desktop*/
+  #Ayudar
+  {
+    flex-direction: row-reverse;
+  }
+  .Que-argentina
+  {
+    margin-top: 50px;
+    padding: 10%;
+    padding-bottom: 0;
+    align-items: center;
+  
+  }
+  .Que-argentina h5
+  {
+    width: 50%;
+  }
+  .Que-argentina-img img 
+  {
+    height: 600px;
+  }
+  .Empeza-ya
+  {
+    display: flex;
+    flex-direction: row;
+
+    padding: 0;
+    padding-left: 2.5%;
+
+    justify-content: space-between;
+  }
+  .Empeza-ya-titles
+  {
+    flex-direction: column;
+
+    padding: 2% 2%;
+  }
+  .Empeza-ya h3
+  {
+    font-size: 50px;
+  }
+  .Empeza-ya h5
+  {
+    font-size: 20px;
+  }
+  .Empeza-ya img
+  {
+    display: flex;
+  }
+}
