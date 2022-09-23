@@ -1,6 +1,8 @@
+require("dotenv").config()
 const {Router} = require('express');
 const router = Router();
 const mysql = require('mysql')
+const jwt = require("jsonwebtoken");
 
 const db = mysql.createConnection({
     host: "localhost",
@@ -20,6 +22,22 @@ var config = {
 db.connect((err) => {
     if (err) throw (err)
 })
+
+const authorization = (req, res, next) => {
+    const token = req.cookies.access_token;
+    if (!token) {
+      return res.sendStatus(403);
+    }
+    try {
+      const data = jwt.verify(token, process.env.SECRET_KEY);
+      req.email = data.email;
+      req.password = data.password;
+      return next();
+    } catch {
+      return res.sendStatus(403);
+    }
+  };
+
 //Routes
 
 router.get('/get-all', (req, res) => {
@@ -93,7 +111,9 @@ router.delete('/:id', (req, res) => {
 
 router.post('/register', async (req, res) => {
     const {email, password } = req.body
-    if( email && password)
+    const token = jwt.sign({ email: req.body.email, password: req.body.password }, process.env.SECRET_KEY, { expiresIn: "300s" });
+
+    if(email && password)
     {
         const isEmailValid = validateEmail(email)
 
@@ -110,6 +130,14 @@ router.post('/register', async (req, res) => {
                 })
             }
             catch { res.status(500).send() }
+
+            return res
+            .cookie("access_token", token, {
+              httpOnly: true,
+              secure: process.env.NODE_ENV === "production",
+            })
+            .status(200)
+            .json(user);
         }
         else res.send('An account already exists with that email address')
     }   
@@ -117,8 +145,9 @@ router.post('/register', async (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
-    const {email, password} = req.body
-
+    const { email, password } = req.body
+    const token = jwt.sign({ email: req.body.email, password: req.body.password }, process.env.SECRET_KEY, { expiresIn: "5m" });
+    
     let sql = `select password from user where email = '${email}'`
     db.query(sql, async (err, result) => {
         if(err) throw err
@@ -131,7 +160,13 @@ router.post('/login', async (req, res) => {
         try 
         {
             if (await compare(password, Password)) {
-                res.send('Success')
+                return res
+                .cookie("access_token", token, {
+                  httpOnly: true,
+                  secure: process.env.NODE_ENV === "production",
+                })
+                .status(200)
+                .json({ message: "Logged in successfully 😊 👌" });
             }
             else {
                 res.send('Incorrect password')
@@ -140,6 +175,13 @@ router.post('/login', async (req, res) => {
         catch { res.status(500).send() }
     })
 })
+
+router.post("/logout", async (req, res) => {
+    return res
+    .clearCookie("access_token")
+    .status(200)
+    .json({ message: "Successfully logged out 😏 🍀" });
+});
 
 function validateEmail(email)
 {
