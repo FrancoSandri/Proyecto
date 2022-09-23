@@ -209,24 +209,17 @@ button /*Button design*/
   background-repeat: no-repeat;
 
   height: 120vh;
-  padding-left: 150px;
   display: flex;
   flex-direction: column;
-  text-align: left;
+  text-align: center;
+
+  align-items: center;
 }
 
 .BackGround-titles
 {
-  padding-top: 10%;
+  padding-top: 13%;
 }
-
-.BackGround-titles h5
-{
-  max-width: 500px;
-  font-size: 20px;
-  font-weight: 550;
-}
-
 /*Que es satolution mobile*/
 
 .Que-es
@@ -286,7 +279,7 @@ button /*Button design*/
 /*Verde Agua section Mobile*/
 #Aqua
 {
-  background-color: #6EBF9A;
+  background-color: #93C8B6;
   flex-direction: row-reverse;
   margin: 0;
 }
@@ -302,8 +295,8 @@ button /*Button design*/
   display: flex;
   flex-direction: column;
 
-  background-color: #6EBF9A;
-  padding: 20%;|
+  background-color: #93C8B6;
+  padding: 10%;|
   padding-bottom: 0;
 
 }
@@ -314,7 +307,7 @@ button /*Button design*/
 /*Empeza ya Mobile*/
 .Empeza-ya
 {
-  background-color: #6EBF9A;
+  background-color: #93C8B6;
   flex-direction: column;
 
   text-align: left;
