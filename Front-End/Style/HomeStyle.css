@@ -296,7 +296,7 @@ button /*Button design*/
   flex-direction: column;
 
   background-color: #93C8B6;
-  padding: 10%;|
+  padding: 10%;
   padding-bottom: 0;
 
 }
@@ -320,6 +320,26 @@ button /*Button design*/
 .Empeza-ya img
 {
   display: none;
+}
+/*Footer mobile */
+
+footer
+{
+  background-color: #93C8B6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 200px;
+}
+footer a{
+  margin: 0 10px;
+}
+footer h5, footer h6
+{
+  margin: 0;
+  color: #fff;
 }
 @media (min-width: 720px)
 {

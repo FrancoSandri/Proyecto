@@ -11,6 +11,7 @@ body
     text-align: center;
     flex-direction: column;
 }
+*{margin: 0;}
 /*Barra Menu*/
 .header {
     display: flex;
@@ -150,6 +151,14 @@ body
   background-position: center top;
   height: 120vh;
   width: auto;
+
+  text-align: left;
+}
+.BackGround h1
+{
+  color: #fff;
+  padding-top: 10%;
+  padding-left: 10%;
 }
 .SobreNos-Tiles
 {
