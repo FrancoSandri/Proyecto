@@ -110,7 +110,7 @@ router.delete('/:id', (req, res) => {
 })
 
 router.post('/register', async (req, res) => {
-    const {email, password } = req.body
+    const { email, password } = req.body
     const token = jwt.sign({ email: req.body.email, password: req.body.password }, process.env.SECRET_KEY, { expiresIn: "300s" });
 
     if(email && password)
@@ -137,7 +137,7 @@ router.post('/register', async (req, res) => {
               secure: process.env.NODE_ENV === "production",
             })
             .status(200)
-            .json(user);
+            .send();
         }
         else res.send('An account already exists with that email address')
     }   
