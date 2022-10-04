@@ -10,8 +10,33 @@
     <link rel="stylesheet" href="fonts.css">
     <script src='Home.js'></script>
     <link href="Icons/css/uicons-bold-rounded.css" rel="stylesheet">
-
-    
+    <script>
+        (function(d){
+           var s = d.createElement("script");
+           /*position*/
+           s.setAttribute("data-position", 3);
+           /*size (values: small, large)*/
+           s.setAttribute("data-size", "small");
+           /*default language (e.g., fr, de, es, he, nl, etc.)*/
+           s.setAttribute("data-language", "es");
+           /*color (e.g., #053f67)*/
+           s.setAttribute("data-color", "#fff");
+           /*override type (1=person, 2=chair, 3=eye, 4=text)*/
+           s.setAttribute("data-type", "1");
+           /* s.setAttribute("data-statement_text:", "Our Accessibility Statement");*/
+           /* s.setAttribute("data-statement_url", "http://www.example.com/accessibility";*/
+           /*support on mobile devices*/
+           s.setAttribute("data-mobile", true);
+           /* uncomment the following line to set custom trigger action for accessibility menu*/
+           /* s.setAttribute("data-trigger", "triggerId")*/
+           s.setAttribute("data-account", "Kzwh8zrdzV");
+           s.setAttribute("src", "https://cdn.userway.org/widget.js");
+           (d.body || d.head).appendChild(s);})(document)
+   </script>
+  <noscript>
+  Please ensure Javascript is enabled for purposes of 
+  <a href="https://userway.org">website accessibility</a>
+  </noscript>
 </head>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <header x-data="{ open: false }" class="header" id="Head">
@@ -41,54 +66,52 @@
                     <h1> Bienvenido a Satolution, donde hay una solution. </h1>
                 </div>
                 <form action="Home.php">
-                    <button >Mapa</button>
+                    <button class="boton" >Mapa</button>
                 </form>
         </div>
         <div class="Que-es">
             <h2>¿Que es Satolution?</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo ratione totam quae quis sed eligendi quisquam, id quo, odit alias voluptate mollitia rerum error! Placeat facere unde enim nisi magnam.   </p>
         </div>
-        <div class="boxes">
-            <div class="box">
-                <img src="Fotos/Home-Box-Satellite.png">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendo carlameizado</p>
+        <div class="boxes-container">
+            <div class="boxes">
+                <div class="box">
+                    <img src="Fotos/Home-Box-Satellite.png">
+                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendo carlameizado</h5>
+                </div>
+                <div class="box" id="secondarybox">
+                    <img src="Fotos/Home-Box-Computer.png">
+                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendo carlameizado</h5>
+                </div>
+                <div class="box" id="secondarybox">
+                    <img src="Fotos/Home-Box-AstroNaut.png">
+                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendo carlameizado</h5>
+                </div>
             </div>
-            <div class="box" id="secondarybox">
-                <img src="Fotos/Home-Box-Computer.png">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendo carlameizado</p>
-            </div>
-            <div class="box" id="secondarybox">
-                <img src="Fotos/Home-Box-AstroNaut.png">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendo carlameizado</p>
-            </div>
+                <div class="boxes-titles">
+                    <h3>Satolution es perfecta para el campo, Pero como funciona?</h3>
+                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore cum, labore ullam ipsa repellendus iusto dignissimos veniam iure facere repudiandae vero eius voluptatem ut illo molestias non dolor accusantium? Magni?</h5>
+                </div>
         </div>
-        <div class="Text-box" id="Aqua">
-            <div class="Text-titles">
-                <h3>Que es la sequia</h3>
-                <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum harum id eos? Rerum ex, minus quasi quisqu ercitationem et illo dolore.</h5>
-            </div>
-            <img src="Fotos/Home-QueEsLaSequia.png">
+        <div class="datos">
+            <div class="deteccion-humo"><h5>Deteccion de humedad</h5></div>
+            <div class="dispositivos"><h5>Uso en cualquier dispositivo</h5></div>
+            <div class="ciudados"><h5>Cuidar tus plantas</h5></div>
         </div>
-        <div class="Text-box" id="Preevenir">
-            <div class="Text-titles">
-                <h2>Porque es importante preveenir</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed reiciendis deleniti quasi aperiam maxime labore maiores beatae quidem fugiat, vitae itaque! Itaque nam vel odit perferendis amet doloribus deserunt veniam.</p>
+        <div class="Datos-utiles">
+            <img src="Fotos/Home-Laherrmienta.png">
+            <div class="Datos-utiles-info">
+                <h2>La herrmienta mas facil de usar</h2>
+                <p>Sitio web accesible para todos los usuarios</p>
+                <p>Accesible en cualquier dispositivo</p>
+                <p>Acceso de informacion rapido y eficiente</p>
             </div>
-                <img src="Fotos/Home-Preevenitr.png">
-        </div>
-        <div class="Text-box" id="Ayudar">
-            <div class="Text-titles">
-                <h2>Que hacemos para Ayudar</h2>
-                <p>Lorem ipsum dolor sit amet consectetur arum laudantium delectutem corrupti doloremque placeat veniam ratione assumenda explicabo excepturi, incidunt voluptatum saepe quam!</p>
-            </div>
-            <img src="Fotos/Home-QueHacemosAyudar.png">
         </div>
         <div class="Que-argentina">
             <h3>¿Que provoco esto en la argentina?</h3>
             <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quis non consectetur enim itaque deserunt numquam recusandae perspiciatis magnam aut distinctio quae velit, amet aperiam alias tenetur soluta molestias impedit?</h5>
         </div>
         <div class="Que-argentina-img">
-            <img src="Fotos/Home-QueArgentinaimg.png">
         </div>
         <div class="Text-box">
             <div class="Text-titles">
@@ -103,7 +126,7 @@
                 <h3 class="Empeza-Ya-Color">campo</h3>
                 <h5>Lorem, ipsum dolor sit amet consectetur. perro alem se cachafaz</h5>
                 <form action="Home.php">
-                    <button >Iniciar Sesión</button>
+                    <button class="boton" >Iniciar Sesión</button>
                 </form>
             </div>
         </div>
@@ -118,9 +141,9 @@
 <body>
 <footer>
     <div class="Social-Media">
-        <a href="#"><img src="Fotos/Home-InstagramLogo.png"></a>       
-        <a href="#"><img src="Fotos/Home-InstagramLogo.png"></a>
-        <a href="#"><img src="Fotos/Home-InstagramLogo.png"></a>       
+        <a href="https://www.instagram.com"><img src="Fotos/Home-InstagramLogo.png"></a>       
+        <a href="https://ar.linkedin.com"><img src="Fotos/Home-LinkedinLogo.png"></a>
+        <a href="https://twitter.com/home?lang=es"><img src="Fotos/Home-TwitterLogo.png"></a>       
     </div>
     <h5>Nosotros</h5>
     <h6>copyright©</h6>
