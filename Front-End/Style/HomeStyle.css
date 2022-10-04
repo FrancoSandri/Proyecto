@@ -307,19 +307,29 @@ button /*Button design*/
 /*Empeza ya Mobile*/
 .Empeza-ya
 {
-  background-color: #93C8B6;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10%;
+  background-image: url(../Fotos/Home-Emepza-Ya.png);
+}
+.Empeza-ya-titles
+{
   flex-direction: column;
-
-  text-align: left;
-  padding: 50px;
+  text-align: center;
 }
 .Empeza-ya h3
 {
-  font-size: 28px;
+  font-size: 35px;
+  margin: 0;
 }
-.Empeza-ya img
+.Empeza-ya h5
 {
-  display: none;
+  font-size: 20px;
+}
+.Empeza-Ya-Color
+{
+  color: #367E77;
 }
 /*Footer mobile */
 
@@ -408,32 +418,5 @@ footer h5, footer h6
   {
     height: 600px;
   }
-  .Empeza-ya
-  {
-    display: flex;
-    flex-direction: row;
-
-    padding: 0;
-    padding-left: 2.5%;
-
-    justify-content: space-between;
-  }
-  .Empeza-ya-titles
-  {
-    flex-direction: column;
-
-    padding: 2% 2%;
-  }
-  .Empeza-ya h3
-  {
-    font-size: 50px;
-  }
-  .Empeza-ya h5
-  {
-    font-size: 20px;
-  }
-  .Empeza-ya img
-  {
-    display: flex;
-  }
 }
+header button{ background-color: #fff;}

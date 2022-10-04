@@ -7,11 +7,11 @@
     margin-top: 0;
     font-family: "poppins";
     width: 100%;
+    font-family: "poppins";
 }
 body
 {
     margin: 0;
-    font-family: "Inter";
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,8 +20,40 @@ body
     background-color: #FDFFFD;
 
 }
+/*PREFABS*/
+h5
+{
+    font-size: 18px;
+    font-weight: initial;
 
+    display: flex;
+    justify-content: left;
+
+    margin-bottom: 0;
+}
+.Cuenta
+{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
 /*Registro*/
+
+/*LOGO*/
+.Logo1
+{
+    margin-left: 5px;
+    margin-top: 10px;
+    height: 50px;
+    width: 50px;
+}
+.Logo
+{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: left;
+}
 .Register
 {
     display: flex;
@@ -46,7 +78,8 @@ body
 {
     margin-top: 0;
     text-align: left;
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: initial;
 }
 .From
 {
@@ -55,19 +88,16 @@ body
 }
 .Form input
 {
-    margin-bottom: 15px;
-    padding: 5px;
-    font-size: 18px;
-    border-color: rgba(128, 128, 128, 0.219);
+    padding: 8px;
     border-radius: 5px;
-    background-color: #fff;
-    outline: none;
-    width: 100%;
+    
 }
-.Register input:hover
+.Inputs
 {
-    border-color: #216968;
+    margin-top: 22px;
 }
+
+
 .Sesion
 {
     font-size: 16px;
@@ -80,11 +110,7 @@ body
     background-color: #216968;
     color: #fff;
 }
-h5
-{
-    text-align: left;
-    margin-bottom: 5px;
-}
+
 #Contraseña
 {
     text-align: left;
@@ -100,7 +126,6 @@ button:hover
 {
     font-size: 16px;
     padding: 12px 0;
-    margin: 2px;
     width: 99%;
     background-color: #fff;
     background-image: url(../Fotos/Google-Logo.png);
@@ -109,22 +134,13 @@ button:hover
     border-color: #b5b5b5;
     border-radius: 10px;
 }
-#Google:hover
-{
-    transition-delay: .1s;
-    background-color: rgba(88, 88, 88, 0.336);
-}
-h4
-{
-    margin-bottom: 0;
-    margin-top: 50px;
-}
 .Register a
 {
     font-style: italic;
     color: blue;
     text-decoration: none; 
 }
+
 .Imagenes
 {
     display: none;
@@ -141,8 +157,9 @@ h4
     .Register
     {
         display: flex;
-        width: 40%;
-        margin: 4%;
+        width: 55%;
+        margin-right: 4%;
+        margin-left: 1%;
         margin-bottom: 0;
         margin-top: 1%;
     }
