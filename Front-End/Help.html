@@ -3,30 +3,38 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Satolution|Login</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='Style/Help.css'>
-    <link href="Icons/css/uicons-bold-rounded.css" rel="stylesheet">
+    <link href="Style/Login.css" rel="stylesheet" type="text/css" />
     <script src='main.js'></script>
+    <link href="Icons/css/uicons-bold-rounded.css" rel="stylesheet">
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+    </style>
 </head>
-<header x-data="{ open: false }" class="header">
-    <div class="header__logo">
-    </div>
-    <button class="header__button-nav--open" x-on:click="open = true"><i class="fi-br-align-justify"></i></button>
-    <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
-        <div class="nav__button" x-on:click="open = false">
-            <button class="header__button-nav--close"><i class="fi-br-align-justify"></i></button>
-        </div>
-            <ul class="nav__ul">
-            <li class="nav__item"><a href="#" class="nav__link"><i class="fi-br-map-marker"></i> Mapa</a></li>
-            <li class="nav__item"><a href="Us.html" class="nav__link"><i class="fi-br-users-alt"></i> Nosotros</a></li>
-            <li class="nav__item"><a href="#" class="nav__link"><i class="fi-br-envelope"></i> Ayuda</a></li>
-            <li class="nav__item"><a href="Login.html" class="nav__link"><i class="fi-br-user"></i> Iniciar Sesión</a></li>
-            <li class="nav__item"><a href="Register.html" class="nav__link"><i class="fi-br-user-add"></i> Registrarse</a></li>
-        </ul>
-    </nav>
-</header>
 <body>
+    <div class="Form">
+        <div class="Register">
+            <div class="Titles">
+                <h1>Iniciar sesión</h1>
+                <h3>Bienvenido de vuelta! Por favor, Introduzca sus datos.</h3>
+            </div>
+            <form class="From">
+                <h5>Usaurio</h5>
+                    <input type="text" id="textInput">
+                <h5>Correco electronico</h5> 
+                    <input type="email" id="emailInput">
+                <h5>Mensaje</h5>
+                    <span class="textarea" role="textbox" contenteditable></span>
+            </form>
+            <form action="#.html">
+                <button class="Sesion" id="button">Enviar Mensaje</button>
+            </form>
+        </div>
+        <div class="Imagenes">
+            <img src="Fotos/Home-Help-BG.png">
+        </div>
+    </div>
     
 </body>
 </html>

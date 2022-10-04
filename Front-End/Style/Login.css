@@ -189,6 +189,15 @@ h4
     }
 }
 
-
-
-
+  /*Contactanos*/
+  .textarea {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: both;
+    text-align: start;
+    min-height: 40px;
+    line-height: 20px;
+    max-width: 1px;
+    min-width: 100%;
+}
