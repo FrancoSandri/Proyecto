@@ -2,7 +2,7 @@ const button = document.getElementById("button")
 
 button.addEventListener("click", function(event){
     event.preventDefault();
-    apiURL = "http://localhost:3000/login"
+    apiURL = "http://localhost:3000/register"
 
     const data = {
         "usuario" : document.getElementById("emailInput").value(),
