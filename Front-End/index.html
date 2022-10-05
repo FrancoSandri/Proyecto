@@ -9,16 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="fonts.css">
     <script src='Home.js'></script>
-    <link href="Icons/css/uicons-bold-rounded.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
     <script>
         (function(d){
            var s = d.createElement("script");
            /*position*/
            s.setAttribute("data-position", 3);
            /*size (values: small, large)*/
-           s.setAttribute("data-size", "small");
+           s.setAttribute("data-size", "large");
            /*default language (e.g., fr, de, es, he, nl, etc.)*/
-           s.setAttribute("data-language", "es");
+           s.setAttribute("data-language", "null");
            /*color (e.g., #053f67)*/
            s.setAttribute("data-color", "#fff");
            /*override type (1=person, 2=chair, 3=eye, 4=text)*/
@@ -39,27 +40,63 @@
   </noscript>
 </head>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<header x-data="{ open: false }" class="header" id="Head">
-    <div class="header__logo">
-    </div>
-    <button class="header__button-nav--open" x-on:click="open = true"><i class="fi-br-align-justify"></i></button>
-    <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
-        <div class="nav__button" x-on:click="open = false">
-            <button class="header__button-nav--close"><i class="fi-br-align-justify"></i></button>
-        </div>
-            <ul class="nav__ul">
-                <li class="nav__item"><a id="Nav" href="#" class="nav__link"><i class="fi-br-map-marker"></i> Inicio</a></li>
-                <li class="nav__item"><a id="Nav1" href="#" class="nav__link"><i class="fi-br-map-marker"></i> Mapa</a></li>
-                <li class="nav__item"><a id="Nav2" href="Us.html" class="nav__link"><i class="fi-br-users-alt"></i> Nosotros</a></li>
-                <li class="nav__item"><a id="Nav3" href="Help.html" class="nav__link"><i class="fi-br-envelope"></i> Ayuda</a></li>
-                <div id="Registros">
-                    <li class="nav__item"><a id="Nav4" href="Login.html" class="nav__link"><i class="fi-br-user"></i> Iniciar Sesión</a></li>
-                    <li class="nav__item" id="Btn-Crear"><a href="Register.html" class="nav__link"><i class="fi-br-user-add"></i> Crear Cuenta</a></li>
-                </div>
-            </ul>
-    </nav>
-</header>
+    <header>
+        <!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navigation Bar | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
 <body>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo">
+        <a href="#">Satolution</a>
+      </div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Ayuda</a></li>
+        <li><a href="#">Inisiar Sesión</a></li>
+        <li><a href="#">Registrarse</a></li>
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+  </div>
+
+  <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = ()=>{
+      navbar.classList.add("show");
+      menuBtn.classList.add("hide");
+      body.classList.add("disabled");
+    }
+    cancelBtn.onclick = ()=>{
+      body.classList.remove("disabled");
+      navbar.classList.remove("show");
+      menuBtn.classList.remove("hide");
+    }
+    window.onscroll = ()=>{
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+  </script>
+</body>
+</html>
+    </header>
+<body id="cuerpo">
     <div class="Contenedor">
         <div class="BackGround">
                 <div class="BackGround-titles">
@@ -122,18 +159,18 @@
         </div>
         <div class="Empeza-ya">
             <div class="Empeza-ya-titles">
-                <h3>Empeza ya a cuidar tu campo</h3>
-                <h5>Lorem, ipsum dolor sit amet consectetur. perro alem se cachafaz</h5>
+                <h3>Empeza ya a cuidar tu </h3>
+                <h4>campo</h4>
+                <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates aliquid totam cumque praesentium, inventore consequatur nam velit assumenda itaque exercitationem, perferendis non. Iusto architecto sapiente repudiandae sunt consequatur tempora debitis.</h5>
                 <form action="Home.php">
                     <button class="boton" >Iniciar Sesión</button>
                 </form>
             </div>
-            <img src="Fotos/Home-EmpezaYa.png">
         </div>
         <div class="Text-box">
             <div class="Text-titles">
             <h2>Contactanos</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit repudiandae non dolorum quae ex soluta, pariatur tempora minima sequi veritatis, debitis dolor enim atque tempore veniam voluptatibus officia voluptatum quo.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. pora minima sequi veritatis, debitis dolor enim atque tempore veniam voluptatibus officia voluptatum quo.</p>
             </div>  
             <img src="Fotos/Home-Contactanos.png">
         </div>
@@ -148,3 +185,20 @@
     <h5>Nosotros</h5>
     <h6>copyright©</h6>
 </footer>
+<!--DarkMode-->
+<script>
+    var icon = document.getElementById("icon");
+
+    icon.onclick = function()
+        {
+            document.body.classList.toggle("dark-theme");
+            if(document.body.classList.contains("dark-theme"))
+            {
+                icon.className = "bi bi-brightness-high";
+            }
+            else
+            {
+                icon.className = "bi bi-moon";
+            }
+        }
+</script>

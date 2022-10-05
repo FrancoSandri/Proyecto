@@ -1,134 +1,170 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
-body{margin: 0;}
+body{
+  margin: 0;
+background-color: var(--primary-color);}
 /*Barra Menu*/
-.header {
-    display: flex;
-    align-items: center;
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::selection{
+  background: rgb(0,123,255,0.3);
+}
+.content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 30px;
+}
+.navbar{
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  padding: 25px 0;
+  transition: all 0.3s ease;
+}
+.navbar.sticky{
+  background: #1b1b1b;
+  padding: 10px 0;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+}
+.navbar .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo a{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.navbar .menu-list{
+  display: inline-flex;
+}
+.menu-list li{
+  list-style: none;
+}
+.menu-list li a{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.menu-list li a:hover{
+  color: #007bff;
+}
+.banner{
+  background: url("banner.jpg") no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.about{
+  padding: 30px 0;
+}
+.about .title{
+  font-size: 38px;
+  font-weight: 700;
+}
+.about p{
+  padding-top: 20px;
+  text-align: justify;
+}
+.icon{
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+.menu-list .cancel-btn{
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+@media (max-width: 1230px) {
+  .content{
+    padding: 0 60px;
+  }
+}
+@media (max-width: 1100px) {
+  .content{
+    padding: 0 40px;
+  }
+}
+@media (max-width: 900px) {
+  .content{
+    padding: 0 30px;
+  }
+}
+@media (max-width: 868px) {
+  body.disabled{
+    overflow: hidden;
+  }
+  .icon{
+    display: block;
+  }
+  .icon.hide{
+    display: none;
+  }
+  .navbar .menu-list{
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    left: -100%;
+    top: 0px;
+    display: block;
+    padding: 40px 0;
+    text-align: center;
+    background: #222;
+    transition: all 0.3s ease;
   }
-  .header__logo
-  {
-    background-image: url(../Fotos/Logo44.png);
-    width: 50px;
-    height: 50px;
+  .navbar.show .menu-list{
+    left: 0%;
   }
-  /* Estilos móvil/celular */
-  @media all and (max-width: 700px) {
-    .header
-    {
-        justify-content: space-between;
-    }
-    /* Oculta el nav en la parte izquiera */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgb(255, 255, 255);
-      transform: translateX(-100vw);
-      transition: 0.5s;
-    }
-  
-    /* Muestra el nav */
-    .nav--show {
-      transform: translateX(0);
-    }
-    .header__button-nav--open
-    {
-        border: 0;
-        background-color: rgba(0, 0, 0, 0);
-    }
-    .header__button-nav--close
-    {
-        border: 0;
-    }
-    .nav__button {
-      text-align: right;
-    }
-    .nav__ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .nav__link {
-      display: block;
-      padding: 10px 1.5rem;
-      font-size: 1.5rem;
-      text-align: center;
-      text-decoration: none;
-      color: #000;
-    }  
-    .fi-br-align-justify
-    {
-        margin-top: 8px;
-        font-size: 25px;
-    }
-    .fi-br-align-justify:hover
-    {
-        text-align: center;
-        color: #499F78;
-    }
+  .navbar .menu-list li{
+    margin-top: 45px;
   }
-  
-  /* Estilos Escritorio */
-  @media all and (min-width: 701px) {
-  
-    /* Oculta botón de abrir o cerrar */
-    .nav__button,
-    .header__button-nav--open {
-      display: none;
-    }
-  
-    /* Adapta el nav en horizontal */
-    .nav__ul {
-      display: flex;
-      list-style: none;
-      padding: 10px;
-      margin: 0;
-    }
-  
-    .nav__link {
-      display: block;
-      padding: 10px 1rem;
-      text-decoration: none;
-      transition: 0.5s;
-       color: #fff;
-    }
-  
-    .nav__link:hover {
-      background-color: rgba(206, 206, 206, 0.692);
-    }
-    .fi-br-user-add{display: none;}
-    .fi-br-map-marker{display: none;}
-    .fi-br-user{display: none;}
-    .fi-br-envelope{display: none;}
-    .fi-br-users-alt{display: none;}
-    .fi-br-user-add{display: none;}
-    #Registros
-    {
-        display: flex;
-        flex-direction: row;
-        position: absolute;
-        right: 2%;
-    }
-    .header__logo
-    {
-        position: absolute;
-        left: 0.5%;
-    }
-    #Btn-Crear
-    {
-        background-color: #389389;
-        border-radius: 10px;
-    }
+  .navbar .menu-list li a{
+    font-size: 23px;
+    margin-left: -100%;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
+  .navbar.show .menu-list li a{
+    margin-left: 0px;
+  }
+}
+@media (max-width: 380px) {
+  .navbar .logo a{
+    font-size: 27px;
+  }
+}
+
+  /*Dark Mode*/
+#icon
+{
+  cursor: pointer;
+}
+:root 
+{
+  --primary-color: #FDFFFD;
+  --secondary-color: #000;
+}
+.dark-theme
+{
+  --primary-color: #0E0E10;
+  --secondary-color: #fff;
+}
   /*Estilo Base*/
 /*Prefabs Mobile*/
 *{font-family: "poppins";}
@@ -146,6 +182,7 @@ h5 /*White text*/
 }
 p /*Black text*/
 {
+  color: var(--secondary-color);
   font-weight: 100;
   font-size: 15px;
 }
@@ -156,6 +193,7 @@ h3 /*White Titles*/
 }
 h2/*Black Titles*/
 {
+  color: var(--secondary-color);
   font-size: 22px;
 }
 .boton /*Button design*/
@@ -372,19 +410,25 @@ h2/*Black Titles*/
 /*Empeza ya Mobile*/
 .Empeza-ya
 {
-  background-color: #93C8B6;
-  flex-direction: column;
-
-  text-align: left;
+  background-image: url(../Fotos/Home-EmpezaYa.png);
+  text-align: center;
   padding: 50px;
+}
+.Empeza-ya-titles
+{
+  display: flex;
+  flex-direction: column;
 }
 .Empeza-ya h3
 {
   font-size: 28px;
 }
-.Empeza-ya img
+.Empeza-ya h4
 {
-  display: none;
+    font-size: 27px;
+    margin: 0;
+    color: #216968;
+    margin-bottom: 50px;
 }
 /*Footer mobile */
 
@@ -485,32 +529,30 @@ footer img
   {
     height: 600px;
   }
+  /*Emepza Ya desktop*/
   .Empeza-ya
   {
     display: flex;
-    flex-direction: row;
-
-    padding: 0;
-    padding-left: 2.5%;
-
-    justify-content: space-between;
+    flex-direction: column;
   }
   .Empeza-ya-titles
   {
     flex-direction: column;
-
-    padding: 2% 2%;
   }
   .Empeza-ya h3
+  {
+    font-size: 50px;
+    margin: 0;
+  }
+  .Empeza-ya h4
   {
     font-size: 50px;
   }
   .Empeza-ya h5
   {
     font-size: 20px;
-  }
-  .Empeza-ya img
-  {
-    display: flex;
+    margin: 0;
+    margin-bottom: 50px;
+    padding: 0 25%;
   }
 }
