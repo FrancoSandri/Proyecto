@@ -30,7 +30,7 @@ background-color: var(--primary-color);}
   transition: all 0.3s ease;
 }
 .navbar.sticky{
-  background: #1b1b1b;
+  background: var(--primary-color);
   padding: 10px 0;
   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
 }
@@ -39,8 +39,15 @@ background-color: var(--primary-color);}
   align-items: center;
   justify-content: space-between;
 }
+.logo /*Acomodar button darkmode*/
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 .navbar .logo a{
-  color: #fff;
+  color: var(--secondary-color);
   font-size: 30px;
   font-weight: 600;
   text-decoration: none;
@@ -51,8 +58,12 @@ background-color: var(--primary-color);}
 .menu-list li{
   list-style: none;
 }
+.menu-list i, .menu-list div
+{
+  color: var(--primary-color);
+}
 .menu-list li a{
-  color: #fff;
+  color: var(--secondary-color);
   font-size: 18px;
   font-weight: 500;
   margin-left: 25px;
@@ -164,6 +175,46 @@ background-color: var(--primary-color);}
 {
   --primary-color: #0E0E10;
   --secondary-color: #fff;
+}
+/*DarkMode Button*/
+label {
+  width:50px;
+  height:25px;
+  position: relative;
+  display: block;
+  background: #ebebeb;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+  cursor: pointer;
+}
+label:after {
+  content: "";
+  width:25px;
+  height:25px;
+  position: absolute;
+  left:0.5px;
+  background: linear-gradient(180deg,#ffcc89,#d8860b);
+  border-radius: 180px;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+}
+input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+input:checked + label {
+  background: #242424;
+}
+input:checked + label:after {
+  left:50px;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg,#777,#3a3a3a);
+}
+label, label:after {
+  transition: 0.3s
+}
+label:active:after{ 
+  width: 30px; 
 }
   /*Estilo Base*/
 /*Prefabs Mobile*/
@@ -556,3 +607,4 @@ footer img
     padding: 0 25%;
   }
 }
+
