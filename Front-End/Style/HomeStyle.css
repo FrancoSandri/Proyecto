@@ -39,12 +39,12 @@ background-color: var(--primary-color);}
   align-items: center;
   justify-content: space-between;
 }
-.logo /*Acomodar button darkmode*/
+#darkmode-toggle
 {
+  margin-left: 20px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 .logo img
 {
@@ -541,7 +541,6 @@ footer img
   }
   .box
   {
-    width: 20%;
     margin: 0 5%;
     height: 80%;
     border-radius: 10px;
