@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="fonts.css">
     <script src='Home.js'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="shortcut icon" href="Fotos/favicon-32x32.png" />
     <script>
         (function(d){
            var s = d.createElement("script");
            /*position*/
            s.setAttribute("data-position", 3);
            /*size (values: small, large)*/
-           s.setAttribute("data-size", "large");
+           s.setAttribute("data-size", "small");
            /*default language (e.g., fr, de, es, he, nl, etc.)*/
            s.setAttribute("data-language", "null");
            /*color (e.g., #053f67)*/
@@ -41,33 +42,22 @@
 </head>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <header>
-        <!DOCTYPE html>
-<!-- Created By CodingNepal - www.codingnepalweb.com -->
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticky Navigation Bar | CodingNepal</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-</head>
-<body>
   <nav class="navbar">
     <div class="content">
       <div class="logo">
-        <a href="#">Satolution</a>
+        <a href="index.html"><img src="Fotos/Logo44.png" alt=""></a> 
         <input type="checkbox" id="darkmode-toggle"/>
-        <label for="darkmode-toggle">    
+        <label for="darkmode-toggle">   
       </div>
       <ul class="menu-list">
         <div class="icon cancel-btn">
           <i class="fas fa-times"></i>
         </div>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Nosotros</a></li>
-        <li><a href="#">Ayuda</a></li>
-        <li><a href="#">Inisiar Sesión</a></li>
-        <li><a href="#">Registrarse</a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Us.html">Nosotros</a></li>
+        <li><a href="Help.html">Ayuda</a></li>
+        <li><a href="Login.html">Iniciar Sesión</a></li>
+        <li><a href="Register.html">Registrarse</a></li>
       </ul>
       <div class="icon menu-btn">
         <i class="fas fa-bars"></i>
@@ -95,8 +85,6 @@
       this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
     }
   </script>
-</body>
-</html>
     </header>
 <body id="cuerpo">
     <div class="Contenedor">

@@ -46,6 +46,12 @@ background-color: var(--primary-color);}
   justify-content: center;
   align-items: center;
 }
+.logo img
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .navbar .logo a{
   color: var(--secondary-color);
   font-size: 30px;
@@ -58,9 +64,9 @@ background-color: var(--primary-color);}
 .menu-list li{
   list-style: none;
 }
-.menu-list i, .menu-list div
+.menu-list i, .icon-menu-btn
 {
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 .menu-list li a{
   color: var(--secondary-color);
@@ -92,7 +98,7 @@ background-color: var(--primary-color);}
   text-align: justify;
 }
 .icon{
-  color: #fff;
+  color: var(--secondary-color);
   font-size: 20px;
   cursor: pointer;
   display: none;
@@ -137,7 +143,7 @@ background-color: var(--primary-color);}
     display: block;
     padding: 40px 0;
     text-align: center;
-    background: #222;
+    background: var(--primary-color);
     transition: all 0.3s ease;
   }
   .navbar.show .menu-list{
@@ -208,7 +214,7 @@ input:checked + label {
 input:checked + label:after {
   left:50px;
   transform: translateX(-100%);
-  background: linear-gradient(180deg,#777,#3a3a3a);
+  background: linear-gradient(180deg,rgb(255, 255, 255),#5f5f5f);
 }
 label, label:after {
   transition: 0.3s
@@ -371,7 +377,7 @@ h2/*Black Titles*/
 .box /*Dentro de las cajas*/
 {
   padding: 50px 0;
-  background-color: #216968;
+  background-color: #2d2c2c;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -485,7 +491,7 @@ h2/*Black Titles*/
 
 footer
 {
-  background-color: #93C8B6;
+  background-color: #2d2c2c;;
   display: flex;
   flex-direction: column;
   align-items: center;
