@@ -17,7 +17,7 @@ body
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    background-color: #FDFFFD;
+    background-color: var(--primary-color);
 
 }
 /*Header*/

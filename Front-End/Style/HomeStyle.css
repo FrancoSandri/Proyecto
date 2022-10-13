@@ -234,13 +234,13 @@ h1 /*Background titles*/
 h5 /*White text*/
 {
   color: #fff;
-  font-weight: 100;
+  font-weight: 200;
   font-size: 15px;
 }
 p /*Black text*/
 {
   color: var(--secondary-color);
-  font-weight: 100;
+  font-weight: 300;
   font-size: 15px;
 }
 h3 /*White Titles*/
@@ -274,11 +274,11 @@ h2/*Black Titles*/
 }
 .Text-box
 {
-  text-align: left;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 5%;
+  padding: 25% 5%;
   margin-bottom: 5%;
 }
 .Text-box img
@@ -336,7 +336,8 @@ h2/*Black Titles*/
 
 .BackGround-titles
 {
-  padding-top: 13%;
+  padding: 0 10%;
+  padding-top: 40%;
 }
 /*Que es satolution mobile*/
 
@@ -381,6 +382,8 @@ h2/*Black Titles*/
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 65%;
+  border-radius: 10px;
 }
 .box h5
 {
@@ -441,24 +444,40 @@ h2/*Black Titles*/
 {
   padding-top: 50px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   text-align: center;
 }
+.Datos-utiles h2
+{
+  font-size: 35px;
+}
+.Datos-utiles p
+{
+  font-size: 18px;
+  font-weight: bold;
+  width: 95%;
+}
 .Datos-utiles img
 {
-  width: 50%;
-  height: 50%;
+  margin: 50px 0;
+  margin-bottom:200px;
+  width: 60%;
+  height: 60%;
+}
+.Datos-utiles-info i, .Datos-utiles-info svg
+{
+ color: #389389;
 }
 /*Que argentina mobile*/
 .Que-argentina
 {
   display: flex;
   flex-direction: column;
+  text-align: center;
   background-image: url(../Fotos/Home-QueArgentina.png);
   padding: 10%;
-  padding-bottom: 0;
-
+  padding-bottom: 100px;
 }
 .Que-argentina-img img
 {
@@ -514,12 +533,17 @@ footer img
 }
 @media (min-width: 720px)
 {
+  .BackGround-titles
+  {
+    padding: 0;
+    padding-top: 18%;
+  }
   /*Desktop Prefabs*/
   .Text-box
   {
-    padding-top: 5%;
     display: flex;
     flex-direction: row;
+    padding: 5% 5%;
   }
   .Text-box img
   {
@@ -553,6 +577,11 @@ footer img
     justify-content: space-between;
     padding:  5% 10%;
   }
+  .Datos-utiles img
+  {
+    height: 40%;
+    width: 40%;
+  }
   /*Prevenir Desktop*/
   #Preevenir
   {
@@ -572,10 +601,9 @@ footer img
   }
   .Que-argentina
   {
-    padding: 10%;
     align-items: left;
     text-align: left;
-  
+    padding: 10%;
   }
   .Que-argentina h5
   {
