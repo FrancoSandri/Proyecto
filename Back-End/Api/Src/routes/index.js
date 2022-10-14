@@ -147,9 +147,10 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
     const { email, password } = req.body
     const token = jwt.sign({ email: req.body.email, password: req.body.password }, process.env.SECRET_KEY, { expiresIn: "5m" });
-    
+
     let sql = `select password from user where email = '${email}'`
     db.query(sql, async (err, result) => {
+        
         if(err) throw err
 
         let Password
