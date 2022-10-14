@@ -2,14 +2,14 @@ const button = document.getElementById("button")
 
 button.addEventListener("click", function(event){
     event.preventDefault();
-    apiURL = "http://localhost/register"
+    apiURL = "http://localhost:3000/register"
 
     const data = {
         "usuario" : document.getElementById("emailInput").value(),
         "password" : document.getElementById("passwordInput").value()
     }
 
-    const response = await fetch(apiURL, {
+    const response = fetch(apiURL, {
         method: "POST",
         headers: {"Content-type": "application/json;charset=UTF-8"},
         mode: "cors",
