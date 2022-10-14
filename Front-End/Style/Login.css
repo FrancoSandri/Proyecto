@@ -17,10 +17,20 @@ body
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    background-color: #FDFFFD;
+    background-color: var(--primary-color);
 
 }
-
+/*Header*/
+header
+{
+    display: flex;
+    flex-direction: row-reverse;
+}
+header img
+{
+    height: 44px;
+    width: 44px;
+}
 /*Registro*/
 .Register
 {
@@ -37,7 +47,7 @@ body
 {
     margin-top: 20px;
     text-align: left;
-    font-size:38px;
+    font-size:30px;
     padding: 17px 0px;
     margin-bottom: 0;
     padding-bottom: 6px;
@@ -46,7 +56,9 @@ body
 {
     margin-top: 0;
     text-align: left;
-    font-size: 16px;
+    font-size: 18px;
+    padding-right: 20px;
+    font-weight: initial;
 }
 .From
 {
@@ -55,14 +67,12 @@ body
 }
 .Form input
 {
-    margin-bottom: 15px;
-    padding: 5px;
-    font-size: 18px;
-    border-color: rgba(128, 128, 128, 0.219);
-    border-radius: 5px;
-    background-color: #fff;
-    outline: none;
-    width: 100%;
+    margin-top: 2px;
+    margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: #b5b5b5;
 }
 .Register input:hover
 {
@@ -85,31 +95,18 @@ h5
     text-align: left;
     margin-bottom: 5px;
 }
+#passwordInput
+{
+    margin-bottom: 0;
+}
 #Contraseña
 {
     text-align: left;
     font-style: normal;
     font-size: 12px;
 }
+
 button:hover
-{
-    transition-delay: .1s;
-    background-color: rgba(88, 88, 88, 0.336);
-}
-#Google
-{
-    font-size: 16px;
-    padding: 12px 0;
-    margin: 2px;
-    width: 99%;
-    background-color: #fff;
-    background-image: url(../Fotos/Google-Logo.png);
-    background-repeat: no-repeat;
-    background-position: right 12% center;
-    border-color: #b5b5b5;
-    border-radius: 10px;
-}
-#Google:hover
 {
     transition-delay: .1s;
     background-color: rgba(88, 88, 88, 0.336);
@@ -141,7 +138,7 @@ h4
     .Register
     {
         display: flex;
-        width: 40%;
+        width: 50%;
         margin: 4%;
         margin-bottom: 0;
         margin-top: 1%;
@@ -189,6 +186,23 @@ h4
     }
 }
 
-
-
-
+  /*Contactanos*/
+  .textarea 
+  {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: both;
+    text-align: start;
+    min-height: 40px;
+    line-height: 20px;
+    max-width: 1px;
+    min-width: 100%;
+    }
+    .textarea
+    {
+        border-radius: 5px;
+        border: 1px solid;
+        padding: 10px;
+        border-color: #b5b5b5;
+    }

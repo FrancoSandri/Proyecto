@@ -1,164 +1,259 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
-body{margin: 0;}
+body{
+  margin: 0;
+background-color: var(--primary-color);}
 /*Barra Menu*/
-.header {
-    display: flex;
-    align-items: center;
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::selection{
+  background: rgb(0,123,255,0.3);
+}
+.content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 30px;
+}
+.navbar{
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  padding: 25px 0;
+  transition: all 0.3s ease;
+}
+.navbar.sticky{
+  background: var(--primary-color);
+  padding: 10px 0;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+}
+.navbar .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#darkmode-toggle
+{
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo img
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar .logo a{
+  color: var(--secondary-color);
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.navbar .menu-list{
+  display: inline-flex;
+}
+.menu-list li{
+  list-style: none;
+}
+.menu-list i, .icon-menu-btn
+{
+  color: var(--secondary-color);
+}
+.menu-list li a{
+  color: var(--secondary-color);
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.menu-list li a:hover{
+  color: #007bff;
+}
+.banner{
+  background: url("banner.jpg") no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.about{
+  padding: 30px 0;
+}
+.about .title{
+  font-size: 38px;
+  font-weight: 700;
+}
+.about p{
+  padding-top: 20px;
+  text-align: justify;
+}
+.icon{
+  color: var(--secondary-color);
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+.menu-list .cancel-btn{
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+@media (max-width: 1230px) {
+  .content{
+    padding: 0 60px;
+  }
+}
+@media (max-width: 1100px) {
+  .content{
+    padding: 0 40px;
+  }
+}
+@media (max-width: 900px) {
+  .content{
+    padding: 0 30px;
+  }
+}
+@media (max-width: 868px) {
+  body.disabled{
+    overflow: hidden;
+  }
+  .icon{
+    display: block;
+  }
+  .icon.hide{
+    display: none;
+  }
+  .navbar .menu-list{
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    left: -100%;
+    top: 0px;
+    display: block;
+    padding: 40px 0;
+    text-align: center;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
   }
-  .header__logo
-  {
-    background-image: url(../Fotos/Logo44.png);
-    width: 50px;
-    height: 50px;
+  .navbar.show .menu-list{
+    left: 0%;
   }
-  /* Estilos móvil/celular */
-  @media all and (max-width: 700px) {
-    .header
-    {
-        justify-content: space-between;
-    }
-    /* Oculta el nav en la parte izquiera */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgb(255, 255, 255);
-      transform: translateX(-100vw);
-      transition: 0.5s;
-    }
-  
-    /* Muestra el nav */
-    .nav--show {
-      transform: translateX(0);
-    }
-    .header__button-nav--open
-    {
-        border: 0;
-        background-color: rgba(0, 0, 0, 0);
-    }
-    .header__button-nav--close
-    {
-        border: 0;
-    }
-    .nav__button {
-      text-align: right;
-    }
-    .nav__ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .nav__link {
-      display: block;
-      padding: 10px 1.5rem;
-      font-size: 1.5rem;
-      text-align: center;
-      text-decoration: none;
-      color: #000;
-    }  
-    .fi-br-align-justify
-    {
-        margin-top: 8px;
-        font-size: 25px;
-    }
-    .fi-br-align-justify:hover
-    {
-        text-align: center;
-        color: #499F78;
-    }
+  .navbar .menu-list li{
+    margin-top: 45px;
   }
-  
-  /* Estilos Escritorio */
-  @media all and (min-width: 701px) {
-  
-    /* Oculta botón de abrir o cerrar */
-    .nav__button,
-    .header__button-nav--open {
-      display: none;
-    }
-  
-    /* Adapta el nav en horizontal */
-    .nav__ul {
-      display: flex;
-      list-style: none;
-      padding: 10px;
-      margin: 0;
-    }
-  
-    .nav__link {
-      display: block;
-      padding: 10px 1rem;
-      text-decoration: none;
-      transition: 0.5s;
-       color: #fff;
-    }
-  
-    .nav__link:hover {
-      background-color: rgba(206, 206, 206, 0.692);
-    }
-    .fi-br-user-add{display: none;}
-    .fi-br-map-marker{display: none;}
-    .fi-br-user{display: none;}
-    .fi-br-envelope{display: none;}
-    .fi-br-users-alt{display: none;}
-    .fi-br-user-add{display: none;}
-    #Registros
-    {
-        display: flex;
-        flex-direction: row;
-        position: absolute;
-        right: 2%;
-    }
-    .header__logo
-    {
-        position: absolute;
-        left: 0.5%;
-    }
-    #Btn-Crear
-    {
-        background-color: #389389;
-        border-radius: 10px;
-    }
+  .navbar .menu-list li a{
+    font-size: 23px;
+    margin-left: -100%;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
+  .navbar.show .menu-list li a{
+    margin-left: 0px;
+  }
+}
+@media (max-width: 380px) {
+  .navbar .logo a{
+    font-size: 27px;
+  }
+}
+
+  /*Dark Mode*/
+#icon
+{
+  cursor: pointer;
+}
+:root 
+{
+  --primary-color: #FDFFFD;
+  --secondary-color: #000;
+}
+.dark-theme
+{
+  --primary-color: #0E0E10;
+  --secondary-color: #fff;
+}
+/*DarkMode Button*/
+label {
+  width:50px;
+  height:25px;
+  position: relative;
+  display: block;
+  background: #ebebeb;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+  cursor: pointer;
+}
+label:after {
+  content: "";
+  width:25px;
+  height:25px;
+  position: absolute;
+  left:0.5px;
+  background: linear-gradient(180deg,#ffcc89,#d8860b);
+  border-radius: 180px;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+}
+input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+input:checked + label {
+  background: #242424;
+}
+input:checked + label:after {
+  left:50px;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg,rgb(255, 255, 255),#5f5f5f);
+}
+label, label:after {
+  transition: 0.3s
+}
+label:active:after{ 
+  width: 30px; 
+}
   /*Estilo Base*/
 /*Prefabs Mobile*/
 *{font-family: "poppins";}
 h1 /*Background titles*/
 {
   color: #fff;
-  font-size: 48px;
+  font-size: 35px;
   max-width: 800px;
 }
 h5 /*White text*/
 {
   color: #fff;
-  font-weight: 100;
-  font-size: 20px;
+  font-weight: 200;
+  font-size: 15px;
 }
 p /*Black text*/
 {
-  font-weight: 100;
-  font-size: 18px;
+  color: var(--secondary-color);
+  font-weight: 300;
+  font-size: 15px;
 }
 h3 /*White Titles*/
 {
   color: #fff;
-  font-size: 27px;
+  font-size: 22px;
 }
 h2/*Black Titles*/
 {
-  font-size: 27px;
+  color: var(--secondary-color);
+  font-size: 22px;
 }
-button /*Button design*/
+.boton /*Button design*/
 {
   background-color: #216968;
   color: #fff;
@@ -179,14 +274,17 @@ button /*Button design*/
 }
 .Text-box
 {
-  text-align: left;
-  padding: 0 15%;
-  margin: 5% 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25% 5%;
+  margin-bottom: 5%;
 }
 .Text-box img
 {
-  max-width: 300px;
-  max-height: 300px;
+  width: 80%;
+  height: 80%;
 }
 /*Finish prefab Mobile*/
 /*Prefab Desktop*/
@@ -196,6 +294,26 @@ button /*Button design*/
   {
     max-width: 600px;
     max-height: 600px;
+  }
+  h1 /* Desktop Background titles*/
+  {
+    font-size: 48px;
+  }
+  h5 /*White text*/
+  {
+    font-size: 20px;
+  }
+  p /*Black text*/
+  {
+    font-size: 18px;
+  }
+  h3 /*White Titles*/
+  {
+    font-size: 27px;
+  }
+  h2/*Black Titles*/
+  {
+    font-size: 27px;
   }
 }
 
@@ -218,7 +336,8 @@ button /*Button design*/
 
 .BackGround-titles
 {
-  padding-top: 13%;
+  padding: 0 10%;
+  padding-top: 40%;
 }
 /*Que es satolution mobile*/
 
@@ -239,6 +358,14 @@ button /*Button design*/
 }
 
 /*Box mobile */
+.boxes-container
+{
+  background-image: url(../Fotos/Home-boxes-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 50px;
+  padding-bottom: 300px;
+}
 .boxes
 {
   display: flex;
@@ -246,22 +373,19 @@ button /*Button design*/
 
   justify-content: center;
 
-  background-image: url(../Fotos/Rectangle\ 178.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-
   height: 350px;
 }
-.box
+.box /*Dentro de las cajas*/
 {
-  width:65%;
-  height: 75%;
-  background-color: #fff;
+  padding: 50px 0;
+  background-color: #2d2c2c;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 65%;
+  border-radius: 10px;
 }
-.box p
+.box h5
 {
   padding: 0 10%;
   text-align: center;
@@ -271,34 +395,89 @@ button /*Button design*/
   display: none;
 }
 /*Box mobile img*/
-
 .box img
 {
   width: 100px;
 }
-/*Verde Agua section Mobile*/
-#Aqua
+.boxes-titles /*Boxes titles el resto esta junto a Que-es*/
 {
-  background-color: #93C8B6;
-  flex-direction: row-reverse;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: 5% 10%;
+}
+.boxes-titles h5, .boxes-titles h3
+{
+  max-width: 800px;
+}
+/*Datos*/
+.datos
+{
   margin: 0;
 }
-
-/*Preevenir Mobile*/
-#Preevenir
+.deteccion-humo
 {
-  
+  background-image: url(../Fotos/Home-humedad.png);
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.dispositivos{background-image: url(../Fotos/Home-Dispositivos.png); 
+  height: 150px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;}
+.ciudados
+{
+  background-image: url(../Fotos/Home-TusPlantas.png); 
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*Datos utiles*/
+.Datos-utiles
+{
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
+}
+.Datos-utiles h2
+{
+  font-size: 35px;
+}
+.Datos-utiles p
+{
+  font-size: 18px;
+  font-weight: bold;
+  width: 95%;
+}
+.Datos-utiles img
+{
+  margin: 50px 0;
+  margin-bottom:200px;
+  width: 60%;
+  height: 60%;
+}
+.Datos-utiles-info i, .Datos-utiles-info svg
+{
+ color: #389389;
 }
 /*Que argentina mobile*/
 .Que-argentina
 {
   display: flex;
   flex-direction: column;
-
-  background-color: #93C8B6;
+  text-align: center;
+  background-image: url(../Fotos/Home-QueArgentina.png);
   padding: 10%;
-  padding-bottom: 0;
-
+  padding-bottom: 100px;
 }
 .Que-argentina-img img
 {
@@ -307,25 +486,31 @@ button /*Button design*/
 /*Empeza ya Mobile*/
 .Empeza-ya
 {
-  background-color: #93C8B6;
-  flex-direction: column;
-
-  text-align: left;
+  background-image: url(../Fotos/Home-EmpezaYa.png);
+  text-align: center;
   padding: 50px;
+}
+.Empeza-ya-titles
+{
+  display: flex;
+  flex-direction: column;
 }
 .Empeza-ya h3
 {
   font-size: 28px;
 }
-.Empeza-ya img
+.Empeza-ya h4
 {
-  display: none;
+    font-size: 27px;
+    margin: 0;
+    color: #216968;
+    margin-bottom: 50px;
 }
 /*Footer mobile */
 
 footer
 {
-  background-color: #93C8B6;
+  background-color: #2d2c2c;;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -341,14 +526,24 @@ footer h5, footer h6
   margin: 0;
   color: #fff;
 }
+footer img
+{
+  height: 35px;
+  width: 35px;
+}
 @media (min-width: 720px)
 {
+  .BackGround-titles
+  {
+    padding: 0;
+    padding-top: 18%;
+  }
   /*Desktop Prefabs*/
   .Text-box
   {
-    padding-top: 5%;
     display: flex;
     flex-direction: row;
+    padding: 5% 5%;
   }
   .Text-box img
   {
@@ -370,10 +565,22 @@ footer h5, footer h6
   }
   .box
   {
-    width: 20%;
     margin: 0 5%;
     height: 80%;
     border-radius: 10px;
+  }
+  /*Datos utiles Mobile*/
+  .Datos-utiles
+  {
+    flex-direction: row;
+    text-align: right;
+    justify-content: space-between;
+    padding:  5% 10%;
+  }
+  .Datos-utiles img
+  {
+    height: 40%;
+    width: 40%;
   }
   /*Prevenir Desktop*/
   #Preevenir
@@ -394,11 +601,9 @@ footer h5, footer h6
   }
   .Que-argentina
   {
-    margin-top: 50px;
+    align-items: left;
+    text-align: left;
     padding: 10%;
-    padding-bottom: 0;
-    align-items: center;
-  
   }
   .Que-argentina h5
   {
@@ -408,32 +613,31 @@ footer h5, footer h6
   {
     height: 600px;
   }
+  /*Emepza Ya desktop*/
   .Empeza-ya
   {
     display: flex;
-    flex-direction: row;
-
-    padding: 0;
-    padding-left: 2.5%;
-
-    justify-content: space-between;
+    flex-direction: column;
   }
   .Empeza-ya-titles
   {
     flex-direction: column;
-
-    padding: 2% 2%;
   }
   .Empeza-ya h3
+  {
+    font-size: 50px;
+    margin: 0;
+  }
+  .Empeza-ya h4
   {
     font-size: 50px;
   }
   .Empeza-ya h5
   {
     font-size: 20px;
-  }
-  .Empeza-ya img
-  {
-    display: flex;
+    margin: 0;
+    margin-bottom: 50px;
+    padding: 0 25%;
   }
 }
+
