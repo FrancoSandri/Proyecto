@@ -94,20 +94,22 @@
       menuBtn.classList.remove("hide");
     }
     window.onscroll = ()=>{
-      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+      this.scrollY > 700 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
     }
   </script>
     </header>
 <body id="cuerpo">
     <div class="Contenedor">
-        <div class="BackGround">
-                <div class="BackGround-titles">
-                    <h1> Bienvenido a Satolution, donde hay una solution. </h1>
-                </div>
-                <form action="Home.php">
-                    <button class="boton" >Mapa</button>
-                </form>
-        </div>
+        <section>
+            <img src="Fotos/Main/bg.jpg" id="bg">
+            <img src="Fotos/Main/moon.png" id="moon">
+            <img src="Fotos/Main/mountain.png" id="mountain">
+            <img src="Fotos/Main/road.png" id="road">
+            <form action="Home.php">
+                <h1 id="text">Satolution</h1>
+                <button class="boton" id="sectionbutton">Mapa</button>
+            </form>
+        </section>
         <div class="Que-es">
             <h2>¿Que es Satolution?</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo ratione totam quae quis sed eligendi quisquam, id quo, odit alias voluptate mollitia rerum error! Placeat facere unde enim nisi magnam.   </p>
@@ -211,4 +213,22 @@
         const toggleMenu = document.querySelector('.menu');
         toggleMenu.classList.toggle('active')       
     }
+</script>
+<script>
+    let bg = document.getElementById("bg");
+    let moon = document.getElementById("moon");
+    let mountain = document.getElementById("mountain");
+    let road = document.getElementById("road");
+    let text = document.getElementById("text");
+    let button = document.getElementById("sectionbutton")
+    window.addEventListener('scroll', function(){ 
+    var value = window.scrollY;
+
+    bg.style.top = value * 0.5 + 'px'; 
+    moon.style.left = -value * 0.5 + 'px';
+    mountain.style.top = -value * 0.15 + 'px';
+    road.style.top = value * 0.15 + 'px';
+    text.style.top = value * 1 + 'px';
+    button.style.top = value * 1 + 'px';
+    })
 </script>
