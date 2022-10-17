@@ -18,8 +18,6 @@ background-color: var(--primary-color);}
   background: rgb(0,123,255,0.3);
 }
 .content{
-  max-width: 1250px;
-  margin: auto;
   padding: 0 30px;
 }
 .navbar{
@@ -166,7 +164,6 @@ background-color: var(--primary-color);}
     font-size: 27px;
   }
 }
-
   /*Dark Mode*/
 #icon
 {
@@ -641,3 +638,50 @@ footer img
   }
 }
 
+/*User*/
+.content .menu-list .sesion{
+  position: relative;
+}
+.sesion .menu{
+  justify-content: center;
+  background-color:#FFF;
+  box-sizing:0 5px 25px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  padding: 10px 20px;
+  width: 200px;
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+.sesion .menu.active{
+  opacity: 1;
+  visibility: visible;
+}
+.sesion .menu h3{
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 0px;
+  text-align: left;
+}
+.sesion .menu a{
+  color: #818181;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  padding: 10px 0;
+}
+.sesion .menu a:hover {
+  color:#216968;
+}
+/*User Desktop*/
+@media (min-width: 720px)
+{
+  .sesion .menu
+  {
+    position: absolute;
+    right: 30px;
+  }
+}

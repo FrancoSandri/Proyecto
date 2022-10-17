@@ -56,16 +56,28 @@
         <li><a href="Help.html">Ayuda</a></li>
         <li><a href="Login.html">Iniciar Sesión</a></li>
         <li><a href="Register.html">Registrarse</a></li>
-        <input type="checkbox" id="darkmode-toggle"/>
-        <label for="darkmode-toggle">  
+        <div class="sesion">
+            <div class="profile" onclick="menuToggle();">
+                <img src="Fotos/Home-profile.jpg">
+            </div>        
+        </div>
       </ul>
       <div class="icon menu-btn">
         <i class="fas fa-bars"></i>
-      </div>
+    </div>
+    
+    </div>
+    <div class="sesion">
+        <div class="menu">
+            <h3>Profile</h3>
+            <a href="#">Mis cordenadas</a>
+            <a href="#">Cambiar Contraseña</a>
+            <input type="checkbox" id="darkmode-toggle"/>
+            <label for="darkmode-toggle">
+            </div>
     </div>
   </nav>
-  </div>
-
+  
   <script>
     const body = document.querySelector("body");
     const navbar = document.querySelector(".navbar");
@@ -192,4 +204,11 @@
                 icon.className = "bi bi-moon";
             }
         }
+</script>
+<!--Profile-->
+<script>
+    function menuToggle(){
+        const toggleMenu = document.querySelector('.menu');
+        toggleMenu.classList.toggle('active')       
+    }
 </script>
