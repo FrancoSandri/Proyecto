@@ -1,5 +1,5 @@
 const button = document.getElementById("button")
-
+const inputerr = document.getElementById("passwordInput");
 button.addEventListener("click", function(event){
     event.preventDefault();
     apiURL = "http://localhost:3000/login"
@@ -16,5 +16,5 @@ button.addEventListener("click", function(event){
     })
     .then(response => response.json())
     .then(json => console.log(json))
-    .catch(err => console.log('Solicitud fallida', err));
+    .catch(err => toggleMenu.classList.toggle('err'));
 }, false);

@@ -53,19 +53,32 @@
         </div>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="Us.html">Nosotros</a></li>
-        <li><a href="Help.html">Ayuda</a></li>
         <li><a href="Login.html">Iniciar Sesión</a></li>
         <li><a href="Register.html">Registrarse</a></li>
-        <input type="checkbox" id="darkmode-toggle"/>
-        <label for="darkmode-toggle">  
+        <div class="sesion">
+            <div class="menu">
+                <h3>Profile</h3>
+                <h6>example@gmail.com</h6>
+                <a href="#">Mis cordenadas</a>
+                <a href="#">Cambiar Contraseña</a>
+                <a href="Help.html">Ayuda</a>
+                <a id="Cerrar"href="">Cerrar Sesion</a>    
+                <input type="checkbox" id="darkmode-toggle"/>
+                <label for="darkmode-toggle">
+            </div>
+        </div> 
+        <div class="sesion">
+            <div class="profile" onclick="menuToggle();">
+                <img src="Fotos/Home-profile.jpg">
+            </div>        
+        </div>
+        
       </ul>
       <div class="icon menu-btn">
         <i class="fas fa-bars"></i>
-      </div>
+    </div>
     </div>
   </nav>
-  </div>
-
   <script>
     const body = document.querySelector("body");
     const navbar = document.querySelector(".navbar");
@@ -82,37 +95,39 @@
       menuBtn.classList.remove("hide");
     }
     window.onscroll = ()=>{
-      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+      this.scrollY > 700 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
     }
   </script>
     </header>
-<body id="cuerpo">
+<body id="cuerpo" >
     <div class="Contenedor">
-        <div class="BackGround">
-                <div class="BackGround-titles">
-                    <h1> Bienvenido a Satolution, donde hay una solution. </h1>
-                </div>
-                <form action="Home.php">
-                    <button class="boton" >Mapa</button>
-                </form>
-        </div>
+        <section>
+            <img src="Fotos/Main/bg.jpg" id="bg">
+            <img src="Fotos/Main/moon.png" id="moon">
+            <img src="Fotos/Main/mountain.png" id="mountain">
+            <img src="Fotos/Main/road.png" id="road">
+            <form action="Home.php">
+                <h1 id="text">Satolution</h1>
+                <button class="boton" id="sectionbutton">Mapa</button>
+            </form>
+        </section>
         <div class="Que-es">
             <h2>¿Que es Satolution?</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo ratione totam quae quis sed eligendi quisquam, id quo, odit alias voluptate mollitia rerum error! Placeat facere unde enim nisi magnam.   </p>
+            <p>Satolution en términos simples es una herramienta que te permite detectar la cantidad de agua en las plantas, como una maceta inteligente a gran escala, permitiendo el ahorro de muchos recursos.</p>
         </div>
         <div class="boxes-container">
             <div class="boxes">
                 <div class="box">
                     <img src="Fotos/Home-Box-Satellite.png">
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendo carlameizado</h5>
+                    <h5>Tecnologías que nos informan sobre cambios en pocos minutos</h5>
                 </div>
                 <div class="box" id="secondarybox">
                     <img src="Fotos/Home-Box-Computer.png">
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendo carlameizado</h5>
+                    <h5>Una aplicación accesible y fácil de usar en cualquier dispositivo</h5>
                 </div>
                 <div class="box" id="secondarybox">
                     <img src="Fotos/Home-Box-AstroNaut.png">
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendo carlameizado</h5>
+                    <h5>Ayuda al momento de saber en que condición se encuentra tu campo</h5>
                 </div>
             </div>
                 <div class="boxes-titles">
@@ -129,7 +144,7 @@
             <img src="Fotos/Home-Laherrmienta.png">
             <div class="Datos-utiles-info">
                 <h2>La herrmienta mas facil de usar</h2>
-                <p>Sitio web accesible para todos los usuarios <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-universal-access-circle" viewBox="0 0 16 16"><path d="M8 4.143A1.071 1.071 0 1 0 8 2a1.071 1.071 0 0 0 0 2.143Zm-4.668 1.47 3.24.316v2.5l-.323 4.585A.383.383 0 0 0 7 13.14l.826-4.017c.045-.18.301-.18.346 0L9 13.139a.383.383 0 0 0 .752-.125L9.43 8.43v-2.5l3.239-.316a.38.38 0 0 0-.047-.756H3.379a.38.38 0 0 0-.047.756Z"/><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8Z"/></svg></p>
+                <p>Sitio web accesible para todos los usuarios <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-universal-access-circle" viewBox="0 0 16 16"><path d="M8 4.143A1.071 1.071 0 1 0 8 2a1.071 1.071 0 0 0 0 2.143Zm-4.668 1.47 3.24.316v2.5l-.323 4.585A.383.383 0 0 0 7 13.14l.826-4.017c.045-.18.301-.18.346 0L9 13.139a.383.383 0 0 0 .752-.125L9.43 8.43v-2.5l3.239-.316a.38.38 0 0 0-.047-.756H3.379a.38.38 0 0 0-.047.756Z"/><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8Z"/></svg></p>
                 <p>Accesible en cualquier dispositivo <i class="bi bi-display"></i></p>
                 <p>Acceso de informacion rapido y eficiente <i class="bi bi-clock"></i></p>
             </div>
@@ -192,4 +207,29 @@
                 icon.className = "bi bi-moon";
             }
         }
+</script>
+<!--Profile-->
+<script>
+    function menuToggle(){
+        const toggleMenu = document.querySelector('.menu');
+        toggleMenu.classList.toggle('active')       
+    }
+</script>
+<script>
+    let bg = document.getElementById("bg");
+    let moon = document.getElementById("moon");
+    let mountain = document.getElementById("mountain");
+    let road = document.getElementById("road");
+    let text = document.getElementById("text");
+    let button = document.getElementById("sectionbutton")
+    window.addEventListener('scroll', function(){ 
+    var value = window.scrollY;
+
+    bg.style.top = value * 0.5 + 'px'; 
+    moon.style.left = -value * 0.5 + 'px';
+    mountain.style.top = -value * 0.15 + 'px';
+    road.style.top = value * 0.15 + 'px';
+    text.style.top = value * 1 + 'px';
+    button.style.top = value * 1 + 'px';
+    })
 </script>
