@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(CookieParser());
 
 //Routes
-app.use(require('./routes/index'));
+app.use(require('./routes/login'));
 
 //Starting Server
 app.listen(app.get('port'), () => {         
