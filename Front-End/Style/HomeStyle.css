@@ -344,7 +344,6 @@ section:after{
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 3;
   /*Quitar color azulado*/
   background: #0a2a43;
   mix-blend-mode: color;
@@ -353,7 +352,7 @@ section:after{
 {
   position: relative;
   color: #fff;
-  font-size: 5em;
+  font-size: 4.5em;
   z-index: 1;
   margin: 0;
 }
@@ -370,7 +369,7 @@ section form
 #sectionbutton
 {
   position: relative;
-  z-index: 1;;
+  z-index: 1;
 }
 section img
 {
@@ -407,7 +406,7 @@ section img
 /*Box mobile */
 .boxes-container
 {
-  background-image: url(../Fotos/Home-boxes-background.png);
+  background-image: url(../Fotos/Home-boxes-background.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 50px;
@@ -436,7 +435,7 @@ section img
 .box h5
 {
   padding: 0 10%;
-  text-align: center;
+  text-align: center  ;
   font-size: 17px;
 }
 #secondarybox
@@ -468,21 +467,21 @@ section img
 }
 .deteccion-humo
 {
-  background-image: url(../Fotos/Home-humedad.png);
+  background-image: url(../Fotos/Home-humedad.webp);
   height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
 
 }
-.dispositivos{background-image: url(../Fotos/Home-Dispositivos.png); 
+.dispositivos{background-image: url(../Fotos/Home-Dispositivos.webp); 
   height: 150px; 
   display: flex;
   align-items: center;
   justify-content: center;}
 .ciudados
 {
-  background-image: url(../Fotos/Home-TusPlantas.png); 
+  background-image: url(../Fotos/Home-TusPlantas.webp); 
   height: 150px;
   display: flex;
   align-items: center;
@@ -524,7 +523,7 @@ section img
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-image: url(../Fotos/Home-QueArgentina.png);
+  background-image: url(../Fotos/Home-QueArgentina.webp);
   padding: 10%;
   padding-bottom: 100px;
 }
