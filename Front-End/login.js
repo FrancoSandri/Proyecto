@@ -1,20 +1,33 @@
+const algo = async () => {
+    const res = await fetch("http://localhost:3001/get-all")
+    const data = await res.json()
+    console.log(data)
+}
+algo()
 const button = document.getElementById("button")
 const inputerr = document.getElementById("passwordInput");
-button.addEventListener("click", function(event){
+const form = document.getElementById("form")
+const submithandler = (e) =>{
+    e.preventDefault();
+}
+form.addEventListener("submit", submithandler)
+button.addEventListener("click", async (event)=>{
     event.preventDefault();
-    apiURL = "http://localhost:3000/login"
+    apiURL = "http://localhost:3001/login"
 
     const data = {
-        "usuario" : document.getElementById("emailInput").value(),
-        "password" : document.getElementById("passwordInput").value()
+        "email" : document.getElementById("emailInput").value,
+        "password" : document.getElementById("passwordInput").value
     }
-
-    const response = fetch(apiURL, {
+    console.log(data);
+    const response = await fetch(apiURL, {
         method: "POST",
-        headers: {"Content-type": "application/json;charset=UTF-8"},
+        headers: {
+            "Content-type": "application/json;charset=UTF-8",
+            "Access-Control-Allow-Credentials": true
+        },
         body: JSON.stringify(data)
     })
-    .then(response => response.json())
-    .then(json => console.log(json))
-    .catch(err => toggleMenu.classList.toggle('err'));
+    const respData = await response.json();
+    console.log(respData)
 }, false);
