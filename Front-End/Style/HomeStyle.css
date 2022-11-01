@@ -32,6 +32,7 @@ background-color: var(--primary-color);}
 .navbar.sticky{
   background: var(--primary-color);
   padding: 10px 0;
+  padding-top: 0;
   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
 }
 .navbar .content{
@@ -60,6 +61,10 @@ background-color: var(--primary-color);}
 }
 .navbar .menu-list{
   display: inline-flex;
+}
+.menu-list
+{
+  align-items: center;
 }
 .menu-list li{
   list-style: none;
@@ -265,6 +270,11 @@ h2/*Black Titles*/
 
   font-weight: 800;
 }
+#mail-direction
+{
+  text-decoration: none;
+  color: #fff;
+}
 /*Textbox Prefab Mobile*/
 
 .Text-box p, .Text-box h5, .Text-box h3, .Text-box h2
@@ -315,76 +325,23 @@ h2/*Black Titles*/
     font-size: 27px;
   }
 }
-
+ 
 /*Back Ground mobile*/
-
-section
+.BackGround
 {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-}
-section:before{
-  content: '';
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-  background: linear-gradient(to top, #0a2a43, transparent);
-}
-section:after{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  /*Quitar color azulado*/
-  background: #0a2a43;
-  mix-blend-mode: color;
-}
-#text
-{
-  position: relative;
-  color: #fff;
-  font-size: 5em;
-  z-index: 1;
-  margin: 0;
-}
-section form
-{
+  background-image: url(../Fotos/Home-BackGround.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 120vh;
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center;
 }
-#road
+.BackGround-titles
 {
- z-index: 2; 
-}
-#sectionbutton
-{
-  position: relative;
-  z-index: 1;;
-}
-section img
-{
-  position: absolute;
-  top: 0;
-  Left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-}
-#moon
-{
-
+  padding-top: 13%;
 }
 /*Que es satolution mobile*/
 
@@ -407,7 +364,7 @@ section img
 /*Box mobile */
 .boxes-container
 {
-  background-image: url(../Fotos/Home-boxes-background.png);
+  background-image: url(../Fotos/Home-boxes-background.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 50px;
@@ -436,7 +393,7 @@ section img
 .box h5
 {
   padding: 0 10%;
-  text-align: center;
+  text-align: center  ;
   font-size: 17px;
 }
 #secondarybox
@@ -468,21 +425,21 @@ section img
 }
 .deteccion-humo
 {
-  background-image: url(../Fotos/Home-humedad.png);
+  background-image: url(../Fotos/Home-humedad.webp);
   height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
 
 }
-.dispositivos{background-image: url(../Fotos/Home-Dispositivos.png); 
+.dispositivos{background-image: url(../Fotos/Home-Dispositivos.webp); 
   height: 150px; 
   display: flex;
   align-items: center;
   justify-content: center;}
 .ciudados
 {
-  background-image: url(../Fotos/Home-TusPlantas.png); 
+  background-image: url(../Fotos/Home-TusPlantas.webp); 
   height: 150px;
   display: flex;
   align-items: center;
@@ -524,7 +481,7 @@ section img
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-image: url(../Fotos/Home-QueArgentina.png);
+  background-image: url(../Fotos/Home-QueArgentina.webp);
   padding: 10%;
   padding-bottom: 100px;
 }
@@ -690,6 +647,10 @@ footer img
 }
 
 /*User*/
+.sesion
+{
+  margin-left: 10px;
+}
 .content .menu-list .sesion{
   position: relative;
 }
@@ -737,6 +698,7 @@ footer img
   flex-direction: column;
   text-decoration: none;
   padding: 10px 0;
+  
   border-top: 1px solid #EAF0F7;
 
 }

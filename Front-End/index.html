@@ -35,23 +35,18 @@
            s.setAttribute("src", "https://cdn.userway.org/widget.js");
            (d.body || d.head).appendChild(s);})(document)
    </script>
-  <noscript>
-  Please ensure Javascript is enabled for purposes of 
-  <a href="https://userway.org">website accessibility</a>
-  </noscript>
 </head>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <header>
   <nav class="navbar">
     <div class="content">
       <div class="logo">
-        <a href="index.html"><img src="Fotos/Logo44.png" alt=""></a>  
+        <a href="index.html"><img src="Fotos/Logo44.webp" alt=""></a>  
       </div>
       <ul class="menu-list">
         <div class="icon cancel-btn">
           <i class="fas fa-times"></i>
         </div>
-        <li><a href="index.html">Inicio</a></li>
         <li><a href="Us.html">Nosotros</a></li>
         <li><a href="Login.html">Iniciar Sesión</a></li>
         <li><a href="Register.html">Registrarse</a></li>
@@ -69,7 +64,7 @@
         </div> 
         <div class="sesion">
             <div class="profile" onclick="menuToggle();">
-                <img src="Fotos/Home-profile.jpg">
+                <img src="Fotos/Home-profile.webp">
             </div>        
         </div>
         
@@ -95,22 +90,20 @@
       menuBtn.classList.remove("hide");
     }
     window.onscroll = ()=>{
-      this.scrollY > 700 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+      this.scrollY > 50 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
     }
   </script>
     </header>
 <body id="cuerpo" >
     <div class="Contenedor">
-        <section>
-            <img src="Fotos/Main/bg.jpg" id="bg">
-            <img src="Fotos/Main/moon.png" id="moon">
-            <img src="Fotos/Main/mountain.png" id="mountain">
-            <img src="Fotos/Main/road.png" id="road">
+        <div class="BackGround">
+            <div class="BackGround-titles">
+                <h1> Bienvenido a Satolution</h1>
+            </div>
             <form action="Home.php">
-                <h1 id="text">Satolution</h1>
-                <button class="boton" id="sectionbutton">Mapa</button>
+                <button class="boton" >Mapa</button>
             </form>
-        </section>
+        </div>
         <div class="Que-es">
             <h2>¿Que es Satolution?</h2>
             <p>Satolution en términos simples es una herramienta que te permite detectar la cantidad de agua en las plantas, como una maceta inteligente a gran escala, permitiendo el ahorro de muchos recursos.</p>
@@ -118,15 +111,15 @@
         <div class="boxes-container">
             <div class="boxes">
                 <div class="box">
-                    <img src="Fotos/Home-Box-Satellite.png">
+                    <img src="Fotos/Home-Box-Satellite.webp" alt="Satelite ">
                     <h5>Tecnologías que nos informan sobre cambios en pocos minutos</h5>
                 </div>
                 <div class="box" id="secondarybox">
-                    <img src="Fotos/Home-Box-Computer.png">
+                    <img src="Fotos/Home-Box-Computer.webp" alt="Smartphone">
                     <h5>Una aplicación accesible y fácil de usar en cualquier dispositivo</h5>
                 </div>
                 <div class="box" id="secondarybox">
-                    <img src="Fotos/Home-Box-AstroNaut.png">
+                    <img src="Fotos/Home-Box-AstroNaut.webp" alt="Wattering plant">
                     <h5>Ayuda al momento de saber en que condición se encuentra tu campo</h5>
                 </div>
             </div>
@@ -141,7 +134,7 @@
             <div class="ciudados"><h5>Cuidar tus plantas</h5></div>
         </div>
         <div class="Datos-utiles">
-            <img src="Fotos/Home-Laherrmienta.png">
+            <img src="Fotos/Home-Laherrmienta.webp" alt="Laptop and Smartphone">
             <div class="Datos-utiles-info">
                 <h2>La herrmienta mas facil de usar</h2>
                 <p>Sitio web accesible para todos los usuarios <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-universal-access-circle" viewBox="0 0 16 16"><path d="M8 4.143A1.071 1.071 0 1 0 8 2a1.071 1.071 0 0 0 0 2.143Zm-4.668 1.47 3.24.316v2.5l-.323 4.585A.383.383 0 0 0 7 13.14l.826-4.017c.045-.18.301-.18.346 0L9 13.139a.383.383 0 0 0 .752-.125L9.43 8.43v-2.5l3.239-.316a.38.38 0 0 0-.047-.756H3.379a.38.38 0 0 0-.047.756Z"/><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8Z"/></svg></p>
@@ -160,7 +153,7 @@
             <h2>¿Que esperamos conseguir?</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, non magnam. Fugiat nihil, mollitia, eius vitae tenetur modi quo iste quis voluptatem nostrum libero perferendis nam ab possimus qui fuga.</p>
             </div>
-            <img src="Fotos/Home-QueEsperamos.png">
+            <img src="Fotos/Home-QueEsperamos.webp" alt="People Working">
         </div>
         <div class="Empeza-ya">
             <div class="Empeza-ya-titles">
@@ -176,17 +169,19 @@
             <div class="Text-titles">
             <h2>Contactanos</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. pora minima sequi veritatis, debitis dolor enim atque tempore veniam voluptatibus officia voluptatum quo.</p>
-            <a class="boton" href="mailto:mmagnizeballos@gmail.com?Subject=Interesado%20en%20el%20curso">Contactanos</a>    
+            <form action="Home.php">
+                <button class="boton" ><a id="mail-direction" href="mailto:mmagnizeballos@gmail.com?Subject=Interesado%20en%20el%20curso">Contactanos</a></button>
+            </form>   
             </div>  
-            <img src="Fotos/Home-Contactanos.png">
+            <img src="Fotos/Home-Contactanos.webp" alt="Person writting">
         </div>
     </div>
 <body>
 <footer>
     <div class="Social-Media">
-        <a href="https://www.instagram.com"><img src="Fotos/Home-InstagramLogo.png"></a>       
-        <a href="https://ar.linkedin.com"><img src="Fotos/Home-LinkedinLogo.png"></a>
-        <a href="https://twitter.com/home?lang=es"><img src="Fotos/Home-TwitterLogo.png"></a>       
+        <a href="https://www.instagram.com"><img src="Fotos/Home-InstagramLogo.webp" alt="Instagram"></a>       
+        <a href="https://ar.linkedin.com"><img src="Fotos/Home-LinkedinLogo.webp" alt="Linkedin"></a>
+        <a href="https://twitter.com/home?lang=es"><img src="Fotos/Home-TwitterLogo.webp" alt="Twitter"></a>       
     </div>
     <h5>Nosotros</h5>
     <h6>copyright©</h6>
@@ -214,22 +209,4 @@
         const toggleMenu = document.querySelector('.menu');
         toggleMenu.classList.toggle('active')       
     }
-</script>
-<script>
-    let bg = document.getElementById("bg");
-    let moon = document.getElementById("moon");
-    let mountain = document.getElementById("mountain");
-    let road = document.getElementById("road");
-    let text = document.getElementById("text");
-    let button = document.getElementById("sectionbutton")
-    window.addEventListener('scroll', function(){ 
-    var value = window.scrollY;
-
-    bg.style.top = value * 0.5 + 'px'; 
-    moon.style.left = -value * 0.5 + 'px';
-    mountain.style.top = -value * 0.15 + 'px';
-    road.style.top = value * 0.15 + 'px';
-    text.style.top = value * 1 + 'px';
-    button.style.top = value * 1 + 'px';
-    })
 </script>
