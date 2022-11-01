@@ -3,6 +3,10 @@
 body{
   margin: 0;
 background-color: var(--primary-color);}
+*
+{
+  font-family: "poppins";
+}
 /*Barra Menu*/
 /* custom scroll bar */
 ::-webkit-scrollbar {
@@ -235,7 +239,8 @@ label:active:after{
   position: relative;
 }
 .sesion .menu{
-  top: 100px;
+  top: 350px;
+  left: 60px;
   justify-content: center;
   background-color:var(--primary-color);
   box-sizing:0 5px 25px rgba(0,0,0,0.1);
@@ -292,13 +297,62 @@ label:active:after{
 .sesion .menu a:hover {
   color:#216968;
 }
+.logo img
+{
+  width: 44px;
+}
+.logo img
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar .logo a{
+  color: var(--secondary-color);
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
 /*User Desktop*/
 @media (min-width: 720px)
 {
+  
   .sesion .menu
   {
-    position: #201A31;
+    top: 100px;
+    left: auto;
     right: 30px;
   }
 }
-/*Form*/
+
+/*Design*/
+.Container .Home
+{
+  display: flex;
+}
+.SobreNo
+{
+  display: flex;
+  flex-direction: column;
+  margin: 15% 15%;
+}
+.SobreNo-titles
+{
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 720px)
+{
+  .SobreNo{
+    flex-direction: row;
+    margin: 10% 15%;
+  }
+  .SobreNo-titles
+  {
+    margin: 0 8%;
+  }
+}
+.color
+{
+  color: #4461F2;
+}

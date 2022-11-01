@@ -655,7 +655,8 @@ footer img
   position: relative;
 }
 .sesion .menu{
-  top: 100px;
+  top: 350px;
+  left: 60px;
   justify-content: center;
   background-color:var(--primary-color);
   box-sizing:0 5px 25px rgba(0,0,0,0.1);
@@ -715,9 +716,11 @@ footer img
 /*User Desktop*/
 @media (min-width: 720px)
 {
+  
   .sesion .menu
   {
-    position: #201A31;
+    top: 100px;
+    left: auto;
     right: 30px;
   }
 }

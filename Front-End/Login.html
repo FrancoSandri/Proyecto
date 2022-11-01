@@ -7,9 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="Style/Login.css" rel="stylesheet" type="text/css" />
     <script src='main.js'></script>
-    <script src="login.js"></script>
     <script src='help.js'></script>
-
     <link href="Icons/css/uicons-bold-rounded.css" rel="stylesheet">
     <style>
      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
@@ -36,8 +34,7 @@
            s.setAttribute("data-account", "Kzwh8zrdzV");
            s.setAttribute("src", "https://cdn.userway.org/widget.js");
            (d.body || d.head).appendChild(s);})(document)
-   </script>
-   <script src= 'login.js'></script>
+           </script>
 </head>
 <body>
     <div class="Form">
@@ -54,7 +51,7 @@
                     <input type="password" id="passwordInput" placeholder="example">
                         <h5><a id="Contraseña" href="RecoverPassword.html">Olvide mi Contraseña</a></h5>
             </form>
-            <form action="index.html">
+            <form id="form" action="index.html">
                 <button class="Sesion" id="button">Iniciar sesión</button>
             </form>
             <h4 href="Register.html">¿No tienes una cuenta?</h4>
@@ -64,5 +61,6 @@
             <img src="Fotos/LoginBackGround.webp" alt="Reference Picture">
         </div>
     </div>
+    <script src= 'login.js'></script>
 </body>
 </html>

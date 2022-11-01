@@ -7,6 +7,8 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='Style/Us.css'>
     <script src='Home.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
     <script>
         (function(d){
            var s = d.createElement("script");
@@ -33,70 +35,100 @@
 </head>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <header>
-<nav class="navbar">
-<div class="content">
-  <div class="logo">
-    <a href="index.html"><img src="Fotos/Logo44.webp" alt="Logo"></a>  
-  </div>
-  <ul class="menu-list">
-    <div class="icon cancel-btn">
-      <i class="fas fa-times"></i>
-    </div>
-    <li><a href="Us.html">Nosotros</a></li>
-    <li><a href="Login.html">Iniciar Sesión</a></li>
-    <li><a href="Register.html">Registrarse</a></li>
-    <div class="sesion">
-        <div class="menu">
-            <h3>Profile</h3>
-            <h6>example@gmail.com</h6>
-            <a href="#">Mis cordenadas</a>
-            <a href="#">Cambiar Contraseña</a>
-            <a href="Help.html">Ayuda</a>
-            <a id="Cerrar"href="">Cerrar Sesion</a>    
-            <input type="checkbox" id="darkmode-toggle"/>
-            <label for="darkmode-toggle">
+    <nav class="navbar">
+        <div class="content">
+          <div class="logo">
+            <a href="index.html"><img src="Fotos/Logo44.webp" alt=""></a>  
+          </div>
+          <ul class="menu-list">
+            <div class="icon cancel-btn">
+              <i class="fas fa-times"></i>
+            </div>
+            <li><a href="Us.html">Nosotros</a></li>
+            <li><a href="Login.html">Iniciar Sesión</a></li>
+            <li><a href="Register.html">Registrarse</a></li>
+            <div class="sesion">
+                <div class="menu">
+                    <h3>Profile</h3>
+                    <h6>example@gmail.com</h6>
+                    <a href="#">Mis cordenadas</a>
+                    <a href="#">Cambiar Contraseña</a>
+                    <a href="Help.html">Ayuda</a>
+                    <a id="Cerrar"href="">Cerrar Sesion</a>    
+                    <input type="checkbox" id="darkmode-toggle"/>
+                    <label for="darkmode-toggle">
+                </div>
+            </div> 
+            <div class="sesion">
+                <div class="profile" onclick="menuToggle();">
+                    <img src="Fotos/Home-profile.webp">
+                </div>        
+            </div>
+            
+          </ul>
+          <div class="icon menu-btn">
+            <i class="fas fa-bars"></i>
         </div>
-    </div> 
-    <div class="sesion">
-        <div class="profile" onclick="menuToggle();">
-            <img src="Fotos/Home-profile.webp">
-        </div>        
-    </div>
-    
-  </ul>
-  <div class="icon menu-btn">
-    <i class="fas fa-bars"></i>
-</div>
-</div>
-</nav>
-<script>
-const body = document.querySelector("body");
-const navbar = document.querySelector(".navbar");
-const menuBtn = document.querySelector(".menu-btn");
-const cancelBtn = document.querySelector(".cancel-btn");
-menuBtn.onclick = ()=>{
-  navbar.classList.add("show");
-  menuBtn.classList.add("hide");
-  body.classList.add("disabled");
-}
-cancelBtn.onclick = ()=>{
-  body.classList.remove("disabled");
-  navbar.classList.remove("show");
-  menuBtn.classList.remove("hide");
-}
-window.onscroll = ()=>{
-  this.scrollY > 50 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
-}
-</script>
+        </div>
+      </nav>
+      <script>
+        const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        menuBtn.onclick = ()=>{
+          navbar.classList.add("show");
+          menuBtn.classList.add("hide");
+          body.classList.add("disabled");
+        }
+        cancelBtn.onclick = ()=>{
+          body.classList.remove("disabled");
+          navbar.classList.remove("show");
+          menuBtn.classList.remove("hide");
+        }
+        window.onscroll = ()=>{
+          this.scrollY > 50 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+        }
+      </script>
 </header>
 <body>
     <div class="Container">
         <div class="Home">
-            <div class="Home-titles">
-                <h1>Nuestro Equipo</h1>
+            <img src="Fotos/Nosotros-BackGround.png" alt="Developer Group">>
+        </div>
+        <div class="SobreNo">
+            <div class="SobreNo-titles">
+            <h1>Un poco sobre nosotros</h1>
+            <p>Somos un grupo de cuatro estudiantes de ORT que al principio no teníamos muy en claro que queríamos hacer, hasta que nos surgió una idea bastante distintiva. En un principio, mencionar un proyecto que involucre satélites era una imaginación, pero entre charlas y personas metidas en este tema nos dimos cuenta que alcanzar este sueño iba a ser complicado pero realizable. Después de investigar, hablar con expertos en el tema e indagar más allá, pudimos llegar a una idea, pero se vio frustrada por diversos factores.
+                A pesar de esto, no dejamos esta posibilidad ahí tirada y nos pusimos a pensar en otra idea. Así fue como surgió Solution, un proyecto capaz de ayudar a miles de personas y un desafío para nuestros conocimientos como principiantes en este campo de estudio.
+                </p>
             </div>
-            
+            <img src="Fotos/Nosotros-SobreNosotros.webp" alt="">
         </div>
     </div>
 </body>
 </html>
+<!--DarkMode-->
+<script>
+    var icon = document.getElementById("darkmode-toggle");
+
+    icon.onclick = function()
+        {
+            document.body.classList.toggle("dark-theme");
+            if(document.body.classList.contains("dark-theme"))
+            {
+                icon.className = "bi bi-brightness-high";
+            }
+            else
+            {
+                icon.className = "bi bi-moon";
+            }
+        }
+</script>
+<!--Profile-->
+<script>
+    function menuToggle(){
+        const toggleMenu = document.querySelector('.menu');
+        toggleMenu.classList.toggle('active')       
+    }
+</script>
