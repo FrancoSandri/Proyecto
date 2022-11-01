@@ -32,40 +32,70 @@
    </script>
 </head>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<header x-data="{ open: false }" class="header" id="Head">
-    <a href="index.html"><div class="header__logo">
-    </div></a>
-    <button class="header__button-nav--open" x-on:click="open = true"><i class="fi-br-align-justify"></i></button>
-    <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
-        <div class="nav__button" x-on:click="open = false">
-            <button class="header__button-nav--close"><i class="fi-br-align-justify"></i></button>
+<header>
+<nav class="navbar">
+<div class="content">
+  <div class="logo">
+    <a href="index.html"><img src="Fotos/Logo44.webp" alt="Logo"></a>  
+  </div>
+  <ul class="menu-list">
+    <div class="icon cancel-btn">
+      <i class="fas fa-times"></i>
+    </div>
+    <li><a href="Us.html">Nosotros</a></li>
+    <li><a href="Login.html">Iniciar Sesión</a></li>
+    <li><a href="Register.html">Registrarse</a></li>
+    <div class="sesion">
+        <div class="menu">
+            <h3>Profile</h3>
+            <h6>example@gmail.com</h6>
+            <a href="#">Mis cordenadas</a>
+            <a href="#">Cambiar Contraseña</a>
+            <a href="Help.html">Ayuda</a>
+            <a id="Cerrar"href="">Cerrar Sesion</a>    
+            <input type="checkbox" id="darkmode-toggle"/>
+            <label for="darkmode-toggle">
         </div>
-            <ul class="nav__ul">
-                <li class="nav__item"><a href="#" class="nav__link"><i class="fi-br-map-marker"></i>Inicio</a></li>
-                <li class="nav__item"><a href="#" class="nav__link"><i class="fi-br-map-marker"></i>Mapa</a></li>
-                <li class="nav__item"><a href="Us.html" class="nav__link"><i class="fi-br-users-alt"></i>Nosotros</a></li>
-                <li class="nav__item"><a href="Help.html" class="nav__link"><i class="fi-br-envelope"></i>Ayuda</a></li>
-                <div id="Registros">
-                    <li class="nav__item"><a href="Login.html" class="nav__link"><i class="fi-br-user"></i>Iniciar Sesión</a></li>
-                    <li class="nav__item" id="Btn-Crear"><a href="Register.html" class="nav__link"><i class="fi-br-user-add"></i>Crear Cuenta</a></li>
-                </div>
-            </ul>
-    </nav>
+    </div> 
+    <div class="sesion">
+        <div class="profile" onclick="menuToggle();">
+            <img src="Fotos/Home-profile.webp">
+        </div>        
+    </div>
+    
+  </ul>
+  <div class="icon menu-btn">
+    <i class="fas fa-bars"></i>
+</div>
+</div>
+</nav>
+<script>
+const body = document.querySelector("body");
+const navbar = document.querySelector(".navbar");
+const menuBtn = document.querySelector(".menu-btn");
+const cancelBtn = document.querySelector(".cancel-btn");
+menuBtn.onclick = ()=>{
+  navbar.classList.add("show");
+  menuBtn.classList.add("hide");
+  body.classList.add("disabled");
+}
+cancelBtn.onclick = ()=>{
+  body.classList.remove("disabled");
+  navbar.classList.remove("show");
+  menuBtn.classList.remove("hide");
+}
+window.onscroll = ()=>{
+  this.scrollY > 50 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+}
+</script>
 </header>
 <body>
     <div class="Container">
-        <div class="BackGround">
-            <h1>Nuestro equipo</h1>
-        </div>
-        <div class="SobreNos">
-            <div class="SobreNos-Tiles">
-                <h1>Sobre nosotros</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi aspernatur quibusdam corrupti maiores? Deserunt doloribus ab minus expedita, voluptate eius excepturi. Sit repellendus fugit laudantium explicabo quidem ullam veniam earum?</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi aspernatur quibusdam corrupti maiores? Deserunt doloribus ab minus expedita, voluptate eius excepturi. Sit repellendus fugit laudantium explicabo quidem ullam veniam earum?</p>            </div>
-            <div class="SobreNos-img">
-                <img src="Fotos/Nosotros-SobreNostros.webp" alt="Refernce Picture">
-
+        <div class="Home">
+            <div class="Home-titles">
+                <h1>Nuestro Equipo</h1>
             </div>
+            
         </div>
     </div>
 </body>

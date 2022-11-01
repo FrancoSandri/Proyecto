@@ -21,15 +21,18 @@ body
 
 }
 /*Header*/
-header
+.Logo
 {
-    display: flex;
-    flex-direction: row-reverse;
+    width: auto;
+    height: auto;
+    margin-left: 10px;
+    margin-top: 10px;
 }
-header img
+.Logo img
 {
     height: 44px;
     width: 44px;
+    display: flex;
 }
 /*Registro*/
 .Register
@@ -140,6 +143,7 @@ h4
         display: flex;
         width: 50%;
         margin: 4%;
+        margin-left: 1%;
         margin-bottom: 0;
         margin-top: 1%;
     }
