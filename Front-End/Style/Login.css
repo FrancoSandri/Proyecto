@@ -21,31 +21,18 @@ body
 
 }
 /*Header*/
-.logo 
+.Logo
 {
-  width: 44px;
+    width: auto;
+    height: auto;
+    margin-left: 10px;
+    margin-top: 10px;
 }
-.logo img
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.navbar .logo a{
-  color: var(--secondary-color);
-  font-size: 30px;
-  font-weight: 600;
-  text-decoration: none;
-}
-header
-{
-    display: flex;
-    flex-direction: row-reverse;
-}
-header img
+.Logo img
 {
     height: 44px;
     width: 44px;
+    display: flex;
 }
 /*Registro*/
 .Register
@@ -156,6 +143,7 @@ h4
         display: flex;
         width: 50%;
         margin: 4%;
+        margin-left: 1%;
         margin-bottom: 0;
         margin-top: 1%;
     }

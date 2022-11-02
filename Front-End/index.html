@@ -41,15 +41,16 @@
   <nav class="navbar">
     <div class="content">
       <div class="logo">
-        <a href="index.html"><img src="Fotos/Logo44.webp" alt=""></a>  
+        <a href="index.html"><img src="Fotos/Logo44.webp" alt="Logo"></a>  
       </div>
       <ul class="menu-list">
         <div class="icon cancel-btn">
           <i class="fas fa-times"onclick="menuToggle();"></i>
         </div>
+        <li><a href="#">Mapa</a></li>
         <li><a href="Us.html">Nosotros</a></li>
-        <li><a href="Login.html">Iniciar Sesión</a></li>
-        <li><a href="Register.html">Registrarse</a></li>
+        <li id="Login-Sesion"><a href="Login.html">Iniciar Sesión</a></li>
+        <li id="Register-Sesion"><a href="Register.html">Registrarse</a></li>
         <div class="sesion">
             <div class="menu">
                 <h3>Profile</h3>
@@ -57,7 +58,7 @@
                 <a href="#">Mis cordenadas</a>
                 <a href="#">Cambiar Contraseña</a>
                 <a href="Help.html">Ayuda</a>
-                <a id="Cerrar"href="">Cerrar Sesion</a>    
+                <a id="Cerrar"href="" onclick="SessionToggle();">Cerrar Sesion</a>    
                 <input type="checkbox" id="darkmode-toggle"/>
                 <label for="darkmode-toggle">
             </div>
@@ -209,4 +210,23 @@
         const toggleMenu = document.querySelector('.menu');
         toggleMenu.classList.toggle('active')
     }
+</script>
+
+
+<script>
+    var Login = document.querySelector('#Login-Sesion')
+    var Register = document.querySelector('#Register-Sesion')
+    var buttonClosesession = document.querySelector('#Cerrar')
+var a = 3
+if(a == 3)
+{
+    console.log('hola')
+    Login.style.display = "none"
+    Register.style.display = 'none'
+}
+function SessionToggle()
+{
+    Login.style.display = ''
+    Register.style.display = ''
+}
 </script>
