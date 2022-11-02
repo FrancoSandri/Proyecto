@@ -45,7 +45,7 @@
       </div>
       <ul class="menu-list">
         <div class="icon cancel-btn">
-          <i class="fas fa-times"></i>
+          <i class="fas fa-times"onclick="menuToggle();"></i>
         </div>
         <li><a href="Us.html">Nosotros</a></li>
         <li><a href="Login.html">Iniciar Sesión</a></li>
@@ -70,7 +70,7 @@
         
       </ul>
       <div class="icon menu-btn">
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars"onclick="menuToggle();"></i>
     </div>
     </div>
   </nav>
@@ -207,6 +207,6 @@
 <script>
     function menuToggle(){
         const toggleMenu = document.querySelector('.menu');
-        toggleMenu.classList.toggle('active')       
+        toggleMenu.classList.toggle('active')
     }
 </script>
