@@ -41,8 +41,8 @@
   <nav class="navbar">
     <div class="content">
       <div class="logo">
-        <a href="index.html"><img src="Fotos/Logo44.webp" alt="Logo"></a>  
-      </div>
+        <a href="index.html"><img src="Fotos/Logo44.webp" alt="Logo"></a>
+        </div>
       <ul class="menu-list">
         <div class="icon cancel-btn">
           <i class="fas fa-times"onclick="menuToggle();"></i>
@@ -55,12 +55,9 @@
             <div class="menu">
                 <h3>Profile</h3>
                 <h6>example@gmail.com</h6>
-                <a href="#">Mis cordenadas</a>
-                <a href="#">Cambiar Contraseña</a>
-                <a href="Help.html">Ayuda</a>
+                <a href="recoverpassword.js">Cambiar Contraseña</a>
+                <a href="mailto:satolution@outlook.com?Subject=Me%20Contacto%20para">Ayuda</a>
                 <a id="Cerrar"href="" onclick="SessionToggle();">Cerrar Sesion</a>    
-                <input type="checkbox" id="darkmode-toggle"/>
-                <label for="darkmode-toggle">
             </div>
         </div> 
         <div class="sesion">
@@ -96,6 +93,7 @@
   </script>
     </header>
 <body id="cuerpo" >
+    <img src="Fotos/moon-icon.webp" alt="Dark-Mode" id="icon">
     <div class="Contenedor">
         <div class="BackGround">
             <div class="BackGround-titles">
@@ -189,20 +187,20 @@
 </footer>
 <!--DarkMode-->
 <script>
-    var icon = document.getElementById("darkmode-toggle");
+    var icon = document.getElementById("icon");
 
     icon.onclick = function()
-        {
-            document.body.classList.toggle("dark-theme");
-            if(document.body.classList.contains("dark-theme"))
-            {
-                icon.className = "bi bi-brightness-high";
-            }
-            else
-            {
-                icon.className = "bi bi-moon";
-            }
+    {
+        document.body.classList.toggle("dark-theme")
+        if(document.body.classList.contains("dark-theme")){
+            icon.src = "Fotos/sun-icon.webp"
         }
+        else
+        {
+            icon.src = "Fotos/moon-icon.webp"
+        }
+    }
+
 </script>
 <!--Profile-->
 <script>
