@@ -70,7 +70,7 @@
          else res.status(404).send('User not found')
      })
  })
- router.put('/password-reset', async (req, res) => {
+ router.put('/password-reset', checkUserExistance, async (req, res) => {
      const {email, password} = req.body
      if(email && password)
      {
