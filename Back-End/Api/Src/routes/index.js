@@ -60,17 +60,15 @@
          else res.status(404).send('User not found')
      })
  })
- router.put('/name-reset/:id', (req, res) => {
-     const { id } = req.params
-     const { name } = req.body
-     let sql = `update usuarios set name = '${name}' where id = ${id}`
+ router.post('/name-cheacked', (req, res) => {
+     let sql = `SELECT * FROM usuario WHERE email = '${email}'`
      db.query(sql, (err, result) => {
          if (err) throw err
-         if (result.affectedRows != 0) res.send('User updated successfully')
-         else res.status(404).send('User not found')
+         if (result.affectedRows != 0) res.send('User cheacked successfully')
+         else res.status(404).send('User not cheaked')
      })
  })
- router.put('/password-reset', async (req, res) => {
+ router.put('/password-reset', checkUserExistance, async (req, res) => {
      const {email, password} = req.body
      if(email && password)
      {

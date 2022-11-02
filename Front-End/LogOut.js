@@ -13,19 +13,12 @@ const submithandler = (e) =>{
 form.addEventListener("submit", submithandler)
 button.addEventListener("click", async (event)=>{
     event.preventDefault();
-    apiURL = "http://localhost:3001/password-reset"
+    apiURL = "http://localhost:3001/t"
 
-    const data = {
-        "password" : document.getElementById("passwordInput").value
-    }
-    console.log(data);
     const response = await fetch(apiURL, {
-        method: "PUT",
-        headers: {
-            "Content-type": "application/json;charset=UTF-8",
-            "Access-Control-Allow-Credentials": true
-        },
-        body: JSON.stringify(data)
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' }
     })
     const respData = await response.json();
     console.log(respData)
