@@ -1,0 +1,138 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+body{margin: 0;}
+*{font-family: "poppins";}
+/*Barra Menu*/
+.header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    justify-content: center;
+  }
+  .header__logo
+  {
+    background-image: url(../Fotos/Logo44.png);
+    width: 50px;
+    height: 50px;
+  }
+  /* Estilos móvil/celular */
+  @media all and (max-width: 700px) {
+    .header
+    {
+        justify-content: space-between;
+    }
+    /* Oculta el nav en la parte izquiera */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgb(255, 255, 255);
+      transform: translateX(-100vw);
+      transition: 0.5s;
+    }
+  
+    /* Muestra el nav */
+    .nav--show {
+      transform: translateX(0);
+    }
+    .header__button-nav--open
+    {
+        border: 0;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .header__button-nav--close
+    {
+        border: 0;
+    }
+    .nav__button {
+      text-align: right;
+    }
+    .nav__ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .nav__link {
+      display: block;
+      padding: 10px 1.5rem;
+      font-size: 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      color: #000;
+    }  
+    .fi-br-align-justify
+    {
+        margin-top: 8px;
+        font-size: 25px;
+    }
+    .fi-br-align-justify:hover
+    {
+        text-align: center;
+        color: #499F78;
+    }
+  }
+  
+  /* Estilos Escritorio */
+  @media all and (min-width: 701px) {
+  
+    /* Oculta botón de abrir o cerrar */
+    .nav__button,
+    .header__button-nav--open {
+      display: none;
+    }
+  
+    /* Adapta el nav en horizontal */
+    .nav__ul {
+      display: flex;
+      list-style: none;
+      padding: 10px;
+      margin: 0;
+    }
+  
+    .nav__link {
+      display: block;
+      padding: 10px 1rem;
+      text-decoration: none;
+      transition: 0.5s;
+       color: #fff;
+    }
+  
+    .nav__link:hover {
+      background-color: rgba(206, 206, 206, 0.692);
+    }
+    .fi-br-user-add{display: none;}
+    .fi-br-map-marker{display: none;}
+    .fi-br-user{display: none;}
+    .fi-br-envelope{display: none;}
+    .fi-br-users-alt{display: none;}
+    .fi-br-user-add{display: none;}
+    #Registros
+    {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        right: 2%;
+    }
+    .header__logo
+    {
+        position: absolute;
+        left: 0.5%;
+    }
+    #Btn-Crear
+    {
+        background-color: #389389;
+        border-radius: 10px;
+    }
+  }
+
+  /*Contactanos*/
+  #msjinput
+  {
+    background-color: #000;
+  }
