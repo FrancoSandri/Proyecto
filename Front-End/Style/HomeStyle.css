@@ -618,7 +618,7 @@ footer img
   position: relative;
 }
 .sesion .menu{
-  top: 350px;
+  top: 400px;
   left: 60px;
   justify-content: center;
   background-color:var(--primary-color);
@@ -626,7 +626,7 @@ footer img
   border-radius: 15px;
   padding: 10px 20px;
   width: 250px;
-  height: 350px;
+  height: 300px;
   transition: 0.5s;
   visibility: hidden;
   opacity: 0;
@@ -668,6 +668,7 @@ footer img
 }
 #Cerrar
 {
+  margin-top: 0;
   background-color: #4461F2;
   text-align: center;
   color: #fff;
@@ -685,5 +686,9 @@ footer img
     top: 100px;
     left: auto;
     right: 30px;
+  }
+  #Cerrar
+  {
+    margin-top: 20%;
   }
 }
