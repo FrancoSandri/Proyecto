@@ -4,6 +4,7 @@
  const router = Router();
  const mysql = require('mysql')
  const jwt = require("jsonwebtoken");
+ const cookieParser = require("cookie-parser")
  const express = require("express");
  const app = express();
  const bcrypt = require("bcrypt");
@@ -23,13 +24,14 @@
  db.connect((err) => {
      if (err) throw (err)
  })
+router.use(cookieParser())
  router.use(cors({
-    origin: "*",
+    origin: "http://localhost:5500",
     methods: ['POST', 'PUT', 'GET', 'DELETE', 'OPTIONS', 'HEAD'],
     credentials: true,
-})
-);
+}));
  const authorization = (req, res, next) => {
+    console.log(req.cookies)
      const token = req.cookies.access_token;
      if (!token) {
        return res.sendStatus(403);
@@ -43,6 +45,9 @@
        return res.sendStatus(403);
      }
    };
+   router.get("/check-user", authorization, (req,res)=> {
+    res.json({email: req.email})
+   })
  //Routes
  router.get('/get-all', authorization, (req, res) => {
      let sql = 'select * from usuarios'
@@ -150,6 +155,7 @@
                    expires: new Date(Date.now() + 1000 * 60 * 30),
                    withCredentials: true,
                    secure: process.env.NODE_ENV === "production",
+                   //sameSite: "None"
                  })
                  .status(200)
                  .json({ message: "Logged in successfully 😊 👌", jwtToken: token });
@@ -161,6 +167,21 @@
          catch { res.status(500).send() }
      })
  })
+
+ router.get("/getUser", authorization, async (req, res) => {
+    const userInfo = req.body
+    userInfo.email = req.email
+    
+    try {
+        const user = await User_Controller.getUser(userInfo);
+        return res.json(user);
+    }
+    catch (err) {
+        console.error(err.message);
+        return res.status(400).json({ message: 'Could not get user'});
+    }
+});
+
  router.post("/logout", async (req, res) => {
      return res
      .clearCookie("access_token")
@@ -182,4 +203,42 @@
      var output = syncSql.mysql(config, sql)
      return output.data.rows.length != 0
  }
+
+ const createError = require('http-errors')
+
+ const verifyToken = (req, res, next) => {
+     const token = req.cookies.access_token
+     
+     if(typeof token !== 'undefined'){
+         req.token = token
+         
+         return next()
+     }
+     return next({error: createError.Unauthorized('Token not found')})
+ }
+ 
+
+ router.post('/isLoggedIn', verifyToken, (req, res, next) => {
+    jwt.verify(req.token, process.env.SECRET_KEY, err => {
+        if(!err) return res.send({
+            redirect: {
+                destination: './index.html'
+            }
+        })
+        return res.send({})
+    })
+})
+
+router.post('/isNotLoggedIn', verifyToken, (req, res) => {
+    jwt.verify(req.token, process.env.SECRET_KEY, err => {
+        if(err) return res.send({
+            error: createError.Unauthorized(err.message),
+            redirect: {
+                destination: './Login.html'
+            }
+        })
+        res.send({})
+    })
+})
+
  module.exports = router;    

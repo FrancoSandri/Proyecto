@@ -26,6 +26,7 @@ button.addEventListener("click", async (event)=>{
             "Content-type": "application/json;charset=UTF-8",
             "Access-Control-Allow-Credentials": true
         },
+        credentials:'include',
         body: JSON.stringify(data)
     })
     const respData = await response.json();
