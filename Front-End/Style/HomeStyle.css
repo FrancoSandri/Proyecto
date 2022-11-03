@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
 body{
   margin: 0;
 background-color: var(--primary-color);}
@@ -635,6 +636,25 @@ footer img
 .sesion .menu.active{
   opacity: 1;
   visibility: visible;
+}
+.profile.active
+{
+  background-image: url(../Fotos/Profile-icon2.webp);
+  background-size: 60px;
+  background-repeat: no-repeat;
+}
+.profile img.active
+{
+  visibility: hidden;
+} 
+.profile.desactive
+{
+  background-color: "";
+}
+.profile img
+{
+  width: 50px;
+  height: 50px;
 }
 .sesion .menu.desactive
 {
