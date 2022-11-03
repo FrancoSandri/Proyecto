@@ -13,7 +13,7 @@ const submithandler = (e) =>{
 form.addEventListener("submit", submithandler)
 button.addEventListener("click", async (event)=>{
     event.preventDefault();
-    apiURL = "http://localhost:3001/t"
+    apiURL = "http://localhost:3001/logout"
 
     const response = await fetch(apiURL, {
         method: 'POST',
