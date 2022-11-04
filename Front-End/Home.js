@@ -7,6 +7,7 @@ const checkAuth = async ()=> {
         return resp.json()
     }).then((data)=>{
         document.getElementById("bienvenidoUser").innerText = "Bienvenid@ a  Satolution " + data.email
+        document.getElementById("Changing-Account").innerText = data.email
     })
 
     

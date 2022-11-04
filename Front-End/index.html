@@ -56,7 +56,7 @@
         <div class="sesion">
             <div class="menu">
                 <h3>Profile</h3>
-                <h6>example@gmail.com</h6>
+                <h6 id="Changing-Account">example@gmail.com</h6>
                 <a href="RecoverPassword.html">Cambiar Contraseña</a>
                 <a href="mailto:satolution@outlook.com?Subject=Me%20Contacto%20para">Ayuda</a>
                 <a id="Cerrar"href="" onclick="SessionToggle();">Cerrar Sesion</a>    
@@ -79,6 +79,7 @@
     const navbar = document.querySelector(".navbar");
     const menuBtn = document.querySelector(".menu-btn");
     const cancelBtn = document.querySelector(".cancel-btn");
+    const letters = document.querySelector(".menu-list a");
     menuBtn.onclick = ()=>{
       navbar.classList.add("show");
       menuBtn.classList.add("hide");
@@ -91,6 +92,7 @@
     }
     window.onscroll = ()=>{
       this.scrollY > 50 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+      this.scrollY > 50 ? letters.classList.add("sticky") : navbar.classList.remove("sitcky");
     }
   </script>
     </header>
@@ -99,7 +101,7 @@
     <div class="Contenedor">
         <div class="BackGround">
             <div class="BackGround-titles">
-                <h1 id="bienvenidoUser"> Bienvenido a Satolution</h1>
+                <h1 id="bienvenidoUser"> Bienvenid@ a Satolution</h1>
             </div>
             <form action="Home.php">
                 <button class="boton" >Mapa</button>
@@ -170,7 +172,7 @@
             <div class="Text-titles">
             <h2>Contactanos</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. pora minima sequi veritatis, debitis dolor enim atque tempore veniam voluptatibus officia voluptatum quo.</p>
-            <form action="Home.php">
+            <form>
                 <button class="boton" ><a id="mail-direction" href="mailto:satolution@outlook.com?Subject=Me%20Contacto%20para">Contactanos</a></button>
             </form>   
             </div>  
@@ -211,6 +213,7 @@
         const toggleMenu = document.querySelector('.menu');
         const togglePorfile = document.querySelector(".profile")
         const togglePicture = document.querySelector(".profile img")
+        
         toggleMenu.classList.toggle('active')
         togglePorfile.classList.toggle("active")
         togglePicture.classList.toggle("active")
