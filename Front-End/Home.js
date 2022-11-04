@@ -3,8 +3,10 @@ const checkAuth = async ()=> {
         credentials: "include"
     }).then((resp)=> {
         if(resp.status == 403)
-        console.log("SOS GAYYY")
+            document.getElementById("Sesion").style.display = "none"
+            console.log("SOS GAYYY")
         return resp.json()
+        
     }).then((data)=>{
         document.getElementById("bienvenidoUser").innerText = "Bienvenid@ a  Satolution " + data.email
         document.getElementById("Changing-Account").innerText = data.email
