@@ -250,11 +250,13 @@ h2/*Black Titles*/
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 25% 5%;
   margin-bottom: 5%;
 }
 .Text-box img
 {
+  padding-top: 50px;
   width: 80%;
   height: 80%;
 }
