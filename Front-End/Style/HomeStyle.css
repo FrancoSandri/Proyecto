@@ -177,6 +177,7 @@ background-color: var(--primary-color);}
 #icon
 {
   cursor: pointer;
+  z-index: 10000;
 }
 :root 
 {
@@ -189,8 +190,6 @@ background-color: var(--primary-color);}
   --secondary-color: #fff;
 }
 /*DarkMode Button*/
-
-  /*Estilo Base*/
 /*Prefabs Mobile*/
 *{font-family: "poppins";}
 h1 /*Background titles*/

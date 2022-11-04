@@ -12,7 +12,6 @@ const checkAuth = async ()=> {
             Login.style.display = "none"
             Register.style.display = "none"
         }
-
     })
 
     
