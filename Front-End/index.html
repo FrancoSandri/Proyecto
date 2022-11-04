@@ -79,7 +79,6 @@
     const navbar = document.querySelector(".navbar");
     const menuBtn = document.querySelector(".menu-btn");
     const cancelBtn = document.querySelector(".cancel-btn");
-    const letters = document.querySelector(".menu-list a");
     menuBtn.onclick = ()=>{
       navbar.classList.add("show");
       menuBtn.classList.add("hide");
@@ -92,7 +91,6 @@
     }
     window.onscroll = ()=>{
       this.scrollY > 50 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
-      this.scrollY > 50 ? letters.classList.add("sticky") : navbar.classList.remove("sitcky");
     }
   </script>
     </header>
@@ -232,12 +230,12 @@
         display.style.display = "none"
     }
 </script>
-<!--<script>
+<script>
     var Login = document.querySelector('#Login-Sesion')
     var Register = document.querySelector('#Register-Sesion')
     var buttonClosesession = document.querySelector('#Cerrar')
-var a = 3
-if(a == 3)
+    var a = document.getElementById("Changing-Account")
+if(a != "")
 {
     console.log('hola')
     Login.style.display = "none"
@@ -248,6 +246,6 @@ function SessionToggle()
     Login.style.display = ''
     Register.style.display = ''
 }
-</script>-->
+</script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script> AOS.init();</script>
