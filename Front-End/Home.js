@@ -8,6 +8,11 @@ const checkAuth = async ()=> {
     }).then((data)=>{
         document.getElementById("bienvenidoUser").innerText = "Bienvenid@ a  Satolution " + data.email
         document.getElementById("Changing-Account").innerText = data.email
+        if (data.email == data.email){
+            Login.style.display = "none"
+            Register.style.display = "none"
+        }
+
     })
 
     
