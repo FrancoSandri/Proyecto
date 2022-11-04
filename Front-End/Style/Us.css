@@ -366,6 +366,13 @@ label:active:after{
 {
   display: flex;
 }
+.Home 
+{
+ background-image: url("../Fotos/Nosotros-BackGround.png");
+ background-size: contain;
+ background-repeat: no-repeat;
+ height: 1000px;
+}
 .SobreNo
 {
   display: flex;
