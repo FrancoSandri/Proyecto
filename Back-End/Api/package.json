@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node Back-End/Api/Src/routes/index.js",
     "dev": "nodemon src/index.js"
   },
   "keywords": [],
