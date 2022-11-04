@@ -1,12 +1,10 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
 body{
   margin: 0;
-background-color: var(--primary-color);}
-*
-{
   font-family: "poppins";
-}
+background-color: var(--primary-color);}
 /*Barra Menu*/
 /* custom scroll bar */
 ::-webkit-scrollbar {
@@ -31,8 +29,8 @@ background-color: var(--primary-color);}
   padding: 25px 0;
   transition: all 0.3s ease;
   z-index: 1000;
-  
 }
+
 .navbar.sticky{
   background: var(--primary-color);
   padding: 10px 0;
@@ -44,17 +42,10 @@ background-color: var(--primary-color);}
   align-items: center;
   justify-content: space-between;
 }
-#darkmode-toggle
-{
-  margin-left: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.logo img
+.logo
 {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
 }
 .navbar .logo a{
@@ -90,7 +81,7 @@ background-color: var(--primary-color);}
 }
 .banner{
   background: url("banner.jpg") no-repeat;
-    ight: 100vh;
+  right: 100vh;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -111,6 +102,14 @@ background-color: var(--primary-color);}
   font-size: 20px;
   cursor: pointer;
   display: none;
+}
+#icon
+{
+  position: fixed;
+  bottom: 15px;
+  right: 70px;
+  width: 25px;
+  height: 25px;
 }
 .menu-list .cancel-btn{
   position: absolute;
@@ -179,6 +178,7 @@ background-color: var(--primary-color);}
 #icon
 {
   cursor: pointer;
+  z-index: 10000;
 }
 :root 
 {
@@ -231,6 +231,7 @@ label:active:after{
   width: 30px; 
 }
 /*User*/
+/*User*/
 .sesion
 {
   margin-left: 10px;
@@ -239,7 +240,7 @@ label:active:after{
   position: relative;
 }
 .sesion .menu{
-  top: 350px;
+  top: 400px;
   left: 60px;
   justify-content: center;
   background-color:var(--primary-color);
@@ -247,7 +248,7 @@ label:active:after{
   border-radius: 15px;
   padding: 10px 20px;
   width: 250px;
-  height: 350px;
+  height: 300px;
   transition: 0.5s;
   visibility: hidden;
   opacity: 0;
@@ -256,6 +257,25 @@ label:active:after{
 .sesion .menu.active{
   opacity: 1;
   visibility: visible;
+}
+.profile.active
+{
+  background-image: url(../Fotos/Profile-icon2.webp);
+  background-size: 60px;
+  background-repeat: no-repeat;
+}
+.profile img.active
+{
+  visibility: hidden;
+} 
+.profile.desactive
+{
+  background-color: "";
+}
+.profile img
+{
+  width: 50px;
+  height: 50px;
 }
 .sesion .menu.desactive
 {
@@ -289,6 +309,7 @@ label:active:after{
 }
 #Cerrar
 {
+  margin-top: 0;
   background-color: #4461F2;
   text-align: center;
   color: #fff;
@@ -296,6 +317,21 @@ label:active:after{
 }
 .sesion .menu a:hover {
   color:#216968;
+}
+/*User Desktop*/
+@media (min-width: 720px)
+{
+  
+  .sesion .menu
+  {
+    top: 100px;
+    left: auto;
+    right: 30px;
+  }
+  #Cerrar
+  {
+    margin-top: 20%;
+  }
 }
 .logo img
 {
