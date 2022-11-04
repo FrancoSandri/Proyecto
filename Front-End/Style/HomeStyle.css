@@ -455,7 +455,7 @@ h2/*Black Titles*/
 /*Empeza ya Mobile*/
 .Empeza-ya
 {
-  background-image: url(../Fotos/Home-EmpezaYa.png);
+  background-image: url(../Fotos/Home-EmpezaYa.webp);
   text-align: center;
   padding: 50px;
 }
@@ -618,13 +618,13 @@ footer img
   position: relative;
 }
 .sesion .menu{
-  top: 400px;
-  left: 60px;
+  top: 220px;
+  left: 50px;
   justify-content: center;
   background-color:var(--primary-color);
   box-sizing:0 5px 25px rgba(0,0,0,0.1);
   border-radius: 15px;
-  padding: 10px 20px;
+  padding: 5px 20px 10px 20px;
   width: 250px;
   height: 300px;
   transition: 0.5s;
