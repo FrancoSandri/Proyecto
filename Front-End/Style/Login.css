@@ -75,11 +75,13 @@ body
     padding: 10px;
     border-radius: 10px;
     border: 1px solid;
-    border-color: #b5b5b5;
+    border-color: transparent;
+    background-color: #eaf0f7;
 }
+::placeholder{color: #4f555a;}
 .Register input:hover
 {
-    border-color: #216968;
+    border-color: transparent;
 }
 .Sesion
 {
@@ -90,7 +92,7 @@ body
     border: 0;
     border-radius: 10px;
     justify-content: center;
-    background-color: #216968;
+    background-color: #4461f2;
     color: #fff;
 }
 h5
@@ -112,7 +114,7 @@ h5
 button:hover
 {
     transition-delay: .1s;
-    background-color: rgba(88, 88, 88, 0.336);
+    background-color: #314ac6;
 }
 h4
 {
