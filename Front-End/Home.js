@@ -6,7 +6,7 @@ const checkAuth = async ()=> {
         console.log("SOS GAYYY")
         return resp.json()
     }).then((data)=>{
-        document.getElementById("bienvenidoUser").innerText = "Bienvenido a  Satolution " + data.email
+        document.getElementById("bienvenidoUser").innerText = "Bienvenid@ a  Satolution " + data.email
     })
 
     
