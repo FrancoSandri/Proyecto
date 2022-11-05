@@ -5,9 +5,6 @@
  const mysql = require('mysql')
  const jwt = require("jsonwebtoken");
  const cookieParser = require("cookie-parser")
- const express = require("express");
- const app = express();
- const bcrypt = require("bcrypt");
  const db = mysql.createConnection({
      host: "localhost",
      user: "root",
@@ -189,9 +186,41 @@ router.use(cookieParser())
      .status(200)
      .json({ message: "Successfully logged out 😏 🍀" });
  });
+ 
+ router.post('/registro-plantas', authorization, async (req, res) => {
+    const {NombreCampo, NombreCultivo, Cordenadas, CantidadAgua} = req.body
+    if(NombreCampo && NombreCultivo && Cordenadas && CantidadAgua)
+    {
+        const isRplantValid = validateRPlant(rPlant)
+        if(isRplantValid)
+        {
+            try 
+            {
+                let sql = `INSERT into registros (NombreCampo, NombreCultivo, Cordenadas, CantidadAgua) values ('${NombreCampo}','${NombreCultivo}','${Cordenadas}','${CantidadAgua}')`
+                db.query(sql, (err, result) => {
+                    if (err) throw err
+                    res.status(201).send('Field registred correctly')
+                })
+                return
+            }
+            catch { res.status(500).send() }       
+        }
+        else res.send('A field already exists with this name')
+    }   
+    else res.status(400).send('You must complete all the fields') 
+})
  function validateEmail(email)
  {
      let sql = `SELECT * FROM usuarios WHERE email = '${email}'`
+     var output = syncSql.mysql(config, sql)
+     db.query(sql, (err, result) => {
+         if (err) throw err
+     })
+     return output.data
+ }
+ function validateRPlant(rPlant)
+ {
+     let sql = `SELECT * FROM usuarios WHERE email = '${rPlant}'`
      var output = syncSql.mysql(config, sql)
      db.query(sql, (err, result) => {
          if (err) throw err
