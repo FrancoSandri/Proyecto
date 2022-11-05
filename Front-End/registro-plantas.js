@@ -2,7 +2,7 @@ const button = document.getElementById("button")
 const form = document.getElementById("form")
 const form1 = document.getElementById("form1")
 const submithandler = (e) =>{
-    e.preventDefault();
+    e.preventDefault()
 }
 form.addEventListener("submit", submithandler)
 form1.addEventListener("submit", submithandler)
@@ -13,6 +13,7 @@ button.addEventListener("click", function(event){
     const data = {
         "NombreCampo" : document.getElementById("NombreCampoInput").value,
         "NombreCultivo" : document.getElementById("NombreCultivoInput").value,
+        "CantidadAgua" : document.getElementById("CantidadAguaInput").value,
         "Cordenadas" : document.getElementById("CordenadasInput").value
     }
 
@@ -20,6 +21,7 @@ button.addEventListener("click", function(event){
         method: "POST",
         headers: {"Content-type": "application/json;charset=UTF-8"},
         mode: "cors",
+        credentials:'include',
         body: JSON.stringify(data)
     }).then(response => response.json())
     .then(json => console.log(json))

@@ -372,6 +372,7 @@ label:active:after{
  background-size: contain;
  background-repeat: no-repeat;
  height: 1000px;
+ width: 100%
 }
 .SobreNo
 {
