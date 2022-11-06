@@ -633,7 +633,6 @@ footer img
   left: 50px;
   justify-content: center;
   background-color:var(--primary-color);
-  box-sizing:0 5px 25px rgba(0,0,0,0.1);
   border-radius: 15px;
   padding: 5px 20px 10px 20px;
   width: 250px;
@@ -720,6 +719,8 @@ footer img
     top: 100px;
     left: auto;
     right: 30px;
+    border: 2px solid;
+    border-color: #0000001a;
   }
   .sesion .menu h3
   {
