@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta lang="es" />
+    <meta charset="utf-8" />
+    <title>Satolution</title>
+    <link href="Style/map.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="shortcut icon" href="Fotos/favicon-32x32.png" />
+</head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<header>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo">
+        <a href="index.html"><img src="Fotos/Logo44.webp" alt="Logo"></a>
+        </div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"onclick="menuToggle();"></i>
+        </div>
+        <li><a href="#">Mapa</a></li>
+        <li><a href="Us.html">Nosotros</a></li>
+        <li id="Login-Sesion"><a href="Login.html">Iniciar Sesión</a></li>
+        <li id="Register-Sesion"><a href="Register.html">Registrarse</a></li>
+        <div id="Sesion" class="sesion">
+            <div class="menu">
+                <h3>Profile</h3>
+                <h6 id="Changing-Account">User</h6>
+                <a href="RecoverPassword.html">Cambiar Contraseña</a>
+                <a href="Plants.html">Agregar Campo</a>
+                <a href="mailto:satolution@outlook.com?Subject=Me%20Contacto%20para">Ayuda</a>
+                <a id="Cerrar"href="" onclick="SessionToggle();">Cerrar Sesion</a>    
+            </div>
+            <div class="profile" onclick="menuToggle();">
+                <img src="Fotos/Home-profile.webp">
+            </div>        
+        </div>
+        
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"onclick="menuToggle();"></i>
+    </div>
+    </div>
+  </nav>
+  <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    const profilePicture = document.querySelector(".profile");
+    menuBtn.onclick = ()=>{
+      navbar.classList.add("show");
+      menuBtn.classList.add("hide");
+      body.classList.add("disabled");
+      profilePicture.style.display = "none"
+    }
+    cancelBtn.onclick = ()=>{
+      body.classList.remove("disabled");
+      navbar.classList.remove("show");
+      menuBtn.classList.remove("hide");
+      profilePicture.style.display = ""
+    }
+  </script>
+</header>
+<body>
+
+</body>
+
+<!--Profile-->
+<script>
+    function menuToggle(){
+        const toggleMenu = document.querySelector('.menu');
+        const togglePorfile = document.querySelector(".profile")
+        const togglePicture = document.querySelector(".profile img")
+        
+        toggleMenu.classList.toggle('active')
+        togglePorfile.classList.toggle("active")
+        togglePicture.classList.toggle("active")
+    }
+</script>
+
+<script>
+            var profile = document.querySelector(".profile")
+
+    if(screen.width > 1080)
+    {
+        profile.style.display = ""
+    }
+    else 
+    {
+        display.style.display = "none"
+    }
+</script>
+<script>
+    var Login = document.querySelector('#Login-Sesion')
+    var Register = document.querySelector('#Register-Sesion')
+    var buttonClosesession = document.querySelector('#Cerrar')
+
+</script>
