@@ -1,7 +1,5 @@
 const button = document.getElementById("button")
 const form = document.getElementById("form")
-// const newPassword = document.getElementById("newPasswordInput")
-// const email = document.getElementById("emailInput")
 const submithandler = (e) =>{
     e.preventDefault();
 }
