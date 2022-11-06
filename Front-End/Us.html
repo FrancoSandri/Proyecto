@@ -8,7 +8,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='Style/Us.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
         (function(d){
            var s = d.createElement("script");
@@ -91,9 +91,9 @@
     <div class="Container">
         <img src="Fotos/moon-icon.webp" alt="Dark-Mode" id="icon">
         <div class="Home">
-            
+            <img src="fotos/Nosotros-BackGround.png" alt="">
         </div>
-        <div class="SobreNo">
+        <div data-aos="fade-up" class="SobreNo">
             <div class="SobreNo-titles">
             <h1>Un poco sobre nosotros</h1>
             <p>Somos un grupo de cuatro estudiantes de ORT que al principio no teníamos muy en claro que queríamos hacer, hasta que nos surgió una idea bastante distintiva. En un principio, mencionar un proyecto que involucre satélites era una imaginación, pero entre charlas y personas metidas en este tema nos dimos cuenta que alcanzar este sueño iba a ser complicado pero realizable. Después de investigar, hablar con expertos en el tema e indagar más allá, pudimos llegar a una idea, pero se vio frustrada por diversos factores.
@@ -160,3 +160,6 @@
     var buttonClosesession = document.querySelector('#Cerrar')
 
 </script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script> AOS.init();</script>

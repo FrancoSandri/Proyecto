@@ -46,6 +46,11 @@ background-color: var(--primary-color);}
   display: flex;
   flex-direction: row;
   align-items: center;
+  
+}
+.logo img
+{
+  margin-top: 10px;
 }
 .navbar .logo a{
   color: var(--secondary-color);
@@ -157,10 +162,10 @@ background-color: var(--primary-color);}
     left: 0%;
   }
   .navbar .menu-list li{
-    margin-top: 45px;
+    margin-top: 20px;
   }
   .navbar .menu-list li a{
-    font-size: 23px;
+    font-size: 16px;
     margin-left: -100%;
     transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
@@ -171,6 +176,10 @@ background-color: var(--primary-color);}
 @media (max-width: 380px) {
   .navbar .logo a{
     font-size: 27px;
+  }
+  .navbar .menu-list li a
+  {
+    font-size: 23px;
   }
 }
   /*Dark Mode*/
@@ -306,7 +315,7 @@ h2/*Black Titles*/
 }
 .BackGround-titles
 {
-  padding-top: 13%;
+  padding-top:60%;
 }
 /*Que es satolution mobile*/
 
@@ -525,6 +534,10 @@ footer img
     flex-direction: column;
     margin: 25px 50px;
   }
+  .BackGround-titles
+{
+  padding-top:12%;
+}
   .Que-es
   {
     padding-bottom: 10%;
@@ -620,11 +633,10 @@ footer img
   position: relative;
 }
 .sesion .menu{
-  top: 220px;
+  top: 50%;
   left: 50px;
   justify-content: center;
   background-color:var(--primary-color);
-  box-sizing:0 5px 25px rgba(0,0,0,0.1);
   border-radius: 15px;
   padding: 5px 20px 10px 20px;
   width: 250px;
@@ -664,27 +676,29 @@ footer img
 }
 .sesion .menu h3{
   color: var(--secondary-color);
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
   text-align: left;
   text-align: center;
+  display: none;
 }
 .sesion .menu h6
 {
   color: var(--secondary-color);
-  font-size: 12px;
   text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
 }
 .sesion .menu a{
   color: var(--secondary-color);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   display: flex;
   flex-direction: column;
   text-decoration: none;
   padding: 10px 0;
-  
   border-top: 1px solid #EAF0F7;
+  margin-top: 10px;
 
 }
 #Cerrar
@@ -694,6 +708,8 @@ footer img
   text-align: center;
   color: #fff;
   border-radius: 10px;
+  width: 100%;
+  margin-top: 10px;
 }
 .sesion .menu a:hover {
   color:#216968;
@@ -707,9 +723,29 @@ footer img
     top: 100px;
     left: auto;
     right: 30px;
+    border: 2px solid;
+    border-color: #0000001a;
+  }
+  .sesion .menu h3
+  {
+    display: block;
+    margin: 25px 0;
+  }
+  .sesion .menu h6
+  {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .sesion .menu a
+  {
+    font-size: 16px;
+    align-items: left;
+    margin: 0;
   }
   #Cerrar
   {
     margin-top: 20%;
+    margin: 0;
   }
 }
