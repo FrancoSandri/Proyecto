@@ -1,32 +1,27 @@
-const algo = async () => {
-    const res = await fetch("http://localhost:3001/get-all")
-    const data = await res.json()
-    console.log(data)
-}
-algo()
 const button = document.getElementById("button")
-const inputerr = document.getElementById("passwordInput");
 const form = document.getElementById("form")
+// const newPassword = document.getElementById("newPasswordInput")
+// const email = document.getElementById("emailInput")
 const submithandler = (e) =>{
     e.preventDefault();
 }
 form.addEventListener("submit", submithandler)
 button.addEventListener("click", async (event)=>{
     event.preventDefault();
-    apiURL = "http://localhost:3001/name-cheacked"
-
+    apiURL = "http://localhost:3001/password-reset"
+    
     const data = {
-        "email" : document.getElementById("emailInput").value
+        "email": document.getElementById("emailInput").value,
+        "password": document.getElementById("newPasswordInput").value
     }
-    console.log(data);
-    const response = await fetch(apiURL, {
-        method: "POST",
+     await fetch(apiURL, {
+        method: "PUT",
         headers: {
-            "Content-type": "application/json;charset=UTF-8",
-            "Access-Control-Allow-Credentials": true
+            "Content-type": "application/json;charset=UTF-8"
         },
+        mode: "cors",
+        credentials: 'include',
         body: JSON.stringify(data)
-    })
-    const respData = await response.json();
-    console.log(respData)
+    }).then(response=>console.log(response.json()))
+    .catch(error=>console.log(error))
 }, false);

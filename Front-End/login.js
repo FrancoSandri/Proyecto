@@ -28,6 +28,8 @@ button.addEventListener("click", async (event)=>{
         },
         credentials:'include',
         body: JSON.stringify(data)
+    }).then((response)=>{
+        localStorage.setItem("idUser")
     })
     const respData = await response.json();
     console.log(respData)

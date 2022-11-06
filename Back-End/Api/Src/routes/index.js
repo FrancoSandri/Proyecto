@@ -8,14 +8,14 @@
  const db = mysql.createConnection({
      host: "localhost",
      user: "root",
-     password: "rootroot",
+     password: "",
      database: "Satolution"
  }) 
  const syncSql = require('sync-sql')
  var config = {
      host : "localhost",
      user: "root",
-     password : "rootroot",
+     password : "",
      database : "Satolution"
  }
  db.connect((err) => {
@@ -53,6 +53,13 @@ router.use(cookieParser())
          res.send(result)
      })
  })
+ router.get('/get-campos', authorization, (req, res) => {
+    let sql = 'SELECT * from registrosplantas'
+    db.query(sql, (err, result) => {
+        if (err) throw err
+        res.send(result)
+    })
+})
  router.get('/:id', (req, res) => {
      const { id } = req.params
      let sql = `select * from usuarios where id = ${id}`
@@ -63,31 +70,21 @@ router.use(cookieParser())
      })
  })
  router.post('/name-cheacked', (req, res) => {
-     let sql = `SELECT * FROM usuario WHERE email = '${email}'`
-     db.query(sql, (err, result) => {
+     let sql = `SELECT * FROM usuario WHERE email = '?'`
+     db.query(sql, req.body, (err, result) => {
          if (err) throw err
          if (result.affectedRows != 0) res.send('User cheacked successfully')
          else res.status(404).send('User not cheaked')
      })
  })
- router.put('/password-reset', checkUserExistance, async (req, res) => {
-     const {email, password} = req.body
-     if(email && password)
-     {
-         const IsUser = checkUserExistance(email)
-         if(IsUser)
-         {
-             const Password = password;
-             let sql = `UPDATE usuario SET password = '${Password}' WHERE email = ${email}`
+ router.put('/password-reset',  async (req, res) => {
+     const {password, email} = req.body
+     let sql = `UPDATE usuarios SET password = ${password} WHERE email = "${email}"`
              db.query(sql, (err, result) => {
-                 if(err) throw err
-                 res.send('User updated successfully')
+                 if(err) res.status(500).send({err})
+                 
+                 res.status(200).send({message:"User updated successfully", result})
              })
-         }
-         else res.status(404).send('User not found')
-     }
-     else res.status(400).send('You must complete all the fields')
-  
  })
  router.delete('/:id', (req, res) => {
      const { id } = req.params
@@ -189,25 +186,30 @@ router.use(cookieParser())
  
  router.post('/registro-plantas', authorization, async (req, res) => {
     const {NombreCampo, NombreCultivo, Cordenadas, CantidadAgua} = req.body
-    if(NombreCampo && NombreCultivo && Cordenadas && CantidadAgua)
+    if(NombreCampo && NombreCultivo && Cordenadas && CantidadAgua )
     {
-        const isRplantValid = validateRPlant(rPlant)
-        if(isRplantValid)
-        {
-            try 
+        try 
             {
-                let sql = `INSERT into registros (NombreCampo, NombreCultivo, Cordenadas, CantidadAgua) values ('${NombreCampo}','${NombreCultivo}','${Cordenadas}','${CantidadAgua}')`
+                let sql = `INSERT INTO registrosplantas(NombreCultivo, NombreCampo, Cordenadas, CantidadAgua) VALUES ('${NombreCampo}','${NombreCultivo}','${Cordenadas}','${CantidadAgua}')`
                 db.query(sql, (err, result) => {
                     if (err) throw err
                     res.status(201).send('Field registred correctly')
                 })
                 return
             }
-            catch { res.status(500).send() }       
-        }
-        else res.send('A field already exists with this name')
+            catch { res.status(500).send() }   
     }   
     else res.status(400).send('You must complete all the fields') 
+
+ router.delete('/:id-plantas', (req, res) => {
+    const { id } = req.params
+        let sql = `DELETE from registrosplantas WHERE id = ${id}`
+        db.query(sql, (err, result) => {
+            if (err) throw err
+            if (result.affectedRows != 0) res.send('The field has been deleted successfully')
+            else res.status(404).send('Field not found')
+        })
+    })
 })
  function validateEmail(email)
  {
@@ -217,21 +219,6 @@ router.use(cookieParser())
          if (err) throw err
      })
      return output.data
- }
- function validateRPlant(rPlant)
- {
-     let sql = `SELECT * FROM usuarios WHERE email = '${rPlant}'`
-     var output = syncSql.mysql(config, sql)
-     db.query(sql, (err, result) => {
-         if (err) throw err
-     })
-     return output.data
- }
- function checkUserExistance(email)
- {
-     let sql = `SELECT * FROM usuario WHERE email = '${email}'`
-     var output = syncSql.mysql(config, sql)
-     return output.data.rows.length != 0
  }
 
  const createError = require('http-errors')

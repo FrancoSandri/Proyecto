@@ -6,8 +6,6 @@
     <title>Satolution|Mis campos</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="Style/Login.css" rel="stylesheet" type="text/css" />
-    <script src='main.js'></script>
-    <script src='help.js'></script>
     <link href="Icons/css/uicons-bold-rounded.css" rel="stylesheet">
     <style>
      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
@@ -44,20 +42,24 @@
                 <h1>Ingresar nuevo campo</h1>
                 <h3>Ingresa los valores para crear un nuevo campo</h3>
             </div>
-            <form class="From">
+            <form class="From" id="form1">
                 <h5>Nombre del campo</h5>
-                    <input type="email" id="emailInput" placeholder="name">
+                    <input type="email" id="NombreCampoInput" placeholder="Nombre">
                 <h5>Nombre del cultivo</h5> 
-                    <input type="password" id="passwordInput" placeholder="plant">
+                    <input type="text" id="NombreCultivoInput" placeholder="Planta">
+                <h5>Cantidad de Agua</h5>
+                    <input type="text" id="CantidadAguaInput" placeholder="1000Ml">
+                <h5>Cordenadas del Campo</h5> 
+                    <input type="password" id="CordenadasInput" placeholder="Cordenadas">  
             </form>
-            <form id="form" action="index.html">
-                <button class="Sesion" id="button" onclick="location.href='index.html'" type="button">Crear campo</button>
+            <form action="index.html" id="form">
+                <button class="Sesion" id="button" type="button">Guardar Campo</button>
             </form>
         </div>
         <div class="Imagenes">
             <img src="Fotos/LoginBackGround.webp" alt="Reference Picture">
         </div>
     </div>
-    <script src= 'login.js'></script>
+    <script src='registro-plantas.js'></script>
 </body>
 </html>
