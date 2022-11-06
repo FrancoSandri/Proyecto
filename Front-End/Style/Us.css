@@ -380,6 +380,7 @@ label:active:after{
 {
   display: flex;
   flex-direction: column;
+  color: var(--secondary-color);
 }
 @media (min-width: 720px)
 {
