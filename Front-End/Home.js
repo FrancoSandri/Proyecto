@@ -10,6 +10,7 @@ const checkAuth = async ()=> {
     }).then((data)=>{
         document.getElementById("bienvenidoUser").innerText = "Bienvenid@ a  Satolution " + data.email
         document.getElementById("Changing-Account").innerText = data.email
+        console.log(data)
         if (data.email == data.email){
             Login.style.display = "none"
             Register.style.display = "none"

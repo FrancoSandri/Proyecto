@@ -37,13 +37,14 @@ router.use(cookieParser())
        const data = jwt.verify(token, process.env.SECRET_KEY);
        req.email = data.email;
        req.password = data.password;
+       req.id = data.id
        return next();
      } catch {
        return res.sendStatus(403);
      }
    };
    router.get("/check-user", authorization, (req,res)=> {
-    res.json({email: req.email})
+    res.json({email: req.email, id: req.id})
    })
  //Routes
  router.get('/get-all', authorization, (req, res) => {
@@ -131,15 +132,15 @@ router.use(cookieParser())
 
  router.post('/login', async (req, res) => {
      const { email, password } = req.body
-     const token = jwt.sign({ email: req.body.email, password: req.body.password }, process.env.SECRET_KEY, { expiresIn: "5m" });
-     let sql = `SELECT password from usuarios WHERE email = '${email}'`
+     let sql = `SELECT password, Id from usuarios WHERE email = '${email}'`
      db.query(sql, async (err, result) => {
-      
+         
          if(err) throw err
          let Password
          if(result.length != 0) Password = result[0].password
          else return res.status(404).send('User not found')
-      
+         
+         const token = jwt.sign({ email: req.body.email, password: req.body.password, id: result[0].id }, process.env.SECRET_KEY, { expiresIn: "5m" });
          try 
          {
              if (password == Password) {
