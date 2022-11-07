@@ -8,14 +8,14 @@
  const db = mysql.createConnection({
      host: "localhost",
      user: "root",
-     password: "",
+     password: "rootroot",
      database: "Satolution"
  }) 
  const syncSql = require('sync-sql')
  var config = {
      host : "localhost",
      user: "root",
-     password : "",
+     password : "rootroot",
      database : "Satolution"
  }
  db.connect((err) => {
