@@ -268,9 +268,17 @@ font-family: 'poppins';
     margin-top: 20%;
     margin: 0;
   }
-  .Mapa{
+  /* .Mapa{
     height: calc(100vh-70px);
     margin-top: 70px;
     margin-bottom: 0px;
-  }
+  } */
+  #map{
+    position: fixed;
+    height:600px;
+    width: 100%;
+    border-radius: 10px;
+    top: 85px;
+    left: 0;
+}
 }
