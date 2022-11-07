@@ -31,7 +31,7 @@ font-family: 'poppins';
   margin-top: 10px;
 }
 .navbar .logo a{
-  color: var(--secondary-color);
+  color: #000;
   font-size: 30px;
   font-weight: 600;
   text-decoration: none;
@@ -48,10 +48,10 @@ font-family: 'poppins';
 }
 .menu-list i, .icon-menu-btn
 {
-  color: var(--secondary-color);
+  color: #000;
 }
 .menu-list li a{
-  color: var(--secondary-color);
+  color: #000;
   font-size: 18px;
   font-weight: 500;
   margin-left: 25px;
@@ -62,7 +62,7 @@ font-family: 'poppins';
   color: #007bff;
 }
 .icon{
-  color: var(--secondary-color);
+  color: #000;
   font-size: 20px;
   cursor: pointer;
   display: none;
@@ -156,7 +156,7 @@ font-family: 'poppins';
   top: 50%;
   left: 50px;
   justify-content: center;
-  background-color:var(--primary-color);
+  background-color:#EAF0F7;
   border-radius: 15px;
   padding: 5px 20px 10px 20px;
   width: 250px;
@@ -195,7 +195,7 @@ font-family: 'poppins';
   visibility: hidden;
 }
 .sesion .menu h3{
-  color: var(--secondary-color);
+  color: #000;
   font-size: 12px;
   font-weight: 600;
   text-align: left;
@@ -204,13 +204,13 @@ font-family: 'poppins';
 }
 .sesion .menu h6
 {
-  color: var(--secondary-color);
+  color: #000;
   text-align: center;
   font-size: 16px;
   margin-top: 10px;
 }
 .sesion .menu a{
-  color: var(--secondary-color);
+  color: #000;
   font-size: 16px;
   font-weight: 400;
   display: flex;
