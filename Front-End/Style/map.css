@@ -8,10 +8,11 @@ font-family: 'poppins';
 /*Barra Menu*/
 /* custom scroll bar */
 .navbar{
-  position: fixed;
+  position: sticky;
   width: 100%;
   height: 70px;
   z-index: 1000;
+  
 }
 .navbar .content{
   display: flex;
@@ -59,24 +60,6 @@ font-family: 'poppins';
 }
 .menu-list li a:hover{
   color: #007bff;
-}
-.banner{
-  background: url("banner.jpg") no-repeat;
-  right: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-.about{
-  padding: 30px 0;
-}
-.about .title{
-  font-size: 38px;
-  font-weight: 700;
-}
-.about p{
-  padding-top: 20px;
-  text-align: justify;
 }
 .icon{
   color: var(--secondary-color);
@@ -132,7 +115,7 @@ font-family: 'poppins';
     display: block;
     padding: 40px 0;
     text-align: center;
-    background: var(--primary-color);
+    background: #fff;
     transition: all 0.3s ease;
   }
   .navbar.show .menu-list{
