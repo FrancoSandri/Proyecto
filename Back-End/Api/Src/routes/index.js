@@ -37,6 +37,7 @@ router.use(cookieParser())
        const data = jwt.verify(token, process.env.SECRET_KEY);
        req.email = data.email;
        req.password = data.password;
+       console.log(data)
        req.id = data.id
        return next();
      } catch {
@@ -55,7 +56,7 @@ router.use(cookieParser())
      })
  })
  router.get('/get-campos', authorization, (req, res) => {
-    let sql = 'SELECT * from registrosplantas'
+    let sql = 'SELECT * from registrosplantas WHERE id = "' + req.id + '"'
     db.query(sql, (err, result) => {
         if (err) throw err
         res.send(result)
@@ -139,8 +140,7 @@ router.use(cookieParser())
          let Password
          if(result.length != 0) Password = result[0].password
          else return res.status(404).send('User not found')
-         
-         const token = jwt.sign({ email: req.body.email, password: req.body.password, id: result[0].id }, process.env.SECRET_KEY, { expiresIn: "5m" });
+         const token = jwt.sign({ email: req.body.email, password: req.body.password, id: result[0].Id }, process.env.SECRET_KEY, { expiresIn: "5m" });
          try 
          {
              if (password == Password) {
@@ -191,7 +191,7 @@ router.use(cookieParser())
     {
         try 
             {
-                let sql = `INSERT INTO registrosplantas(NombreCultivo, NombreCampo, Cordenadas, CantidadAgua) VALUES ('${NombreCampo}','${NombreCultivo}','${Cordenadas}','${CantidadAgua}')`
+                let sql = `INSERT INTO registrosplantas(NombreCultivo, NombreCampo, Cordenadas, CantidadAgua, userId) VALUES ('${NombreCampo}','${NombreCultivo}','${Cordenadas}','${CantidadAgua}, '${req.id}'')`
                 db.query(sql, (err, result) => {
                     if (err) throw err
                     res.status(201).send('Field registred correctly')

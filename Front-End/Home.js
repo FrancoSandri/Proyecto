@@ -28,3 +28,12 @@ const SessionToggle = ()=> {
     window.location.reload()
 }
 checkAuth()
+
+const campos = async ()=> {
+    const res = await fetch("http://localhost:3001/get-campos", {
+        credentials: "include",
+    })
+    let data = await res.json()
+    console.log(data)
+}
+campos()
