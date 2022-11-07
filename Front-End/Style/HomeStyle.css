@@ -242,6 +242,10 @@ h2/*Black Titles*/
 
   font-weight: 800;
 }
+.boton:hover
+{
+  background-color: #2c4dee;
+}
 #mail-direction
 {
   text-decoration: none;
@@ -422,6 +426,7 @@ h2/*Black Titles*/
 /*Datos utiles*/
 .Datos-utiles
 {
+  padding: 0 10%;
   padding-top: 50px;
   display: flex;
   flex-direction: column-reverse;
@@ -668,6 +673,10 @@ footer img
 {
   width: 50px;
   height: 50px;
+}
+.profile img:hover
+{
+  filter: grayscale(1);
 }
 .sesion .menu.desactive
 {

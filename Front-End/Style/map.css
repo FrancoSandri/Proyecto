@@ -321,6 +321,10 @@ font-family: 'poppins';
   border: 0;
   color: #fff;
 }
+.From h4
+{
+  margin-bottom: 0;
+}
 .arrow
 {
   background-color: #007bff;
@@ -345,7 +349,7 @@ font-family: 'poppins';
   right: 0;
   top: 56%;
 }
-.arrow:hover, .arrowOpen:hover
+.arrow:hover, .arrowOpen:hover, #button:hover
 {
   background-color: #005abb;
 }
