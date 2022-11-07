@@ -17,6 +17,7 @@ font-family: 'poppins';
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-right: 50px;
 }
 .logo
 {
@@ -283,5 +284,10 @@ font-family: 'poppins';
   {
     margin-top: 20%;
     margin: 0;
+  }
+  .Mapa{
+    height: calc(100vh-70px);
+    margin-top: 70px;
+    margin-bottom: 0px;
   }
 }
