@@ -88,6 +88,23 @@
   <section>
     <div id="map"></div>
 </section>
+<div class="arrowOpen"><</div>
+<form class="From" id="form1">
+  <h4>Ingresar nuevo campo</h4>
+  <div class="arrow">></div>
+  <h5>Nombre del Campo</h5> 
+      <input type="text" id="NombreCultivoInput" placeholder="Nombre">
+  <h5>Nombre del Cultivo</h5>
+      <input type="email" id="NombreCampoInput" placeholder="Plantas">
+  <h5>Cantidad de Agua</h5>
+      <input type="text" id="CantidadAguaInput" placeholder="1000Ml">
+  <h5>Cordenadas del Campo</h5> 
+      <input type="password" id="CordenadasInput" placeholder="Cordenadas">  
+      <form action="index.html" id="form">
+        <button class="Sesion" id="button" onclick="location.href='index.html'" type="button">Guardar Campo</button>
+      </form>
+    </form>
+
 </body>
 
 <!--Profile-->
@@ -122,5 +139,19 @@
 </script>
 <script src='mapa.js'></script>
 <script src='map.js'></script>
+<script>
+  const arrow = document.querySelector('.arrow')
+  const arrowOpen = document.querySelector('.arrowOpen')
+  const From = document.querySelector('.From')
 
+  From.style.display = 'none'
+  arrow.onclick = function()
+  {
+    From.style.display = 'none'
+  }
+  arrowOpen.onclick = function()
+  {
+    From.style.display = ''
+  }
+</script>
 
