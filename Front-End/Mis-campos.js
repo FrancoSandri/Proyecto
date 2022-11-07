@@ -8,7 +8,6 @@ const checkAuth = async ()=> {
         return resp.json()
         
     }).then((data)=>{
-        document.getElementById("bienvenidoUser").innerText = "Bienvenid@ a  Satolution " + data.email
         document.getElementById("Changing-Account").innerText = data.email
         console.log(data)
         if (data.email == data.email){
@@ -19,7 +18,13 @@ const checkAuth = async ()=> {
 
     
 }
-checkAuth()
+const Miscampos = ()=>{
+    fetch("http://localhost:3001/get-campos", {
+        credentials: "include",
+        method: "GET"   
+    })
+    window.location.reload()
+}
 const SessionToggle = ()=> {
     fetch("http://localhost:3001/logout", {
         credentials: "include",
