@@ -23,21 +23,3 @@ const SessionToggle = ()=> {
     window.location.reload()
 }
 checkAuth()
-
-// API
-
-var mymap = L.map('mapid').fitWorld();
-
-
-L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
-    maxZoom: 20,
-    subdomains:['mt0','mt1','mt2','mt3']
-}).addTo(mymap);
-// L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Y6whCApnCOJzE1LhKnGj', {
-//     attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
-//     maxZoom: 20,
-
-//     tileSize: 512,
-//     zoomOffset: -1,
-  // search
-L.Control.geocoder().addTo(mymap);

@@ -273,7 +273,7 @@ font-family: 'poppins';
     margin-top: 70px;
     margin-bottom: 0px;
   } */
-  #mapid{
+  #map{
     position: fixed;
     height:600px;
     width: 100%;
