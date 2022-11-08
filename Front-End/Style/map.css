@@ -268,11 +268,6 @@ font-family: 'poppins';
     margin-top: 20%;
     margin: 0;
   }
-  /* .Mapa{
-    height: calc(100vh-70px);
-    margin-top: 70px;
-    margin-bottom: 0px;
-  } */
   #map{
     position: fixed;
     height:600px;
