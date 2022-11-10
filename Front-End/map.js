@@ -25,8 +25,8 @@ var drawnItems = new L.FeatureGroup();
   
       if (type === 'rectangle') {
           layer.on('click', function() {
-               coords = (layer.getLatLngs());
-               alert(coords);
+               let coords = (layer.getLatLngs());
+               console.log(coords);
           });
       }
   
