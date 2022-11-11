@@ -3,6 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<<<<<<< Updated upstream
     <title>Satolution|Nosotros</title>
     <script src='Us.js'></script>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -101,8 +102,72 @@
                 </p>
             </div>
             <img src="Fotos/Nosotros-SobreNosotros.webp" alt="">
+=======
+    <title>Satolution|Sobre Nosotros</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='Style/Us.css'>
+    <script src='main.js'></script>
+</head>
+<header>
+    <nav class="navbar">
+        <div class="content">
+          <div class="logo">
+            <a href="index.html"><img src="Fotos/Logo44.webp" alt=""></a>  
+          </div>
+          <ul class="menu-list">
+            <div class="icon cancel-btn">
+              <i class="fas fa-times"></i>
+            </div>
+            <li><a href="Us.html">Nosotros</a></li>
+            <li><a href="Login.html">Iniciar Sesión</a></li>
+            <li><a href="Register.html">Registrarse</a></li>
+            <div class="sesion">
+                <div class="menu">
+                    <h3>Profile</h3>
+                    <h6>example@gmail.com</h6>
+                    <a href="#">Mis cordenadas</a>
+                    <a href="RecoverPassword.html">Cambiar Contraseña</a>
+                    <a href="Help.html">Ayuda</a>
+                    <a id="Cerrar"href="">Cerrar Sesion</a>    
+                    <input type="checkbox" id="darkmode-toggle"/>
+                    <label for="darkmode-toggle">
+                </div>
+            </div> 
+            <div class="sesion">
+                <div class="profile" onclick="menuToggle();">
+                    <img src="Fotos/Home-profile.webp">
+                </div>        
+            </div>
+            
+          </ul>
+          <div class="icon menu-btn">
+            <i class="fas fa-bars"></i>
         </div>
-    </div>
+>>>>>>> Stashed changes
+        </div>
+      </nav>
+      <script>
+        const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        menuBtn.onclick = ()=>{
+          navbar.classList.add("show");
+          menuBtn.classList.add("hide");
+          body.classList.add("disabled");
+        }
+        cancelBtn.onclick = ()=>{
+          body.classList.remove("disabled");
+          navbar.classList.remove("show");
+          menuBtn.classList.remove("hide");
+        }
+        window.onscroll = ()=>{
+          this.scrollY > 50 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+        }
+      </script>
+</header>
+<body>
+    
 </body>
 </html>
 
