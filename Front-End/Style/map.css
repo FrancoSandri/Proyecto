@@ -269,10 +269,8 @@ font-family: 'poppins';
     margin: 0;
   }
   #map{
-    position: fixed;
-    height:600px;
-    width: 100%;
-    left: 0;
+    display: flex;
+    height: 600px;
   }
 }
 
@@ -282,7 +280,7 @@ font-family: 'poppins';
   z-index: 1000;
   position: absolute;
   right: 0px;
-  top: 30%;
+  top: 12%;
   /*Display*/
   display: flex;
   flex-direction: column;
@@ -337,10 +335,10 @@ font-family: 'poppins';
   width: 30px;
   height: 30px;
   text-align: center;
-
+  z-index: 1000;
   position: absolute;
   right: 0;
-  top: 56%;
+  top: 48%;
 }
 .arrow:hover, .arrowOpen:hover, #button:hover
 {
