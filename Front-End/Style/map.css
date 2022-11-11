@@ -234,6 +234,11 @@ font-family: 'poppins';
 .sesion .menu a:hover {
   color:#216968;
 }
+#map
+{
+  display: flex;
+  height: 600px;
+}
 /*User Desktop*/
 @media (min-width: 720px)
 {
