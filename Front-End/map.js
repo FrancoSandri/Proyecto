@@ -11,6 +11,7 @@ var drawnItems = new L.FeatureGroup();
            polygon: false,
            marker: false,
            circle:false,
+           polyline:false,
        },
          edit: {
              featureGroup: drawnItems,
@@ -23,12 +24,10 @@ var drawnItems = new L.FeatureGroup();
       var type = e.layerType,
           layer = e.layer;
   
-      if (type === 'rectangle') {
-          layer.on('click', function() {
+      if (type === 'rectangle'){
                let coords = (layer.getLatLngs());
                console.log(coords);
-          });
-      }
+          };
   
       drawnItems.addLayer(layer);
   });
