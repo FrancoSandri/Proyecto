@@ -11,6 +11,7 @@ var drawnItems = new L.FeatureGroup();
            polygon: false,
            marker: false,
            circle:false,
+           polyline: false,
        },
          edit: {
              featureGroup: drawnItems,
