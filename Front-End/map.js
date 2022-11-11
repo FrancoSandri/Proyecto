@@ -35,7 +35,7 @@ var drawnItems = new L.FeatureGroup();
 
 // Require client library and private key.
 var ee = require('@google/earthengine');
-var privateKey = require('./.private-key.json');
+var privateKey = require('./node_modules/package.json');
 
 // Initialize client library and run analysis.
 var runAnalysis = function() {
