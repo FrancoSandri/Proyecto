@@ -234,6 +234,11 @@ font-family: 'poppins';
 .sesion .menu a:hover {
   color:#216968;
 }
+#map
+{
+  display: flex;
+  height: 600px;
+}
 /*User Desktop*/
 @media (min-width: 720px)
 {
@@ -268,19 +273,10 @@ font-family: 'poppins';
     margin-top: 20%;
     margin: 0;
   }
-  /* .Mapa{
-    height: calc(100vh-70px);
-    margin-top: 70px;
-    margin-bottom: 0px;
-  } */
   #map{
-    position: fixed;
-    height:600px;
-    width: 100%;
-    border-radius: 10px;
-    top: 85px;
-    left: 0;
-}
+    display: flex;
+    height: 600px;
+  }
 }
 
 .From
@@ -289,7 +285,7 @@ font-family: 'poppins';
   z-index: 1000;
   position: absolute;
   right: 0px;
-  top: 30%;
+  top: 12%;
   /*Display*/
   display: flex;
   flex-direction: column;
@@ -344,10 +340,10 @@ font-family: 'poppins';
   width: 30px;
   height: 30px;
   text-align: center;
-
+  z-index: 1000;
   position: absolute;
   right: 0;
-  top: 56%;
+  top: 48%;
 }
 .arrow:hover, .arrowOpen:hover, #button:hover
 {

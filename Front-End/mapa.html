@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -21,15 +21,16 @@
  
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script> 
-
-    <script src="node_modules/leaflet-toolbar/dist/leaflet.toolbar.js"></script>
-    <link rel="stylesheet" href="node_modules/leaflet-toolbar/dist/leaflet.toolbar.css"/>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2.rc.2/leaflet.js"></script> 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2.rc.2/leaflet.css"> 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.js"></script> 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.css"> 
     <style id="compiled-css" type="text/css"></style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximumscale=1.0, user-scalable=no" />
+
 </head>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <header>
@@ -90,7 +91,7 @@
   <section>
     <div id="map"></div>
 </section>
-<div class="arrowOpen"><i class="bi bi-arrow-left-circle"></i></div>
+<div class="arrowOpen" id = "Slide" ><i class="bi bi-arrow-left-circle"></i></div>
 <form class="From" id="form1">
   <h4>Ingresar nuevo campo</h4>
   <div class="arrow"><i class="bi bi-arrow-right-circle"></i></div>
@@ -156,4 +157,7 @@
     From.style.display = ''
   }
 </script>
+
+
+
 

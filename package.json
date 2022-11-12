@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@google/earthengine": "^0.1.331",
     "leaflet-draw": "^1.0.4",
     "leaflet-toolbar": "^0.4.0-alpha.2"
   }

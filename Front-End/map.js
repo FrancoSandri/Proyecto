@@ -1,77 +1,84 @@
-var map = L.map('map',{drawControl: true}).setView([-34,-60],8);
+var map = L.map('map',{drawControl: false}).setView([-34,-60],8);
 
 L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
     maxZoom: 20,
     subdomains:['mt0','mt1','mt2','mt3']
 }).addTo(map);
-L.Control.geocoder().addTo(map);
+var drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+    var drawControl = new L.Control.Draw({
+      draw: {
+           polygon: false,
+           marker: false,
+           circle:false,
+           polyline:false,
+       },
+         edit: {
+             featureGroup: drawnItems,
+             edit:false
+         }
+     });
+     map.addControl(drawControl);
 
-// Initialise the FeatureGroup to store editable layers
-var editableLayers = new L.FeatureGroup();
-map.addLayer(editableLayers);
-
-// define custom marker
-var MyCustomMarker = L.Icon.extend({
-    options: {
-      shadowUrl: null,
-      iconAnchor: new L.Point(12, 12),
-      iconSize: new L.Point(24, 24),
-      iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Information_icon4_orange.svg'
-    }
+     map.on('draw:created', function (e) {
+      var type = e.layerType,
+          layer = e.layer;
+  
+      if (type === 'rectangle'){
+               let coords = (layer.getLatLngs());
+               console.log(coords);
+          };
+  
+      drawnItems.addLayer(layer);
   });
 
-var drawPluginOptions = {
-    position: 'topright',
-    draw: {
-      polyline: {
-        shapeOptions: {
-          color: '#f357a1',
-          weight: 10
-        }
-      },
-      polygon: {
-        allowIntersection: false, // Restricts shapes to simple polygons
-        drawError: {
-          color: '#e1e100', // Color the shape will turn when intersects
-          message: '<strong>Polygon draw does not allow intersections!<strong> (allowIntersection: false)' // Message that will show when intersect
-        },
-        shapeOptions: {
-          color: '#bada55'
-        }
-      },
-      circle: false, // Turns off this drawing tool
-      rectangle: {
-        shapeOptions: {
-          clickable: false
-        }
-      },
-      marker: {
-        icon: new MyCustomMarker()
-      }
-    },
-    edit: {
-      featureGroup: editableLayers, //REQUIRED!!
-      remove: false
-    }
-  };
-  // Initialise the draw control and pass it the FeatureGroup of editable layers
-  var drawControl = new L.Control.Draw(drawPluginOptions);
-  map.addControl(drawControl);
-  
-  
-  var editableLayers = new L.FeatureGroup();
-  map.addLayer(editableLayers);
-  
-  
-  
-  
-  map.on('draw:created', function(e) {
-    var type = e.layerType,
-      layer = e.layer;
-  
-    if (type === 'marker') {
-      layer.bindPopup('A popup!');
-    }
-  
-    editableLayers.addLayer(layer);
+
+// Require client library and private key.
+var ee = require('@google/earthengine');
+var privateKey = require('./node_modules/package.json');
+
+// Initialize client library and run analysis.
+var runAnalysis = function() {
+  ee.initialize(null, null, function() {
+    // ... run analysis ...
+  }, function(e) {
+    console.error('Initialization error: ' + e);
   });
+};
+
+// Authenticate using a service account.
+ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
+  console.error('Authentication error: ' + e);
+});
+
+let countries = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
+let roi = countries.filter(ee.Filter.eq("country_na", "Argentina"));
+let fecha_actual = date.today();
+
+let landsat = ee.ImageCollection("LANDSAT/LC08/C01/T1")
+  .filterDate('2021-01-01', str(fecha_actual))
+  .filterBounds(roi)
+  .filter(ee.Filter.eq('CLOUD_COVER', 0));
+
+let composite = ee.Algorithms.Landsat.simpleComposite({
+    'collection': landsat,
+    'asFloat': True
+    });
+
+let clip_ = ee.Image(landsat.mean()).clip(coords);
+
+let ndmi = clip_.normalizedDifference(['B5', 'B6']);
+
+let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF'];
+
+let ndmi_parameters = {'min': -1,
+                   'max': 1,
+                   'palette': palette,
+                   'region': mask};
+let vis_params = {
+    'min': 0,
+    'max': 1,
+    'palette': palette
+    };
+
+L.addLayer(ndmi,ndmi_parameters, campo);

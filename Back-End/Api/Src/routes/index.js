@@ -191,7 +191,7 @@ router.use(cookieParser())
     {
         try 
             {
-                let sql = `INSERT INTO registrosplantas(NombreCultivo, NombreCampo, Cordenadas, CantidadAgua, userId) VALUES ('${NombreCampo}','${NombreCultivo}','${Cordenadas}','${CantidadAgua}, '${req.id}'')`
+                let sql = `INSERT INTO registrosplantas(NombreCultivo, NombreCampo, Cordenadas, CantidadAgua, userId) VALUES ('${NombreCampo}','${NombreCultivo}','${Cordenadas}','${CantidadAgua}, '${data.id}'')`
                 db.query(sql, (err, result) => {
                     if (err) throw err
                     res.status(201).send('Field registred correctly')
@@ -200,7 +200,7 @@ router.use(cookieParser())
             }
             catch { res.status(500).send() }   
     }   
-    else res.status(400).send('You must complete all the fields') 
+    else res.status(400).json({message: 'You must complete all the fields'}) 
 
  router.delete('/:id-plantas', (req, res) => {
     const { id } = req.params
