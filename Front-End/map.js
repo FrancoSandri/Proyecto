@@ -25,7 +25,7 @@ var drawnItems = new L.FeatureGroup();
           layer = e.layer;
   
       if (type === 'rectangle'){
-               let coords = (layer.getLatLngs());
+               let coords = (layer.getLatLngs()); //variable de las coordenadas
                console.log(coords);
           };
   

@@ -5,6 +5,7 @@
  const mysql = require('mysql')
  const jwt = require("jsonwebtoken");
  const cookieParser = require("cookie-parser")
+ const registroIa= require("../../../../Front-End/map")
  const db = mysql.createConnection({
      host: "localhost",
      user: "root",
