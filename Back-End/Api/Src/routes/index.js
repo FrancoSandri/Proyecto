@@ -5,18 +5,18 @@
  const mysql = require('mysql')
  const jwt = require("jsonwebtoken");
  const cookieParser = require("cookie-parser")
- const registroIa= require("../../../../Front-End/map")
+ //const registroIa= require("../../../../Front-End/map")
  const db = mysql.createConnection({
      host: "localhost",
      user: "root",
-     password: "",
+     password: "rootroot",
      database: "Satolution"
  }) 
  const syncSql = require('sync-sql')
  var config = {
      host : "localhost",
      user: "root",
-     password : "",
+     password : "rootroot",
      database : "Satolution"
  }
  db.connect((err) => {
@@ -187,7 +187,7 @@ router.use(cookieParser())
  });
  
  router.post('/registro-plantas', authorization, async (req, res) => {
-    const {NombreCampo, NombreCultivo, Cordenadas, CantidadAgua} = req.body
+    const {NombreCampo, NombreCultivo, Cordenadas, CantidadAgua} = req.body//declarar cordenada como coords
     if(NombreCampo && NombreCultivo && Cordenadas && CantidadAgua )
     {
         try 
