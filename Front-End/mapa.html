@@ -101,7 +101,7 @@
   <h5>Cantidad de Agua</h5>
       <input type="text" id="CantidadAguaInput" placeholder="1000Ml">
       <form action="index.html" id="form">
-        <button class="Sesion" id="button" onclick="location.href='index.html'" type="button">Guardar Campo</button>
+        <button class="Sesion" id="button" type="button" onclick="saveToggle();">Guardar Campo</button>
       </form>
     </form>
 
@@ -154,7 +154,28 @@
     From.style.display = ''
   }
 </script>
+<script>
+  function saveToggle()
+  {
+     let clip_ = ee.Image(landsat.mean()).clip(coords);
 
+     let ndmi = clip_.normalizedDifference(['B5', 'B6']);
+
+     let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF'];
+
+    let ndmi_parameters = {'min': -1,
+                  'max': 1,
+                    'palette': palette,
+                    'region': coords};
+     let vis_params = {
+         'min': 0,
+         'max': 1,
+         'palette': palette
+     };
+
+     L.addLayer(ndmi,ndmi_parameters, NombreCultivoInput);
+  }
+</script>
 
 
 
