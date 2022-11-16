@@ -9,14 +9,14 @@
  const db = mysql.createConnection({
      host: "localhost",
      user: "root",
-     password: "rootroot",
+     password: "",
      database: "Satolution"
  }) 
  const syncSql = require('sync-sql')
  var config = {
      host : "localhost",
      user: "root",
-     password : "rootroot",
+     password : "",
      database : "Satolution"
  }
  db.connect((err) => {
@@ -187,12 +187,12 @@ router.use(cookieParser())
  });
  
  router.post('/registro-plantas', authorization, async (req, res) => {
-    const {NombreCampo, NombreCultivo, Cordenadas, CantidadAgua} = req.body//declarar cordenada como coords
-    if(NombreCampo && NombreCultivo && Cordenadas && CantidadAgua )
+    const {NombreCampo, NombreCultivo, coords, CantidadAgua} = req.body
+    if(NombreCampo && NombreCultivo && coords && CantidadAgua )
     {
         try 
             {
-                let sql = `INSERT INTO registrosplantas(NombreCultivo, NombreCampo, Cordenadas, CantidadAgua, userId) VALUES ('${NombreCampo}','${NombreCultivo}','${Cordenadas}','${CantidadAgua}, '${data.id}'')`
+                let sql = `INSERT INTO registrosplantas(NombreCultivo, NombreCampo, Cordenadas, CantidadAgua, userId) VALUES ('${NombreCampo}','${NombreCultivo}','${coords}','${CantidadAgua}, '${data.id}'')`
                 db.query(sql, (err, result) => {
                     if (err) throw err
                     res.status(201).send('Field registred correctly')

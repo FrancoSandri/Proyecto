@@ -28,6 +28,16 @@ var drawnItems = new L.FeatureGroup();
       if (type === 'rectangle'){
                let coords = (layer.getLatLngs()); //variable de las coordenadas
                console.log(coords);
+               fetch("http://localhost:3001/registro-plantas", {
+                credentials: "include",
+                headers: {
+                  "Content-type": "application/json;charset=UTF-8",
+                  "Access-Control-Allow-Credentials": true
+                },
+                method: "POST"
+            }).then(res => res.json())
+            .catch(err => console.log(err))
+            window.location.reload()
           };
   
       drawnItems.addLayer(layer);
