@@ -48,6 +48,7 @@ var drawnItems = new L.FeatureGroup();
 var ee = require('@google/earthengine');
 var np = require('numpy');
 var plt = require('matplotlib');
+var DateTime = require('datetime-js');
 var privateKey = require('@google/earthengine/package.json');
 
 // Initialize client library and run analysis.
@@ -67,7 +68,7 @@ ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
 //Colección de Earth Engine
 let countries = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
 let roi = countries.filter(ee.Filter.eq("country_na", "Argentina"));
-let fecha_actual = date.today();
+let fecha_actual = DateTime.today();
 
 let landsat = ee.ImageCollection("LANDSAT/LC08/C01/T1")
   .filterDate('2021-01-01', str(fecha_actual))
