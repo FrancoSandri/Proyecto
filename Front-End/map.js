@@ -37,7 +37,7 @@ var drawnItems = new L.FeatureGroup();
                 method: "POST"
             }).then(res => res.json())
             .catch(err => console.log(err))
-            window.location.reload()
+            window.location.reload()//Mirar esto pq buguea
           };
   
       drawnItems.addLayer(layer);
