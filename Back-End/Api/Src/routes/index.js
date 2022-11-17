@@ -9,7 +9,7 @@
  const np = require('numpy');
  const plt = require('matplotlib');
  const DateTime = require('datetime-js');
- const privateKey = require('@google/earthengine/package.json');
+ const privateKey = require('./.private-key.json');
 
  // Initialize client library and run analysis.
 var runAnalysis = function() {
@@ -296,7 +296,7 @@ router.get('/getSateliteImages', (req, res) => {
         'asFloat': True
     });
 
-    res.json({'landsat': landsat, 'ee': ee});
+    res.json({'landsat':landsat, 'ee':ee});
 })
 
  module.exports = router;
