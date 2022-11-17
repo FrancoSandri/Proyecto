@@ -37,7 +37,7 @@ var drawnItems = new L.FeatureGroup();
                 method: "POST"
             }).then(res => res.json())
             .catch(err => console.log(err))
-            window.location.reload()//Mirar esto pq buguea
+            // window.location.reload()//Mirar esto pq buguea
           };
   
       drawnItems.addLayer(layer);
@@ -45,11 +45,11 @@ var drawnItems = new L.FeatureGroup();
 
 
 // Require client library and private key.
-var ee = require('@google/earthengine');
-var np = require('numpy');
-var plt = require('matplotlib');
-var DateTime = require('datetime-js');
-var privateKey = require('@google/earthengine/package.json');
+const ee = require('@google/earthengine');
+const np = require('numpy');
+const plt = require('matplotlib');
+const DateTime = require('datetime-js');
+const privateKey = require('@google/earthengine/package.json');
 
 // Initialize client library and run analysis.
 var runAnalysis = function() {
