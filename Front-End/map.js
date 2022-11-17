@@ -1,46 +1,49 @@
+//Mapa
 var L = window.L;
 var map = L.map('map',{drawControl: false}).setView([-34,-60],8);
 
 L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
-    maxZoom: 20,
-    subdomains:['mt0','mt1','mt2','mt3']
+  maxZoom: 20,
+  subdomains:['mt0','mt1','mt2','mt3']
 }).addTo(map);
 var drawnItems = new L.FeatureGroup();
-        map.addLayer(drawnItems);
-    var drawControl = new L.Control.Draw({
-      draw: {
-           polygon: false,
-           marker: false,
-           circle:false,
-           polyline:false,
-       },
-         edit: {
-             featureGroup: drawnItems,
-             edit:false
-         }
-     });
-     map.addControl(drawControl);
+map.addLayer(drawnItems);
+var drawControl = new L.Control.Draw({
+  draw: {
+    polygon: false,
+    marker: false,
+    circle:false,
+    polyline:false,
+  },
+  edit: {
+    featureGroup: drawnItems,
+    edit:false
+  }
+});
+map.addControl(drawControl);
 
-     map.on('draw:created', function (e) {
-      var type = e.layerType,
-          layer = e.layer;
+map.on('draw:created', function (e) {
+  var type = e.layerType,
+  layer = e.layer;
   
-      if (type === 'rectangle'){
-               let coords = (layer.getLatLngs()); //variable de las coordenadas
-               console.log(coords);
-               fetch("http://localhost:3001/registro-plantas", {
-                credentials: "include",
-                headers: {
-                  "Content-type": "application/json;charset=UTF-8",
-                  "Access-Control-Allow-Credentials": true
-                },
-                method: "POST"
-            }).then(res => res.json())
-            .catch(err => console.log(err))
-            // window.location.reload()//Mirar esto pq buguea
-          };
-  
-      drawnItems.addLayer(layer);
+  if (type === 'rectangle'){
+    let coords = (layer.getLatLngs()); //variable de las coordenadas
+    console.log(coords);
+    fetch("http://localhost:3001/registro-plantas", {
+    credentials: "include",
+    headers: {
+      "Content-type": "application/json;charset=UTF-8",
+      "Access-Control-Allow-Credentials": true
+    },
+    body:{
+      
+    },
+    method: "POST"
+}).then(res => res.json())
+.catch(err => console.log(err))
+};
+
+drawnItems.addLayer(layer);
   });
 
 
