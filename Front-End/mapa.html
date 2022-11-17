@@ -2,70 +2,75 @@
 <html lang="es">
 
 <head>
-    <meta lang="es" />
-    <meta charset="utf-8" />
-    <title>Satolution</title>
-    <link href="Style/map.css" rel="stylesheet" type="text/css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <script type="text/javascript" src="/browserify.js"></script> -->
-    <!-- Icons-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <link rel="shortcut icon" href="Fotos/favicon-32x32.png" />
-    <!-- #Icons -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  <meta lang="es" />
+  <meta charset="utf-8" />
+  <title>Satolution</title>
+  <link href="Style/map.css" rel="stylesheet" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="bundle.js"></script>
+  <!-- <script type="text/javascript" src="/browserify.js"></script> -->
+  <!-- Icons-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="shortcut icon" href="Fotos/favicon-32x32.png" />
+  <!-- #Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
- 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script> 
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2.rc.2/leaflet.js"></script> 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2.rc.2/leaflet.css"> 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.js"></script> 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.css"> 
 
-    <style id="compiled-css" type="text/css"></style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2.rc.2/leaflet.js"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2.rc.2/leaflet.css">
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.js"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.css">
+
+  <style id="compiled-css" type="text/css"></style>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
 </head>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <header>
   <nav class="navbar">
     <div class="content">
       <div class="logo">
         <a href="index.html"><img src="Fotos/Logo44.webp" alt="Logo"></a>
-        </div>
+      </div>
       <ul class="menu-list">
         <div class="icon cancel-btn">
-          <i class="fas fa-times"onclick="menuToggle();"></i>
+          <i class="fas fa-times" onclick="menuToggle();"></i>
         </div>
         <li><a href="mapa.html">Mapa</a></li>
         <li><a href="Us.html">Nosotros</a></li>
         <li id="Login-Sesion"><a href="Login.html">Iniciar Sesión</a></li>
         <li id="Register-Sesion"><a href="Register.html">Registrarse</a></li>
         <div id="Sesion" class="sesion">
-            <div class="menu">
-                <h3>Profile</h3>
-                <h6 id="Changing-Account">User</h6>
-                <a href="RecoverPassword.html">Cambiar Contraseña</a>
-                <a href="mailto:satolution@outlook.com?Subject=Me%20Contacto%20para">Ayuda</a>
-                <a id="Cerrar"href="" onclick="SessionToggle();">Cerrar Sesion</a>    
-            </div>
-            <div class="profile" onclick="menuToggle();">
-                <img src="Fotos/Home-profile.webp">
-            </div>        
+          <div class="menu">
+            <h3>Profile</h3>
+            <h6 id="Changing-Account">User</h6>
+            <a href="RecoverPassword.html">Cambiar Contraseña</a>
+            <a href="mailto:satolution@outlook.com?Subject=Me%20Contacto%20para">Ayuda</a>
+            <a id="Cerrar" href="" onclick="SessionToggle();">Cerrar Sesion</a>
+          </div>
+          <div class="profile" onclick="menuToggle();">
+            <img src="Fotos/Home-profile.webp">
+          </div>
         </div>
-        
+
       </ul>
       <div class="icon menu-btn">
-        <i class="fas fa-bars"onclick="menuToggle();"></i>
-    </div>
+        <i class="fas fa-bars" onclick="menuToggle();"></i>
+      </div>
     </div>
   </nav>
   <script>
@@ -74,13 +79,13 @@
     const menuBtn = document.querySelector(".menu-btn");
     const cancelBtn = document.querySelector(".cancel-btn");
     const profilePicture = document.querySelector(".profile");
-    menuBtn.onclick = ()=>{
+    menuBtn.onclick = () => {
       navbar.classList.add("show");
       menuBtn.classList.add("hide");
       body.classList.add("disabled");
       profilePicture.style.display = "none"
     }
-    cancelBtn.onclick = ()=>{
+    cancelBtn.onclick = () => {
       body.classList.remove("disabled");
       navbar.classList.remove("show");
       menuBtn.classList.remove("hide");
@@ -88,58 +93,57 @@
     }
   </script>
 </header>
+
 <body>
   <section>
     <div id="map"></div>
-</section>
-<div class="arrowOpen" id = "Slide" ><i class="bi bi-arrow-left-circle"></i></div>
-<form class="From" id="form1">
-  <h4>Ingresar nuevo campo</h4>
-  <div class="arrow"><i class="bi bi-arrow-right-circle"></i></div>
-  <h5>Nombre del Campo</h5> 
-      <input type="text" id="NombreCultivoInput" placeholder="Nombre">
-  <h5>Nombre del Cultivo</h5>
-      <input type="email" id="NombreCampoInput" placeholder="Plantas">
-  <h5>Cantidad de Agua</h5>
-      <input type="text" id="CantidadAguaInput" placeholder="1000Ml">
-      <form action="index.html" id="form">
-        <button class="Sesion" id="button" type="button" onclick="saveToggle();">Guardar Campo</button>
-      </form>
+  </section>
+  <div class="arrowOpen" id="Slide"><i class="bi bi-arrow-left-circle"></i></div>
+  <form class="From" id="form1">
+    <h4>Ingresar nuevo campo</h4>
+    <div class="arrow"><i class="bi bi-arrow-right-circle"></i></div>
+    <h5>Nombre del Campo</h5>
+    <input type="text" id="NombreCultivoInput" placeholder="Nombre">
+    <h5>Nombre del Cultivo</h5>
+    <input type="email" id="NombreCampoInput" placeholder="Plantas">
+    <h5>Cantidad de Agua</h5>
+    <input type="text" id="CantidadAguaInput" placeholder="1000Ml">
+    <form action="index.html" id="form">
+      <button class="Sesion" id="button" type="button" onclick="saveToggle();">Guardar Campo</button>
     </form>
+  </form>
 
 </body>
 
 <!--Profile-->
 <script>
-    function menuToggle(){
-        const toggleMenu = document.querySelector('.menu');
-        const togglePorfile = document.querySelector(".profile")
-        const togglePicture = document.querySelector(".profile img")
-        
-        toggleMenu.classList.toggle('active')
-        togglePorfile.classList.toggle("active")
-        togglePicture.classList.toggle("active")
-    }
+  function menuToggle() {
+    const toggleMenu = document.querySelector('.menu');
+    const togglePorfile = document.querySelector(".profile")
+    const togglePicture = document.querySelector(".profile img")
+
+    toggleMenu.classList.toggle('active')
+    togglePorfile.classList.toggle("active")
+    togglePicture.classList.toggle("active")
+  }
 </script>
 
 <script>
-            var profile = document.querySelector(".profile")
+  var profile = document.querySelector(".profile")
 
-    if(screen.width > 1080)
-    {
-        profile.style.display = ""
-    }
-    else 
-    {
-        display.style.display = "none"
-    }
+  if (screen.width > 1080) {
+    profile.style.display = ""
+  }
+  else {
+    display.style.display = "none"
+  }
 </script>
 <script>
-    var Login = document.querySelector('#Login-Sesion')
-    var Register = document.querySelector('#Register-Sesion')
-    var buttonClosesession = document.querySelector('#Cerrar')
+  var Login = document.querySelector('#Login-Sesion')
+  var Register = document.querySelector('#Register-Sesion')
+  var buttonClosesession = document.querySelector('#Cerrar')
 </script>
-<script src="map.js"></script>
+<!-- <script src="map.js"></script> -->
 <script src="mapa.js"></script>
 <script>
   const arrow = document.querySelector('.arrow')
@@ -147,19 +151,16 @@
   const From = document.querySelector('.From')
 
   From.style.display = 'none'
-  arrow.onclick = function()
-  {
+  arrow.onclick = function () {
     From.style.display = 'none'
   }
-  arrowOpen.onclick = function()
-  {
+  arrowOpen.onclick = function () {
     From.style.display = ''
   }
 </script>
-<script> 
+<script>
   //Apreta el boton
-  async function saveToggle()
-  {
+  async function saveToggle() {
     const response = await fetch("http://localhost:3001/getSateliteImages", {
       credentials: "include",
       headers: {
@@ -167,28 +168,27 @@
         "Access-Control-Allow-Credentials": true
       },
     }).then(res => res.json())
-    .catch(err => console.log(err))
+      .catch(err => console.log(err))
     response.json()
 
-     let clip_ = response.ee.Image(response.landsat.mean()).clip(coords);
+    let clip_ = response.ee.Image(response.landsat.mean()).clip(coords);
 
-     let ndmi = clip_.normalizedDifference(['B5', 'B6']);
+    let ndmi = clip_.normalizedDifference(['B5', 'B6']);
 
-     let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF'];
+    let palette = ['#FFFFFF', '#9FA3F3', '#5157CB', '#1500FF'];
 
-    let ndmi_parameters = {'min': -1,
+    let ndmi_parameters = {
+      'min': -1,
       'max': 1,
       'palette': palette,
-      'region': coords};
-     let vis_params = {
+      'region': coords
+    };
+    let vis_params = {
       'min': 0,
       'max': 1,
       'palette': palette
-     };
+    };
 
-     L.addLayer(ndmi, ndmi_parameters, NombreCultivoInput);
+    L.addLayer(ndmi, ndmi_parameters, NombreCultivoInput);
   }
 </script>
-
-
-
