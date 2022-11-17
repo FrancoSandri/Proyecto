@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@google/earthengine": "^0.1.331",
+    "browserify": "^17.0.0",
     "datetime-js": "^4.0.0",
     "leaflet-draw": "^1.0.4",
     "leaflet-toolbar": "^0.4.0-alpha.2",
