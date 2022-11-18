@@ -1,3 +1,5 @@
+// import { console } from "browserify/lib/builtins";
+
 //Mapa
 var map = L.map('map',{drawControl: false}).setView([-34,-60],8);
 
@@ -19,33 +21,37 @@ var drawControl = new L.Control.Draw({
     edit:false
   }
 });
-map.addControl(drawControl);
 
+
+map.addControl(drawControl);
+export let coords;
+localStorage.getItem("coords")
 map.on('draw:created', function (e) {
   var type = e.layerType,
   layer = e.layer;
   
   if (type === 'rectangle'){
-    let coords = (layer.getLatLngs()); //variable de las coordenadas
+    coords = (layer.getLatLngs()); //variable de las coordenadas
     console.log(coords);
-    fetch("http://localhost:3001/registro-plantas", {
-    credentials: "include",
-    headers: {
-      "Content-type": "application/json;charset=UTF-8",
-      "Access-Control-Allow-Credentials": true
-    },
-    body:{
-      
-    },
-    method: "POST"
-}).then(res => res.json())
-.catch(err => console.log(err))
-};
-
-drawnItems.addLayer(layer);
-  });
+    localStorage.setItem("coords", coords)
+  };
+  
+  drawnItems.addLayer(layer);
+});
 
 
+//     fetch("http://localhost:3001/registro-plantas", {
+  //     credentials: "include",
+  //     headers: {
+    //       "Content-type": "application/json;charset=UTF-8",
+//       "Access-Control-Allow-Credentials": true
+//     },
+//     body:{
+  
+//     },
+//     method: "POST"
+// }).then(res => res.json())
+// .catch(err => console.log(err))
 // // Require client library and private key.
 // // unpkg.com/:package@:version/:file
 // const ee = require('@google/earthengine');
@@ -128,7 +134,7 @@ drawnItems.addLayer(layer);
 // let arr = np.zeros([nrows, ncols], np.float32)
 // let counter =0
 // for(y in range(0,len(arr),1)){
-//     for(x in range(0,len(arr[0]),1)){
+  //     for(x in range(0,len(arr[0]),1)){
 //         if (lats[counter] == uniqueLats[y] && lons[counter] == uniqueLons[x] && counter < len(lats)-1){
 //             counter+=1
 //             arr[len(uniqueLats)-1-y,x] = data[counter]}}};

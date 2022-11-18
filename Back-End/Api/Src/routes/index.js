@@ -6,6 +6,7 @@
  const jwt = require("jsonwebtoken");
  const cookieParser = require("cookie-parser");
  const ee = require('@google/earthengine');
+//  import { coords } from "../../../../Front-End/map";
 //  const np = require('numpy');
 //  const plt = require('matplotlib');
  const DateTime = require('datetime-js');
@@ -28,14 +29,14 @@ var runAnalysis = function() {
  const db = mysql.createConnection({
      host: "localhost",
      user: "root",
-     password: "",
+     password: "rootroot",
      database: "Satolution"
  }) 
  const syncSql = require('sync-sql')
  var config = {
      host : "localhost",
      user: "root",
-     password : "",
+     password : "rootroot",
      database : "Satolution"
  }
  db.connect((err) => {
@@ -207,11 +208,10 @@ router.use(cookieParser())
  
  router.post('/registro-plantas', authorization, async (req, res) => {
     const {NombreCampo, NombreCultivo, coords, CantidadAgua} = req.body
-    if(NombreCampo && NombreCultivo && coords && CantidadAgua )
-    {
+    console.log(req.body)
         try 
             {
-                let sql = `INSERT INTO registrosplantas(NombreCultivo, NombreCampo, Cordenadas, CantidadAgua, userId) VALUES ('${NombreCampo}','${NombreCultivo}','${coords}','${CantidadAgua}, '${data.id}'')`
+                let sql = `INSERT INTO registrosplantas(NombreCultivo, NombreCampo, Cordenadas, CantidadAgua) VALUES ('${NombreCampo}','${NombreCultivo}','${coords}','${CantidadAgua}')`
                 db.query(sql, (err, result) => {
                     if (err) throw err
                     res.status(201).send('Field registred correctly')
@@ -219,8 +219,6 @@ router.use(cookieParser())
                 return
             }
             catch { res.status(500).send() }   
-    }   
-    else res.status(400).json({message: 'You must complete all the fields'}) 
 
  router.delete('/:id-plantas', (req, res) => {
     const { id } = req.params

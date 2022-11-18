@@ -2,7 +2,7 @@ module.exports = {
     localDatabase : {
         host : "localhost",
         user : "root",
-        password : "",
+        password : "rootroot",
         database : "satolution"
     }
 }    

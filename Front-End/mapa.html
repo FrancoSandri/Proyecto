@@ -99,11 +99,12 @@
   <h5>Nombre del Campo</h5> 
       <input type="text" id="NombreCultivoInput" placeholder="Nombre">
   <h5>Nombre del Cultivo</h5>
-      <input type="email" id="NombreCampoInput" placeholder="Plantas">
+      <input type="text" id="NombreCampoInput" placeholder="Plantas">
   <h5>Cantidad de Agua</h5>
       <input type="text" id="CantidadAguaInput" placeholder="1000Ml">
-      <form action="index.html" id="form">
-        <button class="Sesion" id="button" type="button" onclick="saveToggle();">Guardar Campo</button>
+      <form action="./index.html" method="post" id="form">
+        <button class="Sesion" id="button" type="button">Guardar Campo</button>
+        <button class="Sesion" id="button-2" type="button" onclick="analizarToggle();">Analizar Campo</button>
       </form>
     </form>
 
@@ -139,8 +140,6 @@
     var Register = document.querySelector('#Register-Sesion')
     var buttonClosesession = document.querySelector('#Cerrar')
 </script>
-<script src="map.js"></script>
-<script src="mapa.js"></script>
 <script>
   const arrow = document.querySelector('.arrow')
   const arrowOpen = document.querySelector('.arrowOpen')
@@ -158,38 +157,40 @@
 </script>
 
  <script> 
-//   //Apreta el boton
-//   async function saveTogglee()
-//   {
-//     const response = await fetch("http://localhost:3001/getSateliteImages", {
-//       credentials: "include",
-//       headers: {
-//         "Content-type": "application/json;charset=UTF-8",
-//         "Access-Control-Allow-Credentials": true
-//       },
-//     }).then(res => res.json())
-//     .catch(err => console.log(err))
-//     response.json()
+   //Apreta el boton
+   async function analizarToggle()
+   {
+     const response = await fetch("http://localhost:3001/getSateliteImages", {
+       credentials: "include",
+       headers: {
+         "Content-type": "application/json;charset=UTF-8",
+         "Access-Control-Allow-Credentials": true
+       },
+     }).then(res => res.json())
+     .catch(err => console.log(err))
+     response.json()
 
-//      let clip_ = response.ee.Image(response.landsat.mean()).clip(coords);
+      let clip_ = response.ee.Image(response.landsat.mean()).clip(coords);
 
-//      let ndmi = clip_.normalizedDifference(['B5', 'B6']);
+      let ndmi = clip_.normalizedDifference(['B5', 'B6']);
 
-//      let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF'];
+      let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF'];
 
-//     let ndmi_parameters = {'min': -1,
-//       'max': 1,
-//       'palette': palette,
-//       'region': coords};
-//      let vis_params = {
-//       'min': 0,
-//       'max': 1,
-//       'palette': palette
-//      };
+     let ndmi_parameters = {'min': -1,
+       'max': 1,
+       'palette': palette,
+       'region': coords};
+      let vis_params = {
+       'min': 0,
+       'max': 1,
+       'palette': palette
+      };
 
-//      L.addLayer(ndmi, ndmi_parameters, NombreCultivoInput);
-//   }
+      L.addLayer(ndmi, ndmi_parameters, NombreCultivoInput);
+   }
 </script>
-
+<script type = 'module' src="map.js"></script>
+<script src="mapa.js"></script>
+<script type="module" src="registro-plantas.js"></script>
 
  
