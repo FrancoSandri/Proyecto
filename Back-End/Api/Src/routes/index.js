@@ -9,7 +9,6 @@
 //  const np = require('numpy');
 //  const plt = require('matplotlib');
  const DateTime = require('datetime-js');
- const privateKey = require('./.private-key.json');
 
  // Initialize client library and run analysis.
 var runAnalysis = function() {
@@ -21,7 +20,7 @@ var runAnalysis = function() {
   };
   
   // Authenticate using a service account.
-  ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
+  ee.data.authenticateViaPrivateKey(process.env.privateKey, runAnalysis, function(e) {
     console.error('Authentication error: ' + e);
   });
 
@@ -280,7 +279,7 @@ router.post('/isNotLoggedIn', verifyToken, (req, res) => {
     })
 })
 
-router.get('/getSateliteImages', authorization, (req, res) => {
+router.get('/getSateliteImages', (req, res) => {//Auth?
     //Colección de Earth Engine
     let countries = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
     let roi = countries.filter(ee.Filter.eq("country_na", "Argentina"));

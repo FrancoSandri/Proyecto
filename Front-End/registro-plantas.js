@@ -14,7 +14,6 @@ button.addEventListener("click", function(event){
         "NombreCampo" : document.getElementById("NombreCampoInput").value,
         "NombreCultivo" : document.getElementById("NombreCultivoInput").value,
         "CantidadAgua" : document.getElementById("CantidadAguaInput").value,
-        "Cordenadas" : document.getElementById("CordenadasInput").value
     }
 
     const response = fetch(apiURL, {
@@ -27,3 +26,4 @@ button.addEventListener("click", function(event){
     .then(json => console.log(json))
     .catch(err => console.log('Solicitud fallida', err));
 }, false);
+

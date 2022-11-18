@@ -156,39 +156,40 @@
     From.style.display = ''
   }
 </script>
-<script> 
-  //Apreta el boton
-  async function saveToggle()
-  {
-    const response = await fetch("http://localhost:3001/getSateliteImages", {
-      credentials: "include",
-      headers: {
-        "Content-type": "application/json;charset=UTF-8",
-        "Access-Control-Allow-Credentials": true
-      },
-    }).then(res => res.json())
-    .catch(err => console.log(err))
-    response.json()
 
-     let clip_ = response.ee.Image(response.landsat.mean()).clip(coords);
+ <script> 
+//   //Apreta el boton
+//   async function saveTogglee()
+//   {
+//     const response = await fetch("http://localhost:3001/getSateliteImages", {
+//       credentials: "include",
+//       headers: {
+//         "Content-type": "application/json;charset=UTF-8",
+//         "Access-Control-Allow-Credentials": true
+//       },
+//     }).then(res => res.json())
+//     .catch(err => console.log(err))
+//     response.json()
 
-     let ndmi = clip_.normalizedDifference(['B5', 'B6']);
+//      let clip_ = response.ee.Image(response.landsat.mean()).clip(coords);
 
-     let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF'];
+//      let ndmi = clip_.normalizedDifference(['B5', 'B6']);
 
-    let ndmi_parameters = {'min': -1,
-      'max': 1,
-      'palette': palette,
-      'region': coords};
-     let vis_params = {
-      'min': 0,
-      'max': 1,
-      'palette': palette
-     };
+//      let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF'];
 
-     L.addLayer(ndmi, ndmi_parameters, NombreCultivoInput);
-  }
+//     let ndmi_parameters = {'min': -1,
+//       'max': 1,
+//       'palette': palette,
+//       'region': coords};
+//      let vis_params = {
+//       'min': 0,
+//       'max': 1,
+//       'palette': palette
+//      };
+
+//      L.addLayer(ndmi, ndmi_parameters, NombreCultivoInput);
+//   }
 </script>
 
 
-
+ 

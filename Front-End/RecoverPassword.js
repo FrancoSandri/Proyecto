@@ -22,4 +22,4 @@ button.addEventListener("click", async (event)=>{
         body: JSON.stringify(data)
     }).then(response=>console.log(response.json()))
     .catch(error=>console.log(error))
-}, false);
+}, false)
