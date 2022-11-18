@@ -169,7 +169,7 @@
      }).then(res => res.json())
      .catch(err => console.log(err))
      response.json()
-
+      let coords = localStorage.getItem("coords")
       let clip_ = response.ee.Image(response.landsat.mean()).clip(coords);
 
       let ndmi = clip_.normalizedDifference(['B5', 'B6']);
@@ -186,7 +186,7 @@
        'palette': palette
       };
 
-      L.addLayer(ndmi, ndmi_parameters, NombreCultivoInput);
+      L.tileLayer(ndmi, ndmi_parameters, NombreCultivoInput).addTo(map);
    }
 </script>
 <script type = 'module' src="map.js"></script>
