@@ -157,7 +157,54 @@
 </script>
 
  <script> 
-   //Apreta el boton
+   
+  var map = L.map('map',{drawControl: false}).setView([-34,-60],8);
+
+    var gee = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+      maxZoom: 20,
+      subdomains:['mt0','mt1','mt2','mt3']
+    }).addTo(map);
+    var drawnItems = new L.FeatureGroup();
+    map.addLayer(drawnItems);
+    var drawControl = new L.Control.Draw({
+      draw: {
+        polygon: false,
+        marker: false,
+        circle:false,
+        polyline:false,
+      },
+      edit: {
+        featureGroup: drawnItems,
+        edit:false
+      }
+    });
+
+
+  map.addControl(drawControl);
+  export let coords;
+  localStorage.getItem("coords")
+  map.on('draw:created', function (e) {
+    var type = e.layerType,
+    layer = e.layer;
+      
+    if (type === 'rectangle'){
+      coords = (layer.getLatLngs()); //variable de las coordenadas
+      console.log(coords);
+      localStorage.setItem("coords", coords)
+    };
+      
+    drawnItems.addLayer(layer);
+    });
+
+  var baseMaps = {
+    "Google Earth": gee
+  };
+
+  var layerControl = L.control.layers(baseMaps).addTo(map);
+
+  layerControl.addBaseLayer(coords,'hola');
+      
+  //Apreta el boton
    async function analizarToggle() //error fetch
    {
      const response = await fetch("http://localhost:3001/getSateliteImages", {
@@ -189,7 +236,7 @@
       L.tileLayer(ndmi, ndmi_parameters, NombreCultivoInput).addTo(map);
    }
 </script>
-<script type = 'module' src="map.js"></script>
+<!-- <script type = 'module' src="map.js"></script> -->
 <script src="mapa.js"></script>
 <script type="module" src="registro-plantas.js"></script>
 
