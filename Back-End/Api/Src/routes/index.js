@@ -55,10 +55,10 @@ router.use(cookieParser())
        return res.sendStatus(403);
      }
      try {
-       const data = jwt.verify(token, process.env.SECRET_KEY);
+       const dataToken = jwt.verify(token, process.env.SECRET_KEY);
        req.email = data.email;
        req.password = data.password;
-       console.log(data)
+       console.log(dataToken)
        req.id = data.id
        return next();
      } catch {
