@@ -293,7 +293,7 @@ router.get('/getSateliteImages', (req, res) => {//Auth?
         'asFloat': True
     });
 
-    res.json({'landsat':landsat, 'ee':ee});
+    res.json({'landsat':landsat});
 })
 
  module.exports = router;

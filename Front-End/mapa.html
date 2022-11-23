@@ -155,39 +155,35 @@
     From.style.display = ''
   }
 </script>
- <script>
-  //Apreta el boton
-   async function analizarToggle() //error fetch
-   {
-     const response = await fetch("http://localhost:3001/getSateliteImages", {
-       credentials: "include",
-       headers: {
-         "Content-type": "application/json;charset=UTF-8",
-         "Access-Control-Allow-Credentials": true
-       },
-     }).then(res => res.json())
-     .catch(err => console.log(err))
-     response.json()
-      let coords = localStorage.getItem("coords")
-      let clip_ = response.ee.Image(response.landsat.mean()).clip(coords);
+<script>
+  async function analizarToggle(){
+    const landsat = await fetch("http://localhost:3001/getSateliteImages", {
+    credentials: "include",
+    headers: {
+      "Content-type": "application/json;charset=UTF-8",
+      "Access-Control-Allow-Credentials": true
+    },
+    }).then(res => res.json())
+    .catch(err => console.log(err))
+    landsat.json()
 
-      let ndmi = clip_.normalizedDifference(['B5', 'B6']);
+    let coords = localStorage.getItem("coords")
+    let clip_ = ee.Image(landsat.mean()).clip(coords)
 
-      let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF'];
+    let ndmi = clip_.normalizedDifference(['B5', 'B6'])
 
-     let ndmi_parameters = {'min': -1,
-       'max': 1,
-       'palette': palette,
-       'region': coords};
-      let vis_params = {
-       'min': 0,
-       'max': 1,
-       'palette': palette
-      };
+    let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF']
 
-      L.tileLayer(ndmi, ndmi_parameters, NombreCultivoInput).addTo(map);
-   }
+    let ndmi_parameters = {'min': -1,
+      'max': 1,
+      'palette': palette,
+      'region': coords};
+
+    L.tileLayer(ndmi, ndmi_parameters, 'NombreCultivoInput').addTo(map);
+}
 </script>
+    
+
 <script src="map.js"></script>
 <script src="mapa.js"></script>
 <script type="module" src="registro-plantas.js"></script>
