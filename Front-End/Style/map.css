@@ -308,7 +308,7 @@ font-family: 'poppins';
   background-color: #cfdceb;
   padding: 10px 10px;
 }
-.From #button
+.From .Sesion
 {
   margin-top: 25px;
   border-radius: 10px;
@@ -343,7 +343,7 @@ font-family: 'poppins';
   z-index: 1000;
   position: absolute;
   right: 0;
-  top: 48%;
+  top: 350px;
 }
 .arrow:hover, .arrowOpen:hover, #button:hover
 {
