@@ -1,4 +1,7 @@
-// import { console } from "browserify/lib/builtins";
+const browserify = require('browserify')
+const ee = require('@google/earthengine');
+const DateTime = require('datetime-js');
+var privateKey = 'b30f3ebc6bbf6a319f326c6a95f48a1905b4c692';
 
 //Mapa
 var map = L.map('map',{drawControl: false}).setView([-34,-60],8);
@@ -43,58 +46,62 @@ var baseMaps = {
 };
 
 var layerControl = L.control.layers(baseMaps).addTo(map);
-async function analizarToggle(){
-  const response = await fetch("http://localhost:3001/getSateliteImages", {
-    method: "GET",
-  credentials: "include",
-  mode: "cors",
-    headers: {
-    "Content-type": "application/json;charset=UTF-8",
-    "Access-Control-Allow-Credentials": true
-  },
-  }).then(res => res.json())
-  .catch(err => console.log(err))
-  // landsat.json()
+//earth engine
+// Initialize client library and run analysis.
+var runAnalysis = function() {
+  ee.initialize(null, null, function() {
+    // ... run analysis ...
+  }, function(e) {
+    console.error('Initialization error: ' + e);
+  });
+};
 
-  let coords = localStorage.getItem("coords")
-  let clip_ = response.ee.Image(response.landsat.mean()).clip(coords)
+// Authenticate using a service account.
+ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
+  console.error('Authentication error: ' + e);
+});
 
-  let ndmi = clip_.normalizedDifference(['B5', 'B6'])
+let countries = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
+let roi = countries.filter(ee.Filter.eq("country_na", "Argentina"));
+let fecha_actual = DateTime.today();
 
-  let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF']
+let landsat = ee.ImageCollection("LANDSAT/LC08/C01/T1")
+.filterDate('2021-01-01', str(fecha_actual))
+.filterBounds(roi)
+.filter(ee.Filter.eq('CLOUD_COVER', 0));
 
-  let ndmi_parameters = {'min': -1,
-    'max': 1,
-    'palette': palette,
-    'region': coords};
+let composite = ee.Algorithms.Landsat.simpleComposite({
+    'collection': landsat,
+    'asFloat': True
+});
 
-  L.tileLayer(ndmi, ndmi_parameters, 'NombreCultivoInput').addTo(map);
-}
-
-//Apreta el boton
- //error fetch
-//   const response = fetch("http://localhost:3001/getSateliteImages", {
-//     credentials: "include",
+// async function analizarToggle(){
+//   const response = await fetch("http://localhost:3001/getSateliteImages", {
+//     method: "GET",
+//   credentials: "include",
+//   mode: "cors",
 //     headers: {
-//       "Content-type": "application/json;charset=UTF-8",
-//       "Access-Control-Allow-Credentials": true
-//     },
+//     "Content-type": "application/json;charset=UTF-8",
+//     "Access-Control-Allow-Credentials": true
+//   },
 //   }).then(res => res.json())
 //   .catch(err => console.log(err))
-//   response.json()
-//    let coords = localStorage.getItem("coords")
-//    let clip_ = response.ee.Image(response.landsat.mean()).clip(coords);
+//   // landsat.json()
 
-//    let ndmi = clip_.normalizedDifference(['B5', 'B6']);
+//   let coords = localStorage.getItem("coords")
+//   let clip_ = response.ee.Image(response.landsat.mean()).clip(coords)
 
-//    let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF'];
+//   let ndmi = clip_.normalizedDifference(['B5', 'B6'])
+
+//   let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF']
 
 //   let ndmi_parameters = {'min': -1,
 //     'max': 1,
 //     'palette': palette,
 //     'region': coords};
 
-//    L.tileLayer(ndmi, ndmi_parameters, 'NombreCultivoInput').addTo(map);
+//   L.tileLayer(ndmi, ndmi_parameters, 'NombreCultivoInput').addTo(map);
+// }
 
 // let latlon = ee.Image.pixelLonLat().addBands(ndmi);
 // let latlon_new = latlon.reduceRegion(

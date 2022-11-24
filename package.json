@@ -1,12 +1,34 @@
 {
   "dependencies": {
     "@google/earthengine": "^0.1.331",
-    "browserify": "^17.0.0",
     "datetime-js": "^4.0.0",
     "leaflet-draw": "^1.0.4",
     "leaflet-toolbar": "^0.4.0-alpha.2",
     "matplotlib": "^1.0.0",
     "numpy": "^0.0.1",
     "requirejs": "^2.3.6"
-  }
+  },
+  "name": "proyecto",
+  "description": "Integrantes:\r - Franco Sandri: IA\r - Franco Bugna: Back-end\r - Iñaki Urizar: Diseño\r - Manuel Magni: Front-end\r #",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "browserify": "^17.0.0"
+  },
+  "scripts": {
+    "build": "browserify ./Front-End/map.js -o ./Front-End/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrancoSandri/Proyecto.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrancoSandri/Proyecto/issues"
+  },
+  
+  "homepage": "https://github.com/FrancoSandri/Proyecto#readme"
 }
+
