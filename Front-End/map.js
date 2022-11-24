@@ -43,6 +43,33 @@ var baseMaps = {
 };
 
 var layerControl = L.control.layers(baseMaps).addTo(map);
+async function analizarToggle(){
+  const response = await fetch("http://localhost:3001/getSateliteImages", {
+    method: "GET",
+  credentials: "include",
+  mode: "cors",
+    headers: {
+    "Content-type": "application/json;charset=UTF-8",
+    "Access-Control-Allow-Credentials": true
+  },
+  }).then(res => res.json())
+  .catch(err => console.log(err))
+  // landsat.json()
+
+  let coords = localStorage.getItem("coords")
+  let clip_ = response.ee.Image(response.landsat.mean()).clip(coords)
+
+  let ndmi = clip_.normalizedDifference(['B5', 'B6'])
+
+  let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF']
+
+  let ndmi_parameters = {'min': -1,
+    'max': 1,
+    'palette': palette,
+    'region': coords};
+
+  L.tileLayer(ndmi, ndmi_parameters, 'NombreCultivoInput').addTo(map);
+}
 
 //Apreta el boton
  //error fetch

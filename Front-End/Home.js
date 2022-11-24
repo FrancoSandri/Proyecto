@@ -29,18 +29,18 @@ const SessionToggle = ()=> {
 }
 checkAuth()
 
-const campos = async ()=> {
-    const res = await fetch("http://localhost:3001/registro-plantas", {
-        method: "POST",
-        body: JSON.stringify({
-            NombreCampo: "asdf",
-            NombreCultivo: "aasdf", 
-            Cordenadas: [34, 12], 
-            CantidadAgua: 12
-        }),
-        credentials: "include",
-    })
-    let data = await res.json()
-    console.log(data)
-}
-campos()
+// const campos = async ()=> {
+//     const res = await fetch("http://localhost:3001/registro-plantas", {
+//         method: "POST",
+//         body: JSON.stringify({
+//             NombreCampo: "asdf",
+//             NombreCultivo: "aasdf", 
+//             Cordenadas: [34, 12], 
+//             CantidadAgua: 12
+//         }),
+//         credentials: "include",
+//     })
+//     let data = await res.json()
+//     console.log(data)
+// }
+// campos()

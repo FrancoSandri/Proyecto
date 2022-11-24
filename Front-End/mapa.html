@@ -155,7 +155,7 @@
     From.style.display = ''
   }
 </script>
-<script>
+<!-- <script>
   async function analizarToggle(){
     const landsat = await fetch("http://localhost:3001/getSateliteImages", {
     credentials: "include",
@@ -165,7 +165,7 @@
     },
     }).then(res => res.json())
     .catch(err => console.log(err))
-    landsat.json()
+    // landsat.json()
 
     let coords = localStorage.getItem("coords")
     let clip_ = ee.Image(landsat.mean()).clip(coords)
@@ -181,7 +181,7 @@
 
     L.tileLayer(ndmi, ndmi_parameters, 'NombreCultivoInput').addTo(map);
 }
-</script>
+</script> -->
     
 
 <script src="map.js"></script>

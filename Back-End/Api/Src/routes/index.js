@@ -55,10 +55,10 @@ router.use(cookieParser())
        return res.sendStatus(403);
      }
      try {
-       const dataToken = jwt.verify(token, process.env.SECRET_KEY);
+       const data = jwt.verify(token, process.env.SECRET_KEY);
        req.email = data.email;
        req.password = data.password;
-       console.log(dataToken)
+       console.log(data)
        req.id = data.id
        return next();
      } catch {
@@ -293,7 +293,7 @@ router.get('/getSateliteImages', (req, res) => {//Auth?
         'asFloat': True
     });
 
-    res.json({'landsat':landsat});
+    res.json({'landsat':landsat, 'ee':ee});
 })
 
  module.exports = router;
