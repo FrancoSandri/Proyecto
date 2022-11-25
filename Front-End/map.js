@@ -1,7 +1,7 @@
-const browserify = require('browserify')
-const ee = require('@google/earthengine');
-const DateTime = require('datetime-js');
-var privateKey = 'b30f3ebc6bbf6a319f326c6a95f48a1905b4c692';
+// const browserify = require('browserify')
+// const ee = require('@google/earthengine');
+// const DateTime = require('datetime-js');
+// var privateKey = 'b30f3ebc6bbf6a319f326c6a95f48a1905b4c692';
 
 //Mapa
 var map = L.map('map',{drawControl: false}).setView([-34,-60],8);
@@ -48,32 +48,32 @@ var baseMaps = {
 var layerControl = L.control.layers(baseMaps).addTo(map);
 //earth engine
 // Initialize client library and run analysis.
-var runAnalysis = function() {
-  ee.initialize(null, null, function() {
-    // ... run analysis ...
-  }, function(e) {
-    console.error('Initialization error: ' + e);
-  });
-};
+// var runAnalysis = function() {
+//   ee.initialize(null, null, function() {
+//     // ... run analysis ...
+//   }, function(e) {
+//     console.error('Initialization error: ' + e);
+//   });
+// };
 
-// Authenticate using a service account.
-ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
-  console.error('Authentication error: ' + e);
-});
+// // Authenticate using a service account.
+// ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
+//   console.error('Authentication error: ' + e);
+// });
 
-let countries = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
-let roi = countries.filter(ee.Filter.eq("country_na", "Argentina"));
-let fecha_actual = DateTime.today();
+// let countries = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
+// let roi = countries.filter(ee.Filter.eq("country_na", "Argentina"));
+// let fecha_actual = DateTime.today();
 
-let landsat = ee.ImageCollection("LANDSAT/LC08/C01/T1")
-.filterDate('2021-01-01', str(fecha_actual))
-.filterBounds(roi)
-.filter(ee.Filter.eq('CLOUD_COVER', 0));
+// let landsat = ee.ImageCollection("LANDSAT/LC08/C01/T1")
+// .filterDate('2021-01-01', str(fecha_actual))
+// .filterBounds(roi)
+// .filter(ee.Filter.eq('CLOUD_COVER', 0));
 
-let composite = ee.Algorithms.Landsat.simpleComposite({
-    'collection': landsat,
-    'asFloat': True
-});
+// let composite = ee.Algorithms.Landsat.simpleComposite({
+//     'collection': landsat,
+//     'asFloat': True
+// });
 
 // async function analizarToggle(){
 //   const response = await fetch("http://localhost:3001/getSateliteImages", {
