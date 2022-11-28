@@ -207,14 +207,13 @@ router.use(cookieParser())
  });
  
  router.post('/registro-plantas', authorization, async (req, res) => {
-    const {NombreCampo, NombreCultivo, coords, CantidadAgua} = req.body
-    console.log(req.body)
+    const {NombreCampo, NombreCultivo, Cordenadas : coords, CantidadAgua} = req.body
         try 
             {
                 let sql = `INSERT INTO registrosplantas(NombreCultivo, NombreCampo, Cordenadas, CantidadAgua) VALUES ('${NombreCampo}','${NombreCultivo}','${coords}','${CantidadAgua}')`
                 db.query(sql, (err, result) => {
                     if (err) throw err
-                    res.status(201).send('Field registred correctly')
+                    res.status(201).json({message: 'Field registred correctly'})
                 })
                 return
             }

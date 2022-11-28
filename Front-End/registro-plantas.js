@@ -6,6 +6,7 @@ const submithandler = (e) =>{
 }
 form1.addEventListener("submit", submithandler)
 button.addEventListener("click", event => {
+    coords = localStorage.getItem("coords")
     event.preventDefault();
     console.log("click")
     let apiURL = "http://localhost:3001/registro-plantas"
