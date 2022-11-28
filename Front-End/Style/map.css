@@ -237,7 +237,7 @@ font-family: 'poppins';
 #map
 {
   display: flex;
-  height: 600px;
+  height: 899px;
 }
 /*User Desktop*/
 @media (min-width: 720px)
@@ -275,7 +275,7 @@ font-family: 'poppins';
   }
   #map{
     display: flex;
-    height: 600px;
+    height: 899px;
   }
 }
 
