@@ -45,11 +45,12 @@ var baseMaps = {
   "Google Earth": gee
 };
 
-var layerControl = L.control.layers(baseMaps).addTo(map);
+L.control.layers(baseMaps).addTo(map);
 //earth engine
 // Initialize client library and run analysis.
 var runAnalysis = function() {
   ee.initialize(null, null, function() {
+    
     let countries = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
     let roi = countries.filter(ee.Filter.eq("country_na", "Argentina"));
     let fecha_actual = DateTime.today();
@@ -59,35 +60,39 @@ var runAnalysis = function() {
     .filterBounds(roi)
     .filter(ee.Filter.eq('CLOUD_COVER', 0));
 
-    let composite = ee.Algorithms.Landsat.simpleComposite({
+    let composite = ee.Algorithms.landsat.simpleComposite({
         'collection': landsat,
         'asFloat': True
     });
-  }, function(e) {
-    console.error('Initialization error: ' + e);
-  });
-};
+      }, function(e) {
+        console.error('Initialization error: ' + e);
+      });
+    };
 
 // Authenticate using a service account.
 ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
   console.error('Authentication error: ' + e);
 });
 
-function analizarToggle(){
-  let coords = localStorage.getItem("coords");
-  let clip_ = ee.Image(landsat.mean()).clip(coords);
 
-  let ndmi = clip_.normalizedDifference(['B5', 'B6'])
 
-  let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF'];
+const button = document.getElementById("button-2");
+button.addEventListener("click", event => {
+  let coords_ = localStorage.getItem("coords");
+  event.preventDefault();
+  console.log("click")
+  L.imageOverlay('example.jpg',coords_).filter('ndvi,colormap').addTo(map);
+  // let clip_ = ee.Image(landsat.mean()).clip(coords_);
 
-  let ndmi_parameters = {'min': -1,
-    'max': 1,
-    'palette': palette,
-    'region': coords};
+  // let ndmi = clip_.normalizedDifference(['B5', 'B6'])
 
-  L.addLayer(ndmi, ndmi_parameters, 'NombreCultivoInput').addTo(map);
-}
+  // let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF'];
+
+  // let ndmi_parameters = {'min': -1,
+  //   'max': 1,
+  //   'palette': palette,
+  //   'region': coords};
+});
 
 // let latlon = ee.Image.pixelLonLat().addBands(ndmi);
 // let latlon_new = latlon.reduceRegion(

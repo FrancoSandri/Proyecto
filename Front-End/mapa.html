@@ -108,7 +108,7 @@
       <input type="text" id="CantidadAguaInput" placeholder="1000Ml">
       <form action="./index.html" method="post" id="form">
         <button class="Sesion" id="button" type="button">Guardar Campo</button>
-        <button class="Sesion" id="button-2" type="button" onclick="analizarToggle();">Analizar Campo</button>
+        <button class="Sesion" id="button-2" type="button">Analizar Campo</button>
       </form>
     </form>
 <!--Profile-->
@@ -156,35 +156,7 @@
     From.style.display = ''
   }
 </script>
-<!-- <script>
-  async function analizarToggle(){
-    const landsat = await fetch("http://localhost:3001/getSateliteImages", {
-    credentials: "include",
-    headers: {
-      "Content-type": "application/json;charset=UTF-8",
-      "Access-Control-Allow-Credentials": true
-    },
-    }).then(res => res.json())
-    .catch(err => console.log(err))
-    // landsat.json()
-
-    let coords = localStorage.getItem("coords")
-    let clip_ = ee.Image(landsat.mean()).clip(coords)
-
-    let ndmi = clip_.normalizedDifference(['B5', 'B6'])
-
-    let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF']
-
-    let ndmi_parameters = {'min': -1,
-      'max': 1,
-      'palette': palette,
-      'region': coords};
-
-    L.tileLayer(ndmi, ndmi_parameters, 'NombreCultivoInput').addTo(map);
-}
-</script> -->
 <script src="bundle.js"></script>
-<!-- <script src="map.js"></script> -->
 </body>
 </html>
 

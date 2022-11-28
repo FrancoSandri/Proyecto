@@ -345,7 +345,7 @@ font-family: 'poppins';
   right: 0;
   top: 350px;
 }
-.arrow:hover, .arrowOpen:hover, #button:hover
+.arrow:hover, .arrowOpen:hover, .Sesion:hover
 {
   background-color: #005abb;
 }
