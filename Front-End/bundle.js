@@ -79,19 +79,20 @@ ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
 const button = document.getElementById("button-2");
 button.addEventListener("click", event => {
   let coords_ = localStorage.getItem("coords");
+  let clip_ = ee.Image(landsat.mean()).clip(coords_);
+
+  let ndmi = clip_.normalizedDifference(['B5', 'B6'])
+
+  let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF'];
+
+  let ndmi_parameters = {'min': -1,
+    'max': 1,
+    'palette': palette,
+    'region': coords};
   event.preventDefault();
   console.log("click")
-  L.imageOverlay('example.jpg',coords_).filter('ndvi,colormap').addTo(map);
-  // let clip_ = ee.Image(landsat.mean()).clip(coords_);
-
-  // let ndmi = clip_.normalizedDifference(['B5', 'B6'])
-
-  // let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF'];
-
-  // let ndmi_parameters = {'min': -1,
-  //   'max': 1,
-  //   'palette': palette,
-  //   'region': coords};
+  L.imageOverlay(ndmi,coords_).filter(ndmi_parameters).addTo(map);
+  
 });
 
 // let latlon = ee.Image.pixelLonLat().addBands(ndmi);
