@@ -29,14 +29,14 @@ var runAnalysis = function() {
  const db = mysql.createConnection({
      host: "localhost",
      user: "root",
-     password: "rootroot",
+     password: "",
      database: "Satolution"
  }) 
  const syncSql = require('sync-sql')
  var config = {
      host : "localhost",
      user: "root",
-     password : "rootroot",
+     password : "",
      database : "Satolution"
  }
  db.connect((err) => {
@@ -51,7 +51,8 @@ router.use(cookieParser())
  const authorization = (req, res, next) => {
     console.log(req.cookies)
      const token = req.cookies.access_token;
-     if (!token) {
+     const refreshToken = req.cookies.refresh_token;
+     if (!token && !refreshToken) {
        return res.sendStatus(403);
      }
      try {
@@ -60,6 +61,11 @@ router.use(cookieParser())
        req.password = data.password;
        console.log(data)
        req.id = data.id
+       const dataRefresh = jwt.verify(refreshToken, process.env.REFRESH_TOKEN);
+       req.email = dataRefresh.email;
+       req.password = dataRefresh.password;
+       console.log(dataRefresh)
+       req.id = dataRefresh.id
        return next();
      } catch {
        return res.sendStatus(403);
@@ -120,7 +126,14 @@ router.use(cookieParser())
  })
  router.post('/register', async (req, res) => {
      const {email, password } = req.body
-     const token = jwt.sign({ email: req.body.email, password: req.body.password }, process.env.SECRET_KEY, { expiresIn: "300s" });
+     const token = jwt.sign({ email: req.body.email, password: req.body.password }, process.env.SECRET_KEY, { expiresIn: "5m" });
+     const refreshToken = jwt.sign(
+        {
+        expiresIn: Math.floor(Date.now() / 1000) * 60 * 60 * 24 * 30,
+        email: req.body.email, password: req.body.password, id: result[0].Id
+        },
+        process.env.REFRESH_TOKEN
+        )
      if(email && password)
      {
          const isEmailValid = validateEmail(email)
@@ -144,6 +157,12 @@ router.use(cookieParser())
                withCredentials: true,
                secure: process.env.NODE_ENV === "production",
              })
+             .cookie("refresh_token", refreshToken, {
+                httpOnly: true,
+               withCredentials: true,
+               secure: process.env.NODE_ENV === "production",
+             }
+             )
              .status(200)
              .json(user);
          }
@@ -162,6 +181,13 @@ router.use(cookieParser())
          if(result.length != 0) Password = result[0].password
          else return res.status(404).send('User not found')
          const token = jwt.sign({ email: req.body.email, password: req.body.password, id: result[0].Id }, process.env.SECRET_KEY, { expiresIn: "5m" });
+         const refreshToken = jwt.sign(
+            {
+            expiresIn: Math.floor(Date.now() / 1000) * 60 * 60 * 24 * 30,
+            email: req.body.email, password: req.body.password, id: result[0].Id
+            },
+            process.env.REFRESH_TOKEN
+            )
          try 
          {
              if (password == Password) {
@@ -173,6 +199,12 @@ router.use(cookieParser())
                    secure: process.env.NODE_ENV === "production",
                    //sameSite: "None"
                  })
+                 .cookie("refresh_token", refreshToken, {
+                    httpOnly: true,
+                   withCredentials: true,
+                   secure: process.env.NODE_ENV === "production",
+                 }
+                 )
                  .status(200)
                  .json({ message: "Logged in successfully 😊 👌", jwtToken: token });
              }
