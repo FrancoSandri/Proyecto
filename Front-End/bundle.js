@@ -1,7 +1,7 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 const ee = require('@google/earthengine');
 const DateTime = require('datetime-js');
-var privateKey = require('./privateKey.json');
+
 
 //Mapa
 var map = L.map('map',{drawControl: false}).setView([-34,-60],8);
@@ -46,40 +46,37 @@ var baseMaps = {
 };
 
 L.control.layers(baseMaps).addTo(map);
-//earth engine
+// earth engine
 // Initialize client library and run analysis.
+var CLIENT_ID = '997989651983-k7hna1kbg6coskbivjepach0706iacmf.apps.googleusercontent.com';
 var runAnalysis = function() {
   ee.initialize(null, null, function() {
-    
-    let countries = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
-    let roi = countries.filter(ee.Filter.eq("country_na", "Argentina"));
-    let fecha_actual = DateTime.today();
-
-    let landsat = ee.ImageCollection("LANDSAT/LC08/C01/T1")
-    .filterDate('2021-01-01', str(fecha_actual))
-    .filterBounds(roi)
-    .filter(ee.Filter.eq('CLOUD_COVER', 0));
-
-    let composite = ee.Algorithms.landsat.simpleComposite({
-        'collection': landsat,
-        'asFloat': True
-    });
-      }, function(e) {
+  ;
+    }, function(e) {
         console.error('Initialization error: ' + e);
       });
-    };
+};
 
 // Authenticate using a service account.
-ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
+ee.data.authenticate(CLIENT_ID, runAnalysis, function(e) {
   console.error('Authentication error: ' + e);
 });
 
 
 
+
+let countries = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
+let roi = countries.filter(ee.Filter.eq("country_na", "Argentina"));
+let fecha_actual = DateTime.today();
+
+let landsat = ee.ImageCollection("LANDSAT/LC08/C01/T1")
+.filterDate('2021-01-01', str(fecha_actual))
+.filterBounds(roi)
+.filter(ee.Filter.eq('CLOUD_COVER', 0));
+
 const button = document.getElementById("button-2");
 console.log('hola');
 button.addEventListener("click", event => {
-  let coords_ = localStorage.getItem("coords");
   let clip_ = ee.Image(landsat.mean()).clip(coords_);
 
   let ndmi = clip_.normalizedDifference(['B5', 'B6'])
@@ -92,7 +89,7 @@ button.addEventListener("click", event => {
     'region': coords};
   event.preventDefault();
   console.log("click")
-  L.imageOverlay(ndmi,coords_).filter(ndmi_parameters).addTo(map);
+  L.imageOverlay(ndmi,coords).filter(ndmi_parameters).addTo(map);
   
 });
 
