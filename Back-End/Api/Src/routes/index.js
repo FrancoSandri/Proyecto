@@ -6,9 +6,6 @@
  const jwt = require("jsonwebtoken");
  const cookieParser = require("cookie-parser");
  const ee = require('@google/earthengine');
-//  import { coords } from "../../../../Front-End/map";
-//  const np = require('numpy');
-//  const plt = require('matplotlib');
  const DateTime = require('datetime-js');
 
  // Initialize client library and run analysis.
