@@ -5,6 +5,8 @@ const router = Router();
 const mysql = require('mysql')
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
+const ee = require('@google/earthengine');
+var privateKey = require('../privateKey.json');
 
 //const registroIa= require("../../../../Front-End/map")
  const db = mysql.createConnection({
@@ -228,6 +230,27 @@ router.use(cookieParser())
                     if (err) throw err
                     res.status(201).json({message: 'Field registred correctly'})
                 })
+                var runAnalysis = function() {
+                    ee.initialize(null, null, function() {
+                        let countries = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
+                        let roi = countries.filter(ee.Filter.eq("country_na", "Argentina"));
+                  
+                        let landsat = ee.ImageCollection("LANDSAT/LC08/C01/T1")
+                        .filterDate('2021-01-01', '2022-11-11')
+                        .filterBounds(roi)
+                        .filter(ee.Filter.eq('CLOUD_COVER', 0));
+                        let clip = ee.Image(landsat.first().clip(Cordenadas));
+                        let ndmi = clip.normalizedDifference(['B5', 'B6']);        
+                        var url = ndmi.visualize({min:-1,max:1,palette:['#FFFFFF','#9FA3F3','#5157CB','#1500FF']}).getThumbURL({dimensions:'1024x1024',format:'jpg'});
+                        console.log(url);
+                        
+                      }, function(e) {
+                          console.error('Initialization error: ' + e);
+                        });
+                  };
+                  ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
+                    console.error('Authentication error: ' + e);
+                    });
                 return
             }
             catch { res.status(500).send() }   
@@ -253,42 +276,6 @@ router.use(cookieParser())
      return output.data
  }
 
- const createError = require('http-errors')
 
- const verifyToken = (req, res, next) => {
-     const token = req.cookies.access_token
-     
-     if(typeof token !== 'undefined'){
-         req.token = token
-         
-         return next()
-     }
-     return next({error: createError.Unauthorized('Token not found')})
- }
- 
-
- router.post('/isLoggedIn', verifyToken, (req, res, next) => {
-    jwt.verify(req.token, process.env.SECRET_KEY, err => {
-        if(!err) return res.send({
-            redirect: {
-                destination: './index.html'
-            }
-        })
-        return res.send({})
-    })
-})
-
-router.post('/isNotLoggedIn', verifyToken, (req, res) => {
-    jwt.verify(req.token, process.env.SECRET_KEY, err => {
-        if(err) return res.send({
-            error: createError.Unauthorized(err.message),
-            redirect: {
-                destination: './Login.html'
-            }
-        })
-        res.send({})
-    })
-})
 
  module.exports = router;
- export {Cordenadas}
