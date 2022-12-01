@@ -1,6 +1,7 @@
 // import {Cordenadas} from './routes/index.js'
 const ee = require('@google/earthengine');
 var privateKey = require('./privateKey.json');
+const np = require('numjs');
 
 var runAnalysis = function() {
     ee.initialize(null, null, function() {
@@ -15,7 +16,6 @@ var runAnalysis = function() {
         let ndmi = clip.normalizedDifference(['B5', 'B6']);        
         var url = ndmi.visualize({min:-1,max:1,palette:['#FFFFFF','#9FA3F3','#5157CB','#1500FF']}).getThumbURL({dimensions:'1024x1024',format:'jpg'});
         console.log(url);
-
         
       }, function(e) {
           console.error('Initialization error: ' + e);
@@ -26,21 +26,3 @@ var runAnalysis = function() {
 ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
 console.error('Authentication error: ' + e);
 });
-
-// const button = document.getElementById("button-2");
-// console.log('hola');
-// button.addEventListener("click", event => {
-// let clip = ee.Image(landsat.mean()).clip(coords);
-
-// let ndmi = clip.normalizedDifference(['B5', 'B6'])
-
-// let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF'];
-
-// let ndmi_parameters = {'min': -1,
-//     'max': 1,
-//     'palette': palette,
-//     'region': coords};
-// event.preventDefault();
-// console.log("click");
-// });
-    
