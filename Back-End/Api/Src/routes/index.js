@@ -229,6 +229,7 @@ router.use(cookieParser())
                 db.query(sql, (err, result) => {
                     if (err) throw err
                     res.status(201).json({message: 'Field registred correctly'})
+                    res.send(url)
                 })
                 var runAnalysis = function() {
                     ee.initialize(null, null, function() {
@@ -251,6 +252,7 @@ router.use(cookieParser())
                   ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
                     console.error('Authentication error: ' + e);
                     });
+                
                 return 
             }
             catch { res.status(500).send() }   
