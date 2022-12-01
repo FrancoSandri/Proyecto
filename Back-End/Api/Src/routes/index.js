@@ -219,15 +219,20 @@ router.use(cookieParser())
      .clearCookie("access_token")
      .status(200)
      .json({ message: "Successfully logged out 😏 🍀" });
- });
- 
- router.post('/registro-plantas', authorization, async (req, res) => {
-    const {NombreCampo, NombreCultivo, Cordenadas : coords, CantidadAgua} = req.body
+    });
+    
+    router.post('/registro-plantas', authorization, async (req, res) => {
+        const {NombreCampo, NombreCultivo, Cordenadas : coords, CantidadAgua} = req.body
         try 
-            {
-                let sql = `INSERT INTO registrosplantas(NombreCultivo, NombreCampo, Cordenadas, CantidadAgua) VALUES ('${NombreCampo}','${NombreCultivo}','${coords}','${CantidadAgua}')`
-                var runAnalysis = function() {
-                    ee.initialize(null, null, function() {
+        {
+            let sql = `INSERT INTO registrosplantas(NombreCultivo, NombreCampo, Cordenadas, CantidadAgua) VALUES ('${NombreCampo}','${NombreCultivo}','${coords}','${CantidadAgua}')`
+            let url;
+            db.query(sql, (err, result) => {
+                if (err) throw err
+                // res.status(201).json({message: 'Field registred correctly'})
+            })
+            var runAnalysis = () => {
+                    ee.initialize(null, null, () => {
                         let countries = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
                         let roi = countries.filter(ee.Filter.eq("country_na", "Argentina"));
                         
@@ -237,25 +242,24 @@ router.use(cookieParser())
                         .filter(ee.Filter.eq('CLOUD_COVER', 0));
                         let clip = ee.Image(landsat.first());
                         let ndmi = clip.normalizedDifference(['B5', 'B6']);        
-                        var url = ndmi.visualize({min:-1,max:1,palette:['#FFFFFF','#9FA3F3','#5157CB','#1500FF']}).getThumbURL({dimensions:'1024x1024',format:'jpg'});
-                        console.log(url);
-                        res.send(url);
+                        let url1 = ndmi.visualize({min:-1,max:1,palette:['#FFFFFF','#9FA3F3','#5157CB','#1500FF']}).getThumbURL({dimensions:'1024x1024',format:'jpg'});
+                        url = url1.length > 0 ? url1 : url;
                         
                     }, function(e) {
                         console.error('Initialization error: ' + e);
                     });
                 };
-                ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
-                    console.error('Authentication error: ' + e);
+                 ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
+                     console.error('Authentication error: ' + e);
                 });
-                db.query(sql, (err, result) => {
-                    if (err) throw err
-                    res.status(201).json({message: 'Field registred correctly'})
-                })
+                console.log(url);
+                res.json ({message: url});
                 
-                return 
+                return
             }
-            catch { res.status(500).send() }   
+            catch { res.status(500).send() }  
+            
+                     
             
 
  router.delete('/:id-plantas', (req, res) => {
