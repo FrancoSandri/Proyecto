@@ -226,7 +226,7 @@ router.use(cookieParser())
         try 
         {
             let sql = `INSERT INTO registrosplantas(NombreCultivo, NombreCampo, Cordenadas, CantidadAgua) VALUES ('${NombreCampo}','${NombreCultivo}','${coords}','${CantidadAgua}')`
-            let url;
+            let url1;
             db.query(sql, (err, result) => {
                 if (err) throw err
                 // res.status(201).json({message: 'Field registred correctly'})
@@ -249,14 +249,12 @@ router.use(cookieParser())
                         console.error('Initialization error: ' + e);
                     });
                 };
-                var url1 = ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
+                url1 = ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
                      console.error('Authentication error: ' + e);
                 });
-                if(url1 != null){
                     console.log(url1)
                     res.json ({message: url1});
                     return
-                  };
                 
                 
             }
