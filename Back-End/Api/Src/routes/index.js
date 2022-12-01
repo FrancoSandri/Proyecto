@@ -291,4 +291,4 @@ router.post('/isNotLoggedIn', verifyToken, (req, res) => {
 })
 
  module.exports = router;
- export {Cordenadas};
+ export {Cordenadas}
