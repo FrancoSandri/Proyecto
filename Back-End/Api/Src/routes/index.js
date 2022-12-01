@@ -249,15 +249,16 @@ router.use(cookieParser())
                         console.error('Initialization error: ' + e);
                     });
                 };
-            var url1 = ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
+                var url1 = ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
                      console.error('Authentication error: ' + e);
                 });
                 if(url1 != null){
                     console.log(url1)
                     res.json ({message: url1});
+                    return
                   };
                 
-                return
+                
             }
             catch { res.status(500).send() }  
             
