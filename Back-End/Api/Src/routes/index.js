@@ -242,18 +242,20 @@ router.use(cookieParser())
                         .filter(ee.Filter.eq('CLOUD_COVER', 0));
                         let clip = ee.Image(landsat.first());
                         let ndmi = clip.normalizedDifference(['B5', 'B6']);        
-                        let url1 = ndmi.visualize({min:-1,max:1,palette:['#FFFFFF','#9FA3F3','#5157CB','#1500FF']}).getThumbURL({dimensions:'1024x1024',format:'jpg'});
-                        url = url1.length > 0 ? url1 : url;
+                        let url = ndmi.visualize({min:-1,max:1,palette:['#FFFFFF','#9FA3F3','#5157CB','#1500FF']}).getThumbURL({dimensions:'1024x1024',format:'jpg'});
+                        console.log(url);
                         
                     }, function(e) {
                         console.error('Initialization error: ' + e);
                     });
                 };
-                 ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
+            var url1 = ee.data.authenticateViaPrivateKey(privateKey, runAnalysis, function(e) {
                      console.error('Authentication error: ' + e);
                 });
-                console.log(url);
-                res.json ({message: url});
+                if(url1 != null){
+                    console.log(url1)
+                    res.json ({message: url1});
+                  };
                 
                 return
             }
