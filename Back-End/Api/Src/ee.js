@@ -10,8 +10,8 @@ var runAnalysis = function() {
         .filterDate('2021-01-01', '2022-11-11')
         .filterBounds(roi)
         .filter(ee.Filter.eq('CLOUD_COVER', 0));
-        let coords = localStorage.getItem('coords');
-        let clip = ee.Image(landsat.first().clip(coords));
+        let coordenas = amplify.store(coords);
+        let clip = ee.Image(landsat.first().clip(coordenas));
         let ndmi = clip.normalizedDifference(['B5', 'B6']);
         var url = ndmi.visualize({gamma:1.5}).getThumbURL({dimensions:'1024x1024',format:'jpg'});
         console.log(url);

@@ -229,6 +229,7 @@ router.use(cookieParser())
                 db.query(sql, (err, result) => {
                     if (err) throw err
                     res.status(201).json({message: 'Field registred correctly'})
+                    amplify.store(Cordenadas, coords)
                 })
                 return
             }
