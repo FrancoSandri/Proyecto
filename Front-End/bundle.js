@@ -1,5 +1,5 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-// const np = require('numjs');
+
 //Mapa
 var map = L.map('map',{drawControl: false}).setView([-34,-60],8);
 
@@ -34,7 +34,7 @@ map.on('draw:created', function (e) {
     console.log(coords);
     localStorage.setItem("coords", coords)
   };
- 
+  
   drawnItems.addLayer(layer);
 });
 
@@ -47,48 +47,47 @@ L.control.layers(baseMaps).addTo(map);
 const button = document.getElementById("button-2");
 console.log('hola');
 button.addEventListener("click", event => {
-
   event.preventDefault();
   console.log("click")
   L.imageOverlay(ndmi,coords).filter(ndmi_parameters).addTo(map);
-//   let latlon = ee.Image.pixelLonLat().addBands(ndmi);
-//   let latlon_new = latlon.reduceRegion(
-//     reducer=ee.Reducer.toList(),
-//     geometry=mask,
-//     maxPixels=1e13,
-//     scale=30);
+  
+});
 
-//   let data = np.array((ee.Array(latlon_new.get('nd')).getInfo()))
-//   let lats = np.array((ee.Array(latlon_new.get('latitude')).getInfo()))
-//   let lons = np.array((ee.Array(latlon_new.get('longitude')).getInfo()))
+// let latlon = ee.Image.pixelLonLat().addBands(ndmi);
+// let latlon_new = latlon.reduceRegion(
+//   reducer=ee.Reducer.toList(),
+//   geometry=mask,
+//   maxPixels=1e13,
+//   scale=30);
 
-//   let uniqueLats = np.unique(lats)
-//   let uniqueLons = np.unique(lons)
-//   let ncols = len(uniqueLons)    
-//   let nrows = len(uniqueLats)
+// let data = np.array((ee.Array(latlon_new.get('nd')).getInfo()))
+// let lats = np.array((ee.Array(latlon_new.get('latitude')).getInfo()))
+// let lons = np.array((ee.Array(latlon_new.get('longitude')).getInfo()))
 
-
-//   let ys = uniqueLats[1] - uniqueLats[0] 
-//   let xs = uniqueLons[1] - uniqueLons[0]
-
-//   let arr = np.zeros([nrows, ncols], np.float32)
-//   let counter =0
-//   for(y in range(0,len(arr),1)){
-//         for(x in range(0,len(arr[0]),1)){
-//           if (lats[counter] == uniqueLats[y] && lons[counter] == uniqueLons[x] && counter < len(lats)-1){
-//               counter+=1
-//               arr[len(uniqueLats)-1-y,x] = data[counter]}}};
-
-//   let fig = plt.figure(figsize=(10,10))
-//   plt.imshow(arr, cmap = "gray_r")
-//   let ax = fig.add_subplot(1, 1, 1)
-//   let title = //nombre del campo pasado por variable
-//   ax.set_title(title)
-//   let cbar = plt.colorbar(label= "NDMI values", orientation = 'horizontal')
-//   cbar.set_ticks([])
-// });
+// let uniqueLats = np.unique(lats)
+// let uniqueLons = np.unique(lons)
+// let ncols = len(uniqueLons)    
+// let nrows = len(uniqueLats)
 
 
+// let ys = uniqueLats[1] - uniqueLats[0] 
+// let xs = uniqueLons[1] - uniqueLons[0]
+
+// let arr = np.zeros([nrows, ncols], np.float32)
+// let counter =0
+// for(y in range(0,len(arr),1)){
+  //     for(x in range(0,len(arr[0]),1)){
+//         if (lats[counter] == uniqueLats[y] && lons[counter] == uniqueLons[x] && counter < len(lats)-1){
+//             counter+=1
+//             arr[len(uniqueLats)-1-y,x] = data[counter]}}};
+
+// let fig = plt.figure(figsize=(10,10))
+// plt.imshow(arr, cmap = "gray_r")
+// let ax = fig.add_subplot(1, 1, 1)
+// let title = //nombre del campo pasado por variable
+// ax.set_title(title)
+// let cbar = plt.colorbar(label= "NDMI values", orientation = 'horizontal')
+// cbar.set_ticks([])
 },{"@google/earthengine":2,"datetime-js":4}],2:[function(require,module,exports){
 (function (global){(function (){
 /*
