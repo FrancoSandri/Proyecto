@@ -1,12 +1,10 @@
- require("dotenv").config()
- const cors = require("cors")
- const {Router} = require('express');
- const router = Router();
- const mysql = require('mysql')
- const jwt = require("jsonwebtoken");
- const cookieParser = require("cookie-parser");
- const ee = require('@google/earthengine');
- const DateTime = require('datetime-js');
+require("dotenv").config()
+const cors = require("cors")
+const {Router} = require('express');
+const router = Router();
+const mysql = require('mysql')
+const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
 
 //const registroIa= require("../../../../Front-End/map")
  const db = mysql.createConnection({
@@ -293,3 +291,4 @@ router.post('/isNotLoggedIn', verifyToken, (req, res) => {
 })
 
  module.exports = router;
+ export {Cordenadas};

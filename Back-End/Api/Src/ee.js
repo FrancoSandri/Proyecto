@@ -1,4 +1,4 @@
-import {Cordenadas} from './routes/index'
+import {Cordenadas} from './routes/index.js'
 const ee = require('@google/earthengine');
 var privateKey = require('./privateKey.json');
 
