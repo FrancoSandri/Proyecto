@@ -1,23 +1,20 @@
 const ee = require('@google/earthengine');
-const DateTime = require('datetime-js');
-var privateKey = 'b30f3ebc6bbf6a319f326c6a95f48a1905b4c692';
+var privateKey = require('./privateKey.json');
 
 var runAnalysis = function() {
     ee.initialize(null, null, function() {
         let countries = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
         let roi = countries.filter(ee.Filter.eq("country_na", "Argentina"));
-        let fecha_actual = DateTime.today();
   
-        let landsat = ee.Image(new ee.ImageCollection("LANDSAT/LC08/C01/T1")
-        .filterDate('2021-01-01', str(fecha_actual))
+        let landsat = ee.ImageCollection("LANDSAT/LC08/C01/T1")
+        .filterDate('2021-01-01', '2022-11-11')
         .filterBounds(roi)
-        .filter(ee.Filter.eq('CLOUD_COVER', 0))
-        .first());
-
-        // let clip = ee.Image(landsat.mean()).clip(coords);
-
-        // let ndmi = clip.normalizedDifference(['B5', 'B6'])
-
+        .filter(ee.Filter.eq('CLOUD_COVER', 0));
+        let coords = localStorage.getItem('coords');
+        let clip = ee.Image(landsat.first().clip(coords));
+        let ndmi = clip.normalizedDifference(['B5', 'B6']);
+        var url = ndmi.visualize({gamma:1.5}).getThumbURL({dimensions:'1024x1024',format:'jpg'});
+        console.log(url);
         // let palette = ['#FFFFFF','#9FA3F3','#5157CB','#1500FF'];
 
         // let ndmi_parameters = {'min': -1,
@@ -25,8 +22,6 @@ var runAnalysis = function() {
         //     'palette': palette,
         //     'region': coords};
         
-        var url = landsat.visualize({bands:['B5','B6'], gamma:1.5}).getThumbURL({dimensions:'1024x1024',format:'jpg'});
-        console.log(url)
       }, function(e) {
           console.error('Initialization error: ' + e);
         });
