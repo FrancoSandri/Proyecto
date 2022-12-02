@@ -4,7 +4,7 @@ const checkAuth = async ()=> {
     }).then((resp)=> {
         if(resp.status == 403)
         document.getElementById("Sesion").style.display = "none"
-        console.log("SOS GAYYY")
+        
         return resp.json()
         
     }).then((data)=>{
