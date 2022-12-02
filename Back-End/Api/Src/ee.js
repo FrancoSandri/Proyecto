@@ -16,21 +16,21 @@ var runAnalysis = function() {
       var url = ndmi.visualize({min:-1,max:1,palette:['#FFFFFF','#9FA3F3','#5157CB','#1500FF']}).getThumbURL({dimensions:'1024x1024',format:'jpg'});
       console.log(url)
 
-      let latlon = ee.Image.pixelLonLat().addBands(ndmi);
-      let latlon_new = latlon.reduceRegion({reducer: ee.Reducer.toList(),
-        geometry:mask,
-        maxPixels: 1e13,
-        scale:30
-      });
+      // let latlon = ee.Image.pixelLonLat().addBands(ndmi);
+      // let latlon_new = latlon.reduceRegion({reducer: ee.Reducer.toList(),
+      //   geometry:mask,
+      //   maxPixels: 1e13,
+      //   scale:30
+      // });
 
-      let data = np.array((ee.Array(latlon_new.get('nd')).getInfo()))
-      let lats = np.array((ee.Array(latlon_new.get('latitude')).getInfo()))
-      let lons = np.array((ee.Array(latlon_new.get('longitude')).getInfo()))
+      // let data = np.array((ee.Array(latlon_new.get('nd')).getInfo()))
+      // let lats = np.array((ee.Array(latlon_new.get('latitude')).getInfo()))
+      // let lons = np.array((ee.Array(latlon_new.get('longitude')).getInfo()))
 
-      let uniqueLats = np.unique(lats)
-      let uniqueLons = np.unique(lons)
-      let ncols = len(uniqueLons)    
-      let nrows = len(uniqueLats)
+      // let uniqueLats = np.unique(lats)
+      // let uniqueLons = np.unique(lons)
+      // let ncols = len(uniqueLons)    
+      // let nrows = len(uniqueLats)
 
 
       // let ys = uniqueLats[1] - uniqueLats[0] 
